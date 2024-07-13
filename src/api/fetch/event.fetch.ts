@@ -7,7 +7,7 @@ import {
 } from "../querys/event.query";
 
 const client = getClient();
-export async function getAllEvents() {
+export async function getAllEvents(): Promise<Event[]> {
   const { data } = await client.query({
     query: getAllEventsQuery(),
     context: {
@@ -22,7 +22,7 @@ export async function getAllEvents() {
   return data.events;
 }
 
-export async function getEventById(id: string) {
+export async function getEventById(id: string): Promise<Event> {
   const { data } = await client.query({
     query: getEventByIdQuery(id),
     context: {
@@ -37,7 +37,7 @@ export async function getEventById(id: string) {
   return data.event;
 }
 
-export async function getEventsByType(eventType: string) {
+export async function getEventsByType(eventType: string): Promise<Event[]> {
   const { data } = await client.query({
     query: getEventsByTypeQuery(eventType),
     context: {
@@ -52,7 +52,7 @@ export async function getEventsByType(eventType: string) {
   return data.events;
 }
 
-export async function getEventsOnDate(date: string) {
+export async function getEventsOnDate(date: string): Promise<Event[]> {
   const { data } = await client.query({
     query: getEventsOnDateQuery(date),
     context: {

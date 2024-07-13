@@ -1,3 +1,5 @@
+// file to test API requests
+
 import { getSponsorById } from "@/api/fetch/sponsor.fetch";
 
 export default async function Page() {
