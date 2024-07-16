@@ -80,9 +80,9 @@ export default function ContactForm() {
       <div className="flex justify-center">
         <button
           type="submit"
-          className="text-white bg-purple-900 py-2 px-4 rounded-xl hover:bg-purple-950"
+          className="text-white text-2xl w-5/12  bg-purple-900 py-2 mt-[14px] px-6 rounded-xl hover:bg-purple-950"
         >
-          Enviar
+          Entrar em contato
         </button>
       </div>
     </form>
