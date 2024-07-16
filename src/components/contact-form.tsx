@@ -35,7 +35,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-white text-gray-900 text-xl border-2 border-purple-500 flex-col p-6 rounded-[12px] space-y-[10px]"
+      className="bg-white text-gray-900 text-xl border-2 border-purple-700 flex-col p-6 rounded-[12px] space-y-[10px]"
     >
       <div className="space-y-[8px] ">
         <h1>Assunto</h1>
@@ -80,7 +80,7 @@ export default function ContactForm() {
       <div className="flex justify-center">
         <button
           type="submit"
-          className="text-white bg-purple-500 p-2 rounded-[8px] hover:bg-purple-700"
+          className="text-white bg-purple-900 py-2 px-4 rounded-xl hover:bg-purple-950"
         >
           Enviar
         </button>
