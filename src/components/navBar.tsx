@@ -17,38 +17,38 @@ export default function NavBar() {
       <nav>
         <ul className="flex flex-wrap gap-4">
           <li>
-            <Link href="/about">
-              <span>Home</span>
+            <Link href="/">
+              <span className="hover:underline">Home</span>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <span>Apresentação</span>
+              <span className="hover:underline">Apresentação</span>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <span>Programação</span>
+              <span className="hover:underline">Programação</span>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <span>Patrocinadores</span>
+              <span className="hover:underline">Patrocinadores</span>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <span>Contato</span>
+              <span className="hover:underline">Contato</span>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <span>Code JR</span>
+              <span className="hover:underline">Code JR</span>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <span>Palestrantes</span>
+              <span className="hover:underline">Palestrantes</span>
             </Link>
           </li>
         </ul>
