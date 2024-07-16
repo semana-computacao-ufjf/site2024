@@ -1,15 +1,12 @@
 import { Sponsor } from "@/types/sponsor";
 import { getClient } from "../apollo/apollo-client";
-import {
-  getAllSponsorsQuery,
-  getSponsorByIdQuery,
-} from "../querys/sponsor.query";
+import { sponsorQueryAll, sponsorQueryById } from "../querys/sponsor.query";
 
 const client = getClient();
 
 export async function getAllSponsors(): Promise<Sponsor[]> {
   const { data } = await client.query({
-    query: getAllSponsorsQuery(),
+    query: sponsorQueryAll(),
     context: {
       fetchOptions: {
         next: {
@@ -24,8 +21,11 @@ export async function getAllSponsors(): Promise<Sponsor[]> {
 
 export async function getSponsorById(id: string): Promise<Sponsor> {
   const { data } = await client.query({
-    query: getSponsorByIdQuery(id),
+    query: sponsorQueryById(id),
     context: {
+      variables: {
+        id,
+      },
       fetchOptions: {
         next: {
           revalidate: 300,

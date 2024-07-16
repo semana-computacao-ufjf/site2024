@@ -11,7 +11,7 @@ id
     }
   `;
 
-export function getSponsorByIdQuery(id: string) {
+export function sponsorQueryById(id: string) {
   return gql`
             query Sponsor {
             sponsor(where: { id: "${id}" }) {
@@ -21,7 +21,7 @@ export function getSponsorByIdQuery(id: string) {
         `;
 }
 
-export function getAllSponsorsQuery() {
+export function sponsorQueryAll() {
   return gql`
     query Sponsor {
         sponsors {

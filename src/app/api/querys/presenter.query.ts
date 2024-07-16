@@ -12,7 +12,7 @@ id
     title}  
     `;
 
-export function getPresenterByIdQuery(id: string) {
+export function presenterQueryById(id: string) {
   return gql`
         query Presenter {
         presenter(where: { id: "${id}" }) {
@@ -22,7 +22,7 @@ export function getPresenterByIdQuery(id: string) {
     `;
 }
 
-export function getAllPresentersQuery() {
+export function presenterQueryAll() {
   return gql`
   query Presenter {
     presenters {

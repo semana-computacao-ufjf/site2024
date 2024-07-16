@@ -1,15 +1,15 @@
 import { Presenter } from "@/types/presenter";
 import { getClient } from "../apollo/apollo-client";
 import {
-  getAllPresentersQuery,
-  getPresenterByIdQuery,
+  presenterQueryAll,
+  presenterQueryById,
 } from "../querys/presenter.query";
 
 const client = getClient();
 
 export async function getAllPresenters(): Promise<Presenter[]> {
   const { data } = await client.query({
-    query: getAllPresentersQuery(),
+    query: presenterQueryAll(),
     context: {
       fetchOptions: {
         next: {
@@ -24,8 +24,11 @@ export async function getAllPresenters(): Promise<Presenter[]> {
 
 export async function getPresenterById(id: string): Promise<Presenter> {
   const { data } = await client.query({
-    query: getPresenterByIdQuery(id),
+    query: presenterQueryById(id),
     context: {
+      variables: {
+        id,
+      },
       fetchOptions: {
         next: {
           revalidate: 300,

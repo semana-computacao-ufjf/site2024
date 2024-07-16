@@ -18,7 +18,7 @@ const eventFields = `
   }
 `;
 
-export function getAllEventsQuery() {
+export function eventsQueryAll() {
   return gql`
   query Event {
     events {
@@ -28,7 +28,7 @@ export function getAllEventsQuery() {
 `;
 }
 
-export function getEventByIdQuery(id: string) {
+export function eventQueryById(id: string) {
   return gql`
     query Event {
       event(where: { id: "${id}" }) {
@@ -38,7 +38,7 @@ export function getEventByIdQuery(id: string) {
   `;
 }
 
-export function getEventsByTypeQuery(eventType: string) {
+export function eventQueryByType(eventType: string) {
   return gql`
     query Event {
       events(where: {event_type: ${eventType}}) {
@@ -48,7 +48,7 @@ export function getEventsByTypeQuery(eventType: string) {
   `;
 }
 
-export function getEventsOnDateQuery(date: string) {
+export function eventQueryOnDate(date: string) {
   return gql`
     query Event {
       events(where: {schedule_gt: "${date}"}) {

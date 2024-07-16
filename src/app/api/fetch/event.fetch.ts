@@ -1,15 +1,15 @@
 import { getClient } from "../apollo/apollo-client";
 import {
-  getAllEventsQuery,
-  getEventByIdQuery,
-  getEventsByTypeQuery,
-  getEventsOnDateQuery,
+  eventQueryById,
+  eventQueryByType,
+  eventQueryOnDate,
+  eventsQueryAll,
 } from "../querys/event.query";
 
 const client = getClient();
 export async function getAllEvents(): Promise<Event[]> {
   const { data } = await client.query({
-    query: getAllEventsQuery(),
+    query: eventsQueryAll(),
     context: {
       fetchOptions: {
         next: {
@@ -24,8 +24,11 @@ export async function getAllEvents(): Promise<Event[]> {
 
 export async function getEventById(id: string): Promise<Event> {
   const { data } = await client.query({
-    query: getEventByIdQuery(id),
+    query: eventQueryById(id),
     context: {
+      variables: {
+        id,
+      },
       fetchOptions: {
         next: {
           revalidate: 300,
@@ -39,7 +42,7 @@ export async function getEventById(id: string): Promise<Event> {
 
 export async function getEventsByType(eventType: string): Promise<Event[]> {
   const { data } = await client.query({
-    query: getEventsByTypeQuery(eventType),
+    query: eventQueryByType(eventType),
     context: {
       fetchOptions: {
         next: {
@@ -54,7 +57,7 @@ export async function getEventsByType(eventType: string): Promise<Event[]> {
 
 export async function getEventsOnDate(date: string): Promise<Event[]> {
   const { data } = await client.query({
-    query: getEventsOnDateQuery(date),
+    query: eventQueryOnDate(date),
     context: {
       fetchOptions: {
         next: {
