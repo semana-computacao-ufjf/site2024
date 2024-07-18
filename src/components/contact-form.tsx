@@ -30,20 +30,23 @@ export default function ContactForm() {
     }
   };
 
-  const inputClassName =
-    "border-2 border-gray-300 bg-blue-700/30 p-4 flex justify-between w-full rounded-[8px]";
+  const requestLayout =
+    "border-2 border-gray-300 bg-blue-700/30   p-4 flex justify-between w-full rounded-[8px]";
+
+  const inputLayout =
+    "bg-transparent border-none w-full placeholder:text-black  focus:outline-none";
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-white text-gray-900 text-xl border-2 border-purple-700 flex-col p-6 rounded-[12px] space-y-[10px]"
+      className="bg-white text-gray-900 font-inter text-xl border-2 border-purple-700 flex-col p-6 rounded-[12px] space-y-[10px]"
     >
       <div className="space-y-[8px] ">
         <h1>Assunto</h1>
-        <div className={inputClassName}>
+        <div className={requestLayout}>
           <input
             type="text"
             placeholder="Assunto"
-            className="bg-transparent border-none w-full focus:outline-none"
+            className={inputLayout}
             {...register("subject")}
           />
           <button type="button" onClick={() => setValue("subject", "")}>
@@ -54,11 +57,11 @@ export default function ContactForm() {
       </div>
       <div className="space-y-[8px] justif">
         <h1>Email</h1>
-        <div className={inputClassName}>
+        <div className={requestLayout}>
           <input
             type="email"
             placeholder="exemplo@codejr.com.br"
-            className="bg-transparent border-none w-full focus:outline-none"
+            className={inputLayout}
             {...register("email")}
           />
           <button type="button" onClick={() => setValue("email", "")}>
@@ -70,7 +73,7 @@ export default function ContactForm() {
       <div className="space-y-[8px]">
         <h1>Mensagem</h1>
         <textarea
-          className={`${inputClassName} h-[200px]`}
+          className={`${requestLayout} placeholder:text-black  h-[200px]`}
           placeholder="Conteúdo"
           {...register("content")}
         />
@@ -80,7 +83,7 @@ export default function ContactForm() {
       <div className="flex justify-center">
         <button
           type="submit"
-          className="text-white text-2xl w-5/12  bg-purple-900 py-2 mt-[14px] px-6 rounded-xl hover:bg-purple-950"
+          className="text-white text-2xl  w-5/12  bg-purple-900 py-2 mt-[14px] px-6 rounded-xl hover:bg-purple-950"
         >
           Entrar em contato
         </button>
