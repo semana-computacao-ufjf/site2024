@@ -6,7 +6,7 @@ export default function ContactPage() {
     <div className="max-w-screen min-h-screen flex py-24 bg-[url('/dark-purple-gradient.png')] bg-cover">
       <div className="w-full flex-col space-y-4 px-16">
         <h1 className="text-5xl mb-16  font-viga">Contato</h1>
-        <div className="flex w-full space-x-16">
+        <div className="flex w-full space-x-10">
           <div className="w-1/2">
             <ContactForm />
           </div>
@@ -16,7 +16,7 @@ export default function ContactPage() {
               alt="Contato"
               width={900}
               height={900}
-              className=" border-[3px] border-purple-700 rounded-lg"
+              className=" border-[3px] border-purple-700 rounded-3xl"
             />
           </div>
         </div>
