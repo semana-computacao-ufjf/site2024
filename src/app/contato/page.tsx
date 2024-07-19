@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <div className="max-w-screen min-h-screen flex py-24 bg-[url('/dark-purple-gradient.png')] bg-cover">
       <div className="w-full flex-col space-y-4 px-16">
-        <h1 className="text-5xl mb-16  font-viga">Contato</h1>
+        <h1 className="text-5xl mb-16">Contato</h1>
         <div className="lg:flex lg:w-full lg:justify-between max-lg:flex max-lg:flex-col  max-lg:space-y-10">
           <div className="xl:w-1/2 lg:w-[48%]  max-lg:w-full max-lg:space-y-2 max-lg:flex-col max-lg:flex">
             <ContactForm />
@@ -28,10 +28,10 @@ export default function ContactPage() {
           </div>
         </div>
         <div className="flex max-lg:hidden justify-between w-full  ">
-          <h1 className="text-2xl w-1/2 font-viga font-bold">
+          <h1 className="text-2xl w-1/2 font-bold">
             Tel: (32) 2102-3327 (Secretaria do DCC)
           </h1>
-          <h1 className="xl:w-1/2 lg:w-[52%]  text-2xl font-quicksand font-bold">
+          <h1 className="xl:w-1/2 lg:w-[52%]  text-2xl  font-bold">
             Endereço: Campus Universitário, Rua José Lourenço Kelmer, s/n - São
             Pedro, Juiz de Fora - MG, 36036-900
           </h1>
