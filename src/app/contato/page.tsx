@@ -1,5 +1,6 @@
 import ContactForm from "@/components/contact-form";
-import Image from "next/image";
+import MapComponent from "@/components/map-component";
+import "leaflet/dist/leaflet.css";
 
 export default function ContactPage() {
   return (
@@ -13,14 +14,8 @@ export default function ContactPage() {
               Tel: (32) 2102-3327 (Secretaria do DCC)
             </label>
           </div>
-          <div className="xl:w-1/2 lg:w-[52%] lg:flex max-lg:w-full max-lg:space-y-2 max-lg:flex-col max-lg:flex">
-            <Image
-              src="/ice-map.png"
-              alt="Contato"
-              width={900}
-              height={900}
-              className=" border-[3px] border-purple-700 rounded-3xl"
-            />
+          <div className="xl:w-1/2 lg:w-[52%] lg:flex max-lg:w-full max-lg:h-[500px] max-lg:space-y-2 max-lg:flex-col max-lg:flex">
+            <MapComponent />
             <label className="lg:hidden">
               Endereço: Campus Universitário, Rua José Lourenço Kelmer, s/n -
               São Pedro, Juiz de Fora - MG, 36036-900

@@ -74,7 +74,7 @@ export default function ContactForm() {
         <div className="flex flex-col flex-grow space-y-[8px]">
           <h1>Mensagem</h1>
           <textarea
-            className={`${requestLayout} placeholder:text-black resize-none flex-grow`}
+            className={`${requestLayout} placeholder:text-black min-h-[200px] resize-none flex-grow`}
             placeholder="Conteúdo"
             {...register("content")}
           />
