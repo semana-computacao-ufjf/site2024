@@ -38,7 +38,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-white h-full text-gray-900 lg:w-[90%]  max-w-full font-inter font-medium text-xl border-2 border-purple-700 flex flex-col p-6 rounded-[12px] space-y-[10px]"
+      className="bg-white h-full text-gray-900 lg:w-[90%]  max-w-full font-inter font-medium md:text-xl text-sm border-2 border-purple-700 flex flex-col md:p-6 p-4 rounded-[12px] space-y-[10px]"
     >
       <div className="flex flex-col flex-grow space-y-[10px]">
         <div className="space-y-[8px]">
@@ -74,7 +74,7 @@ export default function ContactForm() {
         <div className="flex flex-col flex-grow space-y-[8px]">
           <h1>Mensagem</h1>
           <textarea
-            className={`${requestLayout} placeholder:text-black min-h-[200px] resize-none flex-grow`}
+            className={`${requestLayout} placeholder:text-black md:min-h-[200px]  resize-none flex-grow`}
             placeholder="Conteúdo"
             {...register("content")}
           />
