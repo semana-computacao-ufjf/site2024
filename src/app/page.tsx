@@ -6,18 +6,18 @@ export default function Home() {
   const backgroundImage = "/images/fundoPostEscuro.png";
   return (
     <>
-    <div
-      className="h-screen w-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <Navbar />
+      <div
+        className="h-screen w-screen bg-cover bg-center"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        <Navbar />
 
-      <div>
-        <h1>XXVI</h1>
-        <h1>Semana da Computação</h1>
+        <div>
+          <h1>XXVI</h1>
+          <h1>Semana da Computação</h1>
+        </div>
       </div>
-    </div>
-    <Footer></Footer>
+      <Footer></Footer>
     </>
   );
 }
