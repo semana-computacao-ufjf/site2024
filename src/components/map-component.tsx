@@ -20,7 +20,7 @@ export default function MapComponent() {
         position={position}
         icon={
           new Icon({
-            iconUrl: "/marker.png",
+            iconUrl: "/images/marker.png",
             iconSize: [60, 60],
             iconAnchor: [30, 41],
           })
