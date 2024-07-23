@@ -9,6 +9,7 @@ id
     description {
       raw
     }
+      contact_url
   `;
 
 export function sponsorQueryById(id: string) {

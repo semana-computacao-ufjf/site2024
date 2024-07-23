@@ -1,23 +1,14 @@
-import Footer from "@/components/Footer";
-
-import Navbar from "@/components/navBar";
+import FAQSession from "@/components/faq-session";
+import SponsorsSession from "@/components/sponsors-session";
 
 export default function Home() {
-  const backgroundImage = "/images/fundoPostEscuro.png";
   return (
-    <>
-      <div
-        className="h-screen w-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <Navbar />
-
-        <div>
-          <h1>XXVI</h1>
-          <h1>Semana da Computação</h1>
-        </div>
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <div className="text-2xl">
+        <h1>Site Semana Comp UFJF 2024</h1>
       </div>
-      <Footer></Footer>
-    </>
+      <SponsorsSession />
+      <FAQSession />
+    </main>
   );
 }
