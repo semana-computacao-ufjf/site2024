@@ -16,6 +16,8 @@ const config: Config = {
     },
     fontFamily: {
       viga: ["Viga", "sans-serif"],
+      quickSand: ["var(--font-quicksand)"],
+      inter: ["var(--font-inter)"],
     },
   },
   plugins: [],

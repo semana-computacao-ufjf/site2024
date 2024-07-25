@@ -36,7 +36,7 @@ export default function ContactForm() {
   };
 
   const requestLayout =
-    "border-2 border-gray-300 bg-blue-700/30 p-4 flex justify-between w-full rounded-[8px]";
+    "border-2 border-gray-300 bg-blue-700/30 p-4  flex justify-between w-full rounded-[8px]";
   const inputLayout = "bg-transparent border-none w-full  focus:outline-none";
 
   return (
@@ -66,7 +66,7 @@ export default function ContactForm() {
             <input
               type="email"
               placeholder="exemplo@codejr.com.br"
-              className={inputLayout}
+              className={` ${inputLayout} `}
               {...register("email")}
             />
             <button type="button" onClick={() => setValue("email", "")}>

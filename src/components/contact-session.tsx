@@ -21,11 +21,11 @@ export default function ContactSession() {
           </label>
         </div>
       </div>
-      <div className="flex max-lg:hidden justify-between w-full  ">
-        <h1 className="text-2xl w-1/2 font-bold">
+      <div className="flex max-lg:hidden justify-between w-full font-quickSand ">
+        <h1 className="text-2xl w-1/2">
           Tel: (32) 2102-3327 (Secretaria do DCC)
         </h1>
-        <h1 className="xl:w-1/2 lg:w-[52%]  text-2xl  font-bold">
+        <h1 className="xl:w-1/2 lg:w-[52%]  text-2xl ">
           Endereço: Campus Universitário, Rua José Lourenço Kelmer, s/n - São
           Pedro, Juiz de Fora - MG, 36036-900
         </h1>

@@ -1,11 +1,33 @@
 import type { Metadata } from "next";
 import { Viga } from "next/font/google";
+import QuickSand from "next/font/local";
+import Inter from "next/font/local";
 import "./globals.css";
 
 const viga = Viga({
   weight: ["400"],
   style: ["normal"],
   subsets: ["latin"],
+});
+
+const quickSand = QuickSand({
+  src: [
+    {
+      path: "../../public/fonts/Quicksand.ttf",
+      weight: "400",
+    },
+  ],
+  variable: "--font-quicksand",
+});
+
+const inter = Inter({
+  src: [
+    {
+      path: "../../public/fonts/Inter.ttf",
+      weight: "400",
+    },
+  ],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
