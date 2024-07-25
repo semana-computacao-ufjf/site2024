@@ -22,6 +22,9 @@ const config: Config = {
         socialMediaAdjust: "900px",
         eventLogo: "1116px",
       },
+      fontFamily: {
+        viga: ["Viga", "sans-serif"],
+      },
     },
   },
   plugins: [],

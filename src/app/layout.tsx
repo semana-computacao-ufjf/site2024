@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Viga } from "next/font/google";
+
+import { Inter, Viga } from "next/font/google";
 import "./globals.css";
 
 const viga = Viga({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
+
+const inter = Inter({
   weight: ["400"],
   style: ["normal"],
   subsets: ["latin"],
