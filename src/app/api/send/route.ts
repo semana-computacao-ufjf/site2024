@@ -1,5 +1,5 @@
 import { EmailForm } from "@/schema/email.form";
-import { EmailTemplate } from "../../../components/email-template";
+import TwitchResetPasswordEmail from "../../../components/email-template";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -9,10 +9,14 @@ export async function POST(request: Request): Promise<Response> {
     const body: EmailForm = await request.json();
     const { data, error } = await resend.emails.send({
       from: "Acme <onboarding@resend.dev>",
-      to: ["delivered@resend.dev"],
-      subject: "Hello world",
-      react: EmailTemplate({
-        content: body.content,
+      to: [
+        process.env.RESEND_EMAIL_CORE
+          ? process.env.RESEND_EMAIL_CORE
+          : "delivered@resend.dev",
+      ],
+      subject: body.subject,
+      react: TwitchResetPasswordEmail({
+        emailContent: body.content,
         subject: body.subject,
         userEmail: body.email,
       }) as React.ReactElement,

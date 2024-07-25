@@ -7,7 +7,7 @@ export default function MapComponent() {
   return (
     <MapContainer
       center={position}
-      zoom={55}
+      zoom={30}
       scrollWheelZoom={true}
       className=" border-[3px] border-purple-700 rounded-3xl"
       style={{ height: "100%", width: "100%" }}

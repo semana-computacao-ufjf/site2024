@@ -8,8 +8,8 @@ export const emailFormSchema = z.object({
     .min(5, {
       message: "O assunto deve ter no mínimo 5 caracteres",
     }),
-  content: z.string().max(500, {
-    message: "O conteúdo deve ter no máximo 500 caracteres",
+  content: z.string().max(2000, {
+    message: "O conteúdo deve ter no máximo 2000 caracteres",
   }),
   email: z
     .string({
