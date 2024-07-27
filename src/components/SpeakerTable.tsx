@@ -17,7 +17,7 @@ interface SpeakerTableProps {
 export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
 
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage: number = 5;
+  const itemsPerPage: number = 2;
 
   const indexOfLastItem: number = currentPage * itemsPerPage;
   const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;
@@ -41,7 +41,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
   };
   return (
     <div className="overflow-x-auto shadow-md">
-      <table className="mx-auto max-w-7xl border-separate border-spacing-y-3 p-2">
+      <table className="mx-auto  w-10/12 border-separate border-spacing-y-3 p-2">
         <thead>
           <tr className="bg-white ">
             <th className="px-3 py-3 font-inter text-center border-l-transparent p-2 rounded-tl-xl rounded-bl-xl">Palestrante</th>
@@ -68,7 +68,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                     className="pt-3"
                   />
                   <p
-                    className={`px-4 py-2 font-inter text-center ${
+                    className={`px-4 py-2 font-inter text-center w-full truncate ${
                       index % 2 === 0 ? "text-white" : "text-black"
                     }`}
                   >
@@ -77,25 +77,25 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                 </div>
               </td>
               <td
-                className={` w-100 h-32 max-w-4xl px-4 font-inter py-2 text-base overflow-x-auto description-overflow table-responsive:block hidden ${
+                className={` w-100 h-32 px-4 font-inter py-2 text-base table-responsive:block hidden  ${
                   index % 2 === 0 ? "text-white" : "text-black"
                 }`}
               >
-                {item.description}
+                <p className="max-w-5xl line-clamp-4">{item.description}</p>
               </td>
               <td
                 className={`px-4 py-2 font-inter text-base text-center ${
                   index % 2 === 0 ? "text-white" : "text-black"
                 }`}
               >
-                {item.participation}
+                <p className="max-w-2xl ">{item.participation}</p>
               </td>
               <td
                 className={`px-4 py-2 mt-2 border-r p-2 text-base rounded-tr-xl rounded-br-xl text-center ${
                   index % 2 === 0 ? "text-white" : "text-black"
                 }`}
               >
-                {item.filiation}
+                <p className="max-w-2xl truncate">{item.filiation}</p>
               </td>
             </tr>
           ))}

@@ -1,6 +1,8 @@
 import Footer from "@/components/Footer";
 import SpeakerTable from '../components/SpeakerTable';
 import Title from "@/components/Title";
+import CodeSection from "@/components/CodeSection";
+import CardTechnology from "@/components/CardTechnology";
 const speakerData = [
   {
     speakerName: 'John',
@@ -125,9 +127,17 @@ export default function Home() {
        <h1>Site Semana Comp UFJF 2024</h1>
       </div>
     </main>
-    <Title Title="Conheça nossos palestrantes"></Title>
+    {/* <Title Title="Conheça nossos palestrantes"></Title> */}
+    <Title Title="Conheça nossos palestrantes" ></Title>
     <SpeakerTable speakerData={speakerData} />
-    <Footer></Footer>
+    <CodeSection></CodeSection>
+    <div className="flex justify-between mb-4 px-8">
+      <CardTechnology title="Aplicativos" description="Não quer ficar para trás no mundo dos aplicativos? Com o React Native a Code pode ajudar você e a sua empresa!" ></CardTechnology>
+      <CardTechnology title="Sites expositivos" description="Deseja divulgar sua marca e ter mais clientes? Nós desenvolvemos um site expositivo profissional para ajudar o seu negócio a alcançar esses objetivos." ></CardTechnology>
+      <CardTechnology title="Sistemas" description="Deseja modernizar e trazer tecnologia para seu negócio? Com o Laravel, podemos trazer o sistema de gerenciamento mais moderno do mercado!"></CardTechnology>
+    
+    </div>
+    <Footer ></Footer>
     </>
   );
 }
