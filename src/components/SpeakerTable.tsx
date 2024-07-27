@@ -17,7 +17,7 @@ interface SpeakerTableProps {
 export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
 
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage: number = 2;
+  const itemsPerPage: number = 5;
 
   const indexOfLastItem: number = currentPage * itemsPerPage;
   const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;

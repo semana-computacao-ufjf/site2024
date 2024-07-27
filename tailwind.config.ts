@@ -24,7 +24,7 @@ const config: Config = {
         purpleCode: '#291141', 
       },
       screens: {
-        'tableOverFlow': '854px',
+        'sectionBreak': '854px',
         'custom': '1542px',
         'socialMediaAdjust': '900px',
         'eventLogo': '1116px',
