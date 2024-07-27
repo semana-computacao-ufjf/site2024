@@ -8,7 +8,7 @@ export async function POST(request: Request): Promise<Response> {
   try {
     const body: EmailForm = await request.json();
     const { data, error } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: `Acme <${body.email}>`,
       to: [
         process.env.RESEND_EMAIL_CORE
           ? process.env.RESEND_EMAIL_CORE
@@ -19,6 +19,17 @@ export async function POST(request: Request): Promise<Response> {
         emailContent: body.content,
         subject: body.subject,
         userEmail: body.email,
+      }) as React.ReactElement,
+    });
+
+    const confirmationEmail = await resend.emails.send({
+      from: `Acme <no-reply@${process.env.RESEND_EMAIL_DOMAIN}>`,
+      to: [body.email],
+      subject: "Confirmação de envio",
+      react: TwitchResetPasswordEmail({
+        emailContent: `Seu email foi enviado com sucesso para ${body.email}`,
+        subject: "Confirmação de envio",
+        userEmail: `no-reply@${process.env.RESEND_EMAIL_DOMAIN}`,
       }) as React.ReactElement,
     });
 
