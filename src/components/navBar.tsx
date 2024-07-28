@@ -2,17 +2,18 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
+    <main>
     <section
       className="
     flex justify-between items-center
     font-viga text-xl leading-loose
-    px-4 py-2 md:px-8 md:py-4
+    px-4 py-2 md:px-8 md:py-4 
     "
     >
       <img
         src="/images/semanaComputacaoLogo.png"
         alt="Logo"
-        className="brightness-0 invert max-h-20 md:max-h-40 mr-4"
+        className="mr-16 brightness-0 invert max-h-20 md:max-h-40 mr-4"
       />
       <nav>
         <ul className="flex flex-wrap gap-4">
@@ -56,8 +57,9 @@ export default function NavBar() {
       <img
         src="/images/ufjfLogo.png"
         alt="UFJF"
-        className="max-h-10 md:max-h-20"
+        className="max-h-10 md:max-h-20 ml-10"
       />
     </section>
+    </main>
   );
 }
