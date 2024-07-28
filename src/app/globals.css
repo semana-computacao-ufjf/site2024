@@ -51,6 +51,17 @@ html, body {
   box-sizing: border-box;
 }
 
+.separator::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 1px;
+  background-color: black;
+  opacity: 0.8;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
