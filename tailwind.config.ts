@@ -28,9 +28,6 @@ const config: Config = {
         'eventLogo': '1116px'
       }
     },
-    fontFamily:{
-      'viga': ['Viga', 'sans-serif'],
-    }
   },
   plugins: [],
 };
