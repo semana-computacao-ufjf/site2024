@@ -41,7 +41,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
   };
   return (
     <div className="overflow-x-auto shadow-md">
-      <table className="mx-auto  w-10/12 border-separate border-spacing-y-3 p-2">
+      <table className="mx-auto  w-10/12 border-separate border-spacing-y-3 p-2 text-black">
         <thead>
           <tr className="bg-white ">
             <th className="px-3 py-3 font-inter text-center border-l-transparent p-2 rounded-tl-xl rounded-bl-xl">Palestrante</th>

@@ -39,7 +39,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-[#181426]">
       <NavBar />
-      <ContactSession />
+      <SponsorsSession />
+      
       <Title Title="Conheça nossos palestrantes" />
       <SpeakerTable speakerData={speakerData} />
       <div className="bg-white mb-20">
@@ -62,6 +63,8 @@ export default function Home() {
           />
         </div>
       </div>
+        <ContactSession />
+        <FAQSession />
         <Footer />
     </main>
   );
