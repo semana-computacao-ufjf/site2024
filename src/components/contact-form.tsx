@@ -1,5 +1,6 @@
 "use client";
 
+import { inter } from "@/app/fonts";
 import { EmailForm, emailFormSchema } from "@/schema/email.form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -42,7 +43,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-white h-full text-gray-900 lg:w-[90%]  max-w-full font-inter font-medium md:text-xl text-sm border-2 border-purple-700 flex flex-col md:p-6 p-4 rounded-[12px] space-y-[10px]"
+      className={`bg-white h-full text-gray-900 lg:w-[90%]  max-w-full ${inter.className} font-medium md:text-xl text-sm border-2 border-purple-700 flex flex-col md:p-6 p-4 rounded-[12px] space-y-[10px]`}
     >
       <div className="flex flex-col flex-grow space-y-[10px]">
         <div className="space-y-[8px]">

@@ -10,26 +10,6 @@ const viga = Viga({
   subsets: ["latin"],
 });
 
-const quickSand = QuickSand({
-  src: [
-    {
-      path: "../../public/fonts/Quicksand.ttf",
-      weight: "400",
-    },
-  ],
-  variable: "--font-quicksand",
-});
-
-const inter = Inter({
-  src: [
-    {
-      path: "../../public/fonts/Inter.ttf",
-      weight: "400",
-    },
-  ],
-  variable: "--font-inter",
-});
-
 export const metadata: Metadata = {
   title: "Site Semana Computação UFJF 2024",
   description: "Site da Semana da Computação da UFJF 2024",
