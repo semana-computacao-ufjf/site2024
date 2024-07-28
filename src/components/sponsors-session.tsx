@@ -23,7 +23,6 @@ export default async function SponsorsSession() {
 
   return (
     <div className="w-full bg-white text-black flex flex-col  text-center py-10">
-      <h1 className="md:text-5xl text-3xl">Patrocinadores</h1>
       <div className="flex flex-wrap mt-[40px] w-full gap-24 px-6 justify-center ">
         {sponsors?.map((sponsor) => (
           <SponsorModel sponsor={sponsor} key={sponsor.id} />
