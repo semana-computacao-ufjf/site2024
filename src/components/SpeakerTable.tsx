@@ -95,7 +95,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                   index % 2 === 0 ? "text-white" : "text-black"
                 }`}
               >
-                <p className="max-w-2xl truncate">{item.filiation}</p>
+                <p className="max-w-2xl ">{item.filiation}</p>
               </td>
             </tr>
           ))}

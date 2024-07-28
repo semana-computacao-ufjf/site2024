@@ -3,6 +3,7 @@ import SpeakerTable from '../components/SpeakerTable';
 import Title from "@/components/Title";
 import CodeSection from "@/components/CodeSection";
 import CardTechnology from "@/components/CardTechnology";
+import RedirectButton from "@/components/RedirectButton";
 const speakerData = [
   {
     speakerName: 'John',
@@ -149,6 +150,7 @@ export default function Home() {
             description="Deseja modernizar e trazer tecnologia para seu negócio? Com o Laravel, podemos trazer o sistema de gerenciamento mais moderno do mercado!"
           ></CardTechnology>
         </div>
+        <RedirectButton redirectTo={"/contato"} text="Entre em Contato" ></RedirectButton>
       </div>
       <Footer></Footer>
     </>

@@ -14,23 +14,23 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        tableGray:'#313131',
-        codePurple:'#861DCE',
-        abledPurple:'#3f0369',
-        
-        
+        "tableGray":'#313131',
+        "codePurple":'#861DCE',
+        "abledPurple":'#3f0369',
+        "darkerPurple":'#291141',
       },
       borderColor: {
         purpleCode: '#291141', 
       },
       screens: {
-        'sectionBreak': '854px',
+        'sectionBreak': '875px',
         'custom': '1542px',
         'socialMediaAdjust': '900px',
         'eventLogo': '1116px',
+        'card-responsive': '1063px',
+        'card-responsive2': '978px',
+        'card-responsive3': '875px',
         'table-responsive': '892px',
-        
-        
       },
       fontFamily:{
         'inter': ['Inter', 'sans-serif'],
