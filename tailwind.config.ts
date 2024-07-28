@@ -7,15 +7,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontFamily:{
-      'viga': ['Viga'],
+    fontFamily: {
+      viga: ["Viga"],
     },
-    fontSize: {
-      sm: ['14px', '20px'],
-      base: ['16px', '24px'],
-      lg: ['20px', '28px'],
-      xl: ['24px', '32px'],
-    },
+
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -57,6 +52,7 @@ const config: Config = {
         'card-width': '360px',
         'card-heihgt': '372px'
       }
+
     },
   },
   plugins: [],

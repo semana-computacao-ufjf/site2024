@@ -1,3 +1,5 @@
+import FAQSession from "@/components/faq-session";
+import SponsorsSession from "@/components/sponsors-session";
 import ContactSession from "@/components/contact-session";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/navBar";
@@ -34,7 +36,6 @@ const speakerData = [
 ];
 
 export default function Home() {
-  const backgroundImage = "/images/fundoPostEscuro.png";
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-[#181426]">
       <NavBar />
