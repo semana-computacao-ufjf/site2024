@@ -45,7 +45,7 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <Link href="/about">
+            <Link href="/schedule">
               <span className="hover:underline m-1">Code JR</span>
             </Link>
           </li>

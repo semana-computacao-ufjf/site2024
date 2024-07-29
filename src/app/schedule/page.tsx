@@ -1,9 +1,8 @@
-import { Event, EventType } from "@/types/event";
 import ScheduleClient from "./scheduleClient";
+import { EventDetail } from "@/types/event";
 import { fakeEventApi } from "@/util/fakeApi";
 
 export default function Schedule() {
-  // TODO: substituir pela query real da programação
-  const events: Event[] = fakeEventApi();
+  const events: EventDetail[] = fakeEventApi();
   return <ScheduleClient events={events} />;
 }

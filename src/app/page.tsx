@@ -1,13 +1,19 @@
-import FAQSession from "@/components/faq-session";
-import SponsorsSession from "@/components/sponsors-session";
-import ContactSession from "@/components/contact-session";
-import Footer from "@/components/Footer";
-<<<<<<< HEAD
-import NavBar from "@/components/navBar";
+import FAQSession from "@/components/faq/faq-session";
+import SponsorsSession from "@/components/sponsors/sponsors-session";
+import ContactSession from "@/components/contact/contact-session";
+import Footer from "@/components/navbar footer/Footer";
+import NavBar from "@/components/navbar footer/navBar";
 import SpeakerTable from "../components/SpeakerTable";
 import Title from "@/components/Title";
-import CodeSection from "@/components/CodeSection";
-import CardTechnology from "@/components/CardTechnology";
+import CodeSection from "@/components/code-tech/CodeSection";
+import CardTechnology from "@/components/code-tech/CardTechnology";
+import Slider from "@/components/slider";
+import ScheduleClient from "./schedule/scheduleClient";
+import { fakeEventApi } from "@/util/fakeApi";
+import { EventDetail } from "@/types/event";
+import Presentation from "./presentation/page";
+
+const events: EventDetail [] = fakeEventApi();
 
 const speakerData = [
   {
@@ -35,17 +41,15 @@ const speakerData = [
     pictureURL: '/images/example-photo.png',
   },
 ];
-=======
-import Navbar from "@/components/navBar";
->>>>>>> presentation
 
 export default function Home() {
   return (
-<<<<<<< HEAD
     <main className="flex min-h-screen flex-col items-center justify-between bg-[#181426]">
       <NavBar />
+      <Cover />
+      <Presentation />
       <SponsorsSession />
-      
+      <ScheduleClient events={events}/>
       <Title Title="Conheça nossos palestrantes" />
       <SpeakerTable speakerData={speakerData} />
       <div className="bg-white mb-20">
@@ -72,20 +76,6 @@ export default function Home() {
         <FAQSession />
         <Footer />
     </main>
-=======
-    <>
-      <div
-        className="h-screen w-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="bg-[rgba(24,20,38,1)] shadow-[0px_3px_10px_0px_rgba(0,0,0,0.25)]">
-          <Navbar />
-        </div>
-        <Cover />
-      </div>
-      <Footer />
-    </>
->>>>>>> presentation
   );
 }
 

@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Event, EventType } from "@/types/event";
+import { EventDetail , EventType } from "@/types/event";
 import { getWeekday } from "@/util/getWeekday";
 
 interface ScheduleClientProps {
-  events: Event[];
+  events: EventDetail [];
 }
 
 const formatEventType = (type: number): string => {

@@ -1,6 +1,6 @@
 import { Presenter } from "./presenter";
 
-export type Event = {
+export type EventDetail = {
   id: string;
   title: string;
   description?: {

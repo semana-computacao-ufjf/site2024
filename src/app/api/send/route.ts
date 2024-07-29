@@ -1,5 +1,5 @@
 import { EmailForm } from "@/schema/email.form";
-import TwitchResetPasswordEmail from "../../../components/email-template";
+import TwitchResetPasswordEmail from "../../../components/contact/email-template";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);

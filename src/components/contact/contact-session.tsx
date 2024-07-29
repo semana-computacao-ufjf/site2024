@@ -1,5 +1,5 @@
 import { quickSand } from "@/app/fonts";
-import ContactForm from "@/components/contact-form";
+import ContactForm from "@/components/contact/contact-form";
 import MapComponent from "@/components/map-component";
 import "leaflet/dist/leaflet.css";
 

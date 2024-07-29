@@ -1,6 +1,6 @@
-import { Event, EventType } from "@/types/event";
+import { EventDetail , EventType } from "@/types/event";
 const fakeEventApi = () => {
-    const events: Event[] = [
+    const events: EventDetail [] = [
       {
         id: "1",
         title: "Palestra sobre Inteligência Artificial",
