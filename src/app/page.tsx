@@ -5,9 +5,6 @@ import Footer from "@/components/navbar footer/Footer";
 import NavBar from "@/components/navbar footer/navBar";
 import SpeakerTable from "../components/SpeakerTable";
 import Title from "@/components/Title";
-import CodeSection from "@/components/code-tech/CodeSection";
-import CardTechnology from "@/components/code-tech/CardTechnology";
-import Slider from "@/components/slider";
 import ScheduleClient from "./schedule/scheduleClient";
 import { fakeEventApi } from "@/util/fakeApi";
 import { EventDetail } from "@/types/event";
@@ -15,6 +12,9 @@ import Presentation from "./presentation/page";
 
 const events: EventDetail [] = fakeEventApi();
 
+import CodeSection from "@/components/code-tech/CodeSection";
+import CardTechnology from "@/components/code-tech/CardTechnology";
+import RedirectButton from "@/components/RedirectButton";
 const speakerData = [
   {
     speakerName: 'John',
@@ -71,6 +71,7 @@ export default function Home() {
             description="Deseja modernizar e trazer tecnologia para seu negócio? Com o Laravel, podemos trazer o sistema de gerenciamento mais moderno do mercado!"
           />
         </div>
+        <RedirectButton redirectTo={"/contato"} text="Entre em Contato" ></RedirectButton>
       </div>
         <ContactSession />
         <FAQSession />
