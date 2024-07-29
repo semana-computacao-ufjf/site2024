@@ -3,55 +3,47 @@ import SponsorsSession from "@/components/sponsors/sponsors-session";
 import ContactSession from "@/components/contact/contact-session";
 import Footer from "@/components/navbar footer/Footer";
 import NavBar from "@/components/navbar footer/navBar";
-import SpeakerTable from "../components/SpeakerTable";
+import SpeakerTable from "@/components/SpeakerTable";
 import Title from "@/components/Title";
 import ScheduleClient from "./schedule/scheduleClient";
-import { fakeEventApi } from "@/util/fakeApi";
-import { EventDetail } from "@/types/event";
 import Presentation from "./presentation/page";
-
-const events: EventDetail [] = fakeEventApi();
-
 import CodeSection from "@/components/code-tech/CodeSection";
 import CardTechnology from "@/components/code-tech/CardTechnology";
 import RedirectButton from "@/components/RedirectButton";
-const speakerData = [
-  {
-    speakerName: 'John',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-    participation: 'Palestra sobre Machine Learning',
-    filiation: 'Universidade XYZ',
-    pictureURL: '/images/example-photo.png',
-  },
-  {
-    speakerName: 'Jane',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-    participation: 'Workshop de Desenvolvimento Web',
-    filiation: 'Empresa ABC',
-    pictureURL: '/images/example-photo.png',
-  },
-  {
-    speakerName: 'Carlos',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-    participation: 'Painel sobre Cybersecurity',
-    filiation: 'Instituto DEF',
-    pictureURL: '/images/example-photo.png',
-  },
-];
+import Cover from "@/components/cover/cover";
+import { Event } from '@/types/event';
+import { Presenter } from "@/types/presenter";
 
-export default function Home() {
+async function fetchData() {
+  try {
+    const eventsResponse = await fetch('/api/events');
+    if (!eventsResponse.ok) throw new Error('Failed to fetch events');
+    const events: Event[] = await eventsResponse.json();
+
+    const presentersResponse = await fetch('/api/presenters');
+    if (!presentersResponse.ok) throw new Error('Failed to fetch presenters');
+    const presenters: Presenter[] = await presentersResponse.json();
+
+    return { events, presenters };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { events: [], presenters: [] }; // Valores padrão em caso de erro
+  }
+}
+
+export default async function Home() {
+  const { events, presenters } = await fetchData();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-[#181426]">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <NavBar />
       <Cover />
       <Presentation />
-      <SponsorsSession />
       <ScheduleClient events={events}/>
+      <Title Title="Patrocinadores" />
+      <SponsorsSession />
       <Title Title="Conheça nossos palestrantes" />
-      <SpeakerTable speakerData={speakerData} />
+      <SpeakerTable speakerData={presenters} />
       <div className="bg-white mb-20">
         <CodeSection />
         <div className="flex flex-col sectionBreak:flex-row justify-around px-6 gap-0 sectionBreak:gap-8 items-center sectionBreak:items-stretch">
@@ -71,7 +63,10 @@ export default function Home() {
             description="Deseja modernizar e trazer tecnologia para seu negócio? Com o Laravel, podemos trazer o sistema de gerenciamento mais moderno do mercado!"
           />
         </div>
+        <div className="mb-12">
         <RedirectButton redirectTo={"/contato"} text="Entre em Contato" ></RedirectButton>
+
+        </div>
       </div>
         <ContactSession />
         <FAQSession />
@@ -79,35 +74,3 @@ export default function Home() {
     </main>
   );
 }
-
-const Cover = () => {
-  return (
-    <div className="flex items-center justify-around flex-wrap p-4">
-      <div className="text-center">
-        <h1 className="font-viga text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[6vw] font-bold leading-tight text-left">
-          XXVI
-        </h1>
-        <h1 className="font-julius-sans-one text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw] font-normal leading-tight text-left">
-          <div>Semana da</div>
-          <div>Computação</div>
-        </h1>
-        <h2 className="font-viga text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[2vw] font-normal leading-tight text-left mt-6 sm:mt-8 md:mt-10 lg:mt-12">
-          Dias 25 a 29 de Novembro, 2024
-        </h2>
-        <div className="flex items-start justify-center flex-wrap mt-6 sm:mt-8 md:mt-10 lg:mt-12">
-          <button className="bg-white text-black font-semibold py-2 px-4 rounded-lg border-2 border-white shadow-md hover:bg-transparent hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400">
-            Saiba mais
-          </button>
-          <button className="bg-transparent text-white font-semibold py-2 px-4 rounded-lg border-2 border-white shadow-md hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-400 ml-4 sm:ml-6 md:ml-8 lg:ml-10">
-            Dúvidas?
-          </button>
-        </div>
-      </div>
-      <img
-        src="/images/homeImage.png"
-        alt="HomeImage"
-        className="max-h-[350px] mt-6 sm:mt-8 md:mt-10 lg:mt-12"
-      />
-    </div>
-  );
-};

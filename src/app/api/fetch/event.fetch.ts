@@ -5,8 +5,8 @@ import {
   eventQueryOnDate,
   eventsQueryAll,
 } from "../querys/event.query";
-
 const client = getClient();
+
 export async function getAllEvents(): Promise<Event[]> {
   const { data } = await client.query({
     query: eventsQueryAll(),

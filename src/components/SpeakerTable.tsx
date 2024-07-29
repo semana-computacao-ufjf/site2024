@@ -2,16 +2,17 @@
 import NextImage from "next/image";
 import { useState } from "react";
 
-interface Speaker {
-  speakerName: string;
+interface Presenter {
+  id: string;
+  name: string;
   description: string;
   participation: string;
-  filiation: string;
+  bond: string;
   pictureURL: string;
 }
 
 interface SpeakerTableProps {
-  speakerData: Speaker[];
+  speakerData: Presenter[];
 }
 
 export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
@@ -21,7 +22,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
 
   const indexOfLastItem: number = currentPage * itemsPerPage;
   const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;
-  const currentItems: Speaker[] = speakerData.slice(
+  const currentItems: Presenter[] = speakerData.slice(
     indexOfFirstItem,
     indexOfLastItem
   );
@@ -39,9 +40,10 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
   const handleNextPage = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
   };
+
   return (
     <div className="overflow-x-auto shadow-md">
-      <table className="mx-auto  w-10/12 border-separate border-spacing-y-3 p-2 text-black">
+      <table className="mx-auto w-10/12 border-separate border-spacing-y-3 p-2 text-black">
         <thead>
           <tr className="bg-white ">
             <th className="px-3 py-3 font-inter text-center border-l-transparent p-2 rounded-tl-xl rounded-bl-xl">Palestrante</th>
@@ -62,7 +64,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                 <div className="flex flex-col items-center">
                   <NextImage
                     src={item.pictureURL}
-                    alt={item.speakerName}
+                    alt={item.name}
                     width={120}
                     height={120}
                     className="pt-3"
@@ -72,7 +74,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                       index % 2 === 0 ? "text-white" : "text-black"
                     }`}
                   >
-                    {item.speakerName}
+                    {item.name}
                   </p>
                 </div>
               </td>
@@ -95,7 +97,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                   index % 2 === 0 ? "text-white" : "text-black"
                 }`}
               >
-                <p className="max-w-2xl ">{item.filiation}</p>
+                <p className="max-w-2xl ">{item.bond}</p>
               </td>
             </tr>
           ))}
