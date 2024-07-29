@@ -44,6 +44,28 @@ export default function ScheduleClient({ events }: ScheduleClientProps) {
     return new Date(a.schedule).getTime() - new Date(b.schedule).getTime();
   });
 
+  // TODO: Query das premiações
+  const prizes = [
+    {
+      title: "Maratona de Programação",
+      firstPlace: "R$ 1000",
+      secondPlace: "R$ 500",
+      thirdPlace: "R$ 250",
+    },
+    {
+      title: "Game Jam",
+      firstPlace: "R$ 1500",
+      secondPlace: "R$ 700",
+      thirdPlace: "R$ 300",
+    },
+    {
+      title: "Competição de CSS",
+      firstPlace: "R$ 2000",
+      secondPlace: "R$ 1000",
+      thirdPlace: "R$ 500",
+    },
+  ];
+
   const EventTable = () => {
     return (
       <>
@@ -95,7 +117,9 @@ export default function ScheduleClient({ events }: ScheduleClientProps) {
                         <span className="separator"></span>
                       </td>
                       <td className="px-2 py-4 whitespace-nowrap text-left relative">
-                        <div className="text-sm font-medium">{event.title}</div>
+                        <div className="text-sm font-medium pl-4">
+                          {event.title}
+                        </div>
                         {event.description && (
                           <div className="text-sm mt-1">
                             {event.description.raw}
@@ -125,12 +149,45 @@ export default function ScheduleClient({ events }: ScheduleClientProps) {
     );
   };
 
+  const PrizeTable = () => {
+    return (
+      <>
+        <h2 className="font-viga text-[24px] sm:text-[36px] font-normal text-center mt-10">
+          Premiações
+        </h2>
+        <div className="text-black mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 mt-5">
+          <div className="grid grid-cols-4 gap-4 mb-4">
+            <div></div>
+            <div className="font-bold text-center text-white p-4">1º lugar</div>
+            <div className="font-bold text-center text-white p-4">2º lugar</div>
+            <div className="font-bold text-center text-white p-4">3º lugar</div>
+          </div>
+
+          {prizes.map((prize, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-4 gap-4 mb-4 bg-white text-black rounded-[10px] shadow-md p-4"
+            >
+              <div className="text-left font-bold text-violet-900">
+                {prize.title}
+              </div>
+              <div className="text-center">{prize.firstPlace}</div>
+              <div className="text-center">{prize.secondPlace}</div>
+              <div className="text-center">{prize.thirdPlace}</div>
+            </div>
+          ))}
+        </div>
+      </>
+    );
+  };
+
   return (
     <div
       className="min-h-screen w-full bg-cover bg-center bg-white flex flex-col items-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <EventTable />
+      <PrizeTable />
     </div>
   );
 }
