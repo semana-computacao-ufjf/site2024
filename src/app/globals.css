@@ -82,3 +82,10 @@ html, body {
     src: url(/public/fonts/Viga.woff2) format('woff2');
   }
 }
+
+@media (max-width: 390px) {
+  .btn-custom {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+}
