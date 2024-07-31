@@ -5,44 +5,47 @@ import Footer from "@/components/navbar footer/Footer";
 import NavBar from "@/components/navbar footer/navBar";
 import SpeakerTable from "@/components/SpeakerTable";
 import Title from "@/components/Title";
-import ScheduleClient from "./schedule/scheduleClient";
-import Presentation from "./presentation/page";
 import CodeSection from "@/components/code-tech/CodeSection";
 import CardTechnology from "@/components/code-tech/CardTechnology";
-import Slider from "@/components/slider";
 import ScheduleClient from "./schedule/scheduleClient";
 import { fakeEventApi } from "@/util/fakeApi";
-import { EventDetail } from "@/types/event";
+import { Event } from "@/types/event";
 import Presentation from "./presentation/page";
+import RedirectButton from "@/components/RedirectButton";
+import { Presenter } from "@/types/presenter";
 
-const events: EventDetail[] = fakeEventApi();
+const events: Event[] = fakeEventApi();
 
-const speakerData = [
+const speakerData: Presenter[] = [
   {
-    speakerName: "John",
+    id: "1",
+    name: "John",
+    bond: "Professor",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
     participation: "Palestra sobre Machine Learning",
-    filiation: "Universidade XYZ",
     pictureURL: "/images/example-photo.png",
   },
   {
-    speakerName: "Jane",
+    id: "2",
+    name: "Jane",
+    bond: "Desenvolvedora",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
     participation: "Workshop de Desenvolvimento Web",
-    filiation: "Empresa ABC",
     pictureURL: "/images/example-photo.png",
   },
   {
-    speakerName: "Carlos",
+    id: "3",
+    name: "Carlos",
+    bond: "Especialista em Segurança",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
     participation: "Painel sobre Cybersecurity",
-    filiation: "Instituto DEF",
     pictureURL: "/images/example-photo.png",
   },
 ];
+
 
 export default function Home() {
   return (
@@ -54,7 +57,7 @@ export default function Home() {
       <Title Title="Patrocinadores" />
       <SponsorsSession />
       <Title Title="Conheça nossos palestrantes" />
-      <SpeakerTable speakerData={presenters} />
+      <SpeakerTable speakerData={speakerData} />
       <div className="bg-white mb-20">
         <CodeSection />
         <div className="flex flex-col sectionBreak:flex-row justify-around px-6 gap-0 sectionBreak:gap-8 items-center sectionBreak:items-stretch">
