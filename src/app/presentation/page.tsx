@@ -12,7 +12,7 @@ const images = [
 
 export default function Presentation() {
   return (
-    <div className="bg-[rgba(255,255,255,1)] min-h-screen flex flex-col">
+    <div className="bg-[#ffffff] min-h-screen  p-8 flex flex-col">
       <Slider images={images} />
       <About />
     </div>

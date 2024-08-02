@@ -16,7 +16,6 @@ interface SpeakerTableProps {
 }
 
 export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
-
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage: number = 5;
 
@@ -46,10 +45,16 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
       <table className="mx-auto w-10/12 border-separate border-spacing-y-3 p-2 text-black">
         <thead>
           <tr className="bg-white ">
-            <th className="px-3 py-3 font-inter text-center border-l-transparent p-2 rounded-tl-xl rounded-bl-xl">Palestrante</th>
-            <th className="px-3 py-3 font-inter text-center table-responsive:block hidden">Descrição</th>
+            <th className="px-3 py-3 font-inter text-center border-l-transparent p-2 rounded-tl-xl rounded-bl-xl">
+              Palestrante
+            </th>
+            <th className="px-3 py-3 font-inter text-center table-responsive:block hidden">
+              Descrição
+            </th>
             <th className="px-3 py-3 font-inter text-center">Participação</th>
-            <th className="px-3 py-3 font-inter text-center border-r-0 p-2 rounded-tr-xl rounded-br-xl">Filiação</th>
+            <th className="px-3 py-3 font-inter text-center border-r-0 p-2 rounded-tr-xl rounded-br-xl">
+              Filiação
+            </th>
           </tr>
         </thead>
         <tbody className="space-y-4">
@@ -108,15 +113,15 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
-          className="px-4 py-2 mx-1 bg-white text-black rounded-xl disabled:opacity-50 w-10 h-10" 
+          className="px-4 py-2 mx-1 bg-white text-black rounded-xl disabled:opacity-50 w-10 h-10"
         >
           <NextImage
-                    src="/images/arrow_back.svg"
-                    alt="Página anterior"
-                    width={20}
-                    height={20}
-                    className=""
-                  />
+            src="/images/arrow_back.svg"
+            alt="Página anterior"
+            width={20}
+            height={20}
+            className=""
+          />
         </button>
 
         {Array.from({ length: totalPages }, (_, index) => (
@@ -139,12 +144,12 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
           className="px-4 py-2 mx-1 bg-white text-black rounded-xl disabled:opacity-50 w-10 h-10"
         >
           <NextImage
-                    src="/images/arrow_front.svg"
-                    alt="Página posterior"
-                    width={20}
-                    height={20}
-                    className=""
-                  />
+            src="/images/arrow_front.svg"
+            alt="Página posterior"
+            width={20}
+            height={20}
+            className=""
+          />
         </button>
       </div>
     </div>

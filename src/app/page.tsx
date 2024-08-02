@@ -46,7 +46,6 @@ const speakerData: Presenter[] = [
   },
 ];
 
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -54,11 +53,17 @@ export default function Home() {
       <Cover />
       <Presentation />
       <ScheduleClient events={events} />
-      <Title Title="Patrocinadores" />
-      <SponsorsSession />
-      <Title Title="Conheça nossos palestrantes" />
-      <SpeakerTable speakerData={speakerData} />
-      <div className="bg-white mb-20">
+      <div className="w-full bg-white text-black flex flex-col  text-center py-10">
+        <h1 className="text-5xl"> Patrocinadores</h1>
+        <SponsorsSession />
+      </div>
+      <div className="mt-10 w-screen gap-y-11">
+        <h1 className="xl:text-5xl lg:4xl md:text-3xl text-2xl text-center mb-11">
+          Conheça nossos palestrantes!
+        </h1>
+        <SpeakerTable speakerData={speakerData} />
+      </div>
+      <div className="bg-white">
         <CodeSection />
         <div className="flex flex-col sectionBreak:flex-row justify-around px-6 gap-0 sectionBreak:gap-8 items-center sectionBreak:items-stretch">
           <CardTechnology
@@ -78,8 +83,10 @@ export default function Home() {
           />
         </div>
         <div className="mb-12">
-        <RedirectButton redirectTo={"/contato"} text="Entre em Contato" ></RedirectButton>
-
+          <RedirectButton
+            redirectTo={"/contato"}
+            text="Entre em Contato"
+          ></RedirectButton>
         </div>
       </div>
       <ContactSession />
