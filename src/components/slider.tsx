@@ -17,16 +17,16 @@ const Slider = ({ images }: SliderProps) => {
   }, [duration]);
 
   return (
-    <div className="w-full   min-h-[150px] relative">
+    <div className="w-full   min-h-[130px] relative">
       <div ref={wrapperRef} className="flex absolute animate-slide space-x-40">
         {images.concat(images, images).map((image, index) => (
           <Image
-            width={200}
-            height={150}
+            width={150}
+            height={130}
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="max-h-[150px] max-w-[200px]"
+            className="max-h-[130px] max-w-[150px] "
           />
         ))}
       </div>
