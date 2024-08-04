@@ -8,8 +8,8 @@ export default function NavBar() {
           flex items-center justify-center
           font-viga text-2xl leading-loose
           px-4 py-2 md:px-7 md:py-4 
-          shadow-[0px_3px_10px_0px_rgba(0,0,0,0.25)]
-          h-[125px]
+          shadow-[0px_15px_30px_-10px_rgba(0,0,0,0.4)]
+          h-[145px]
           w-full
         "
       >

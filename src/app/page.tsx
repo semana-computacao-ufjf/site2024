@@ -31,7 +31,7 @@ const speakerData: Presenter[] = [
     name: "Jane",
     bond: "Desenvolvedora",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only cinco séculos",
     participation: "Workshop de Desenvolvimento Web",
     pictureURL: "/images/example-photo.png",
   },
@@ -40,7 +40,7 @@ const speakerData: Presenter[] = [
     name: "Carlos",
     bond: "Especialista em Segurança",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only cinco séculos",
     participation: "Painel sobre Cybersecurity",
     pictureURL: "/images/example-photo.png",
   },
@@ -50,6 +50,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <NavBar />
+      <div className="shadow-[-20px_-20px_50px_-20px_rgba(0,0,0,0.5)] w-full h-[0.5px] opacity-80"></div>
       <Cover />
       <Presentation />
       <ScheduleClient events={events} />
