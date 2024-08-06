@@ -1,3 +1,4 @@
+import { Event } from "@/types/event";
 import { getClient } from "../apollo/apollo-client";
 import {
   eventQueryById,
