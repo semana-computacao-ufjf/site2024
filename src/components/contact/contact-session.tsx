@@ -14,7 +14,7 @@ export default function ContactSession() {
             Tel: (24) 9 9911-4310 (Code Jr.)
           </label>
         </div>
-        <div className="xl:w-1/2 lg:w-[52%] lg:flex max-lg:w-full max-lg:h-[400px] max-lg:space-y-2 max-lg:flex-col max-lg:flex">
+        <div className="xl:w-1/2 lg:w-[52%] lg:flex max-lg:w-full  max-lg:space-y-2 max-lg:flex-col max-lg:flex">
           <MapComponent />
           <label className={`lg:hidden max-md:text-sm  ${quickSand.className}`}>
             Endereço: Instituto de Ciências Exatas, Campus Universitário, Rua
