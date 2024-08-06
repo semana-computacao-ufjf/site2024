@@ -10,7 +10,7 @@ export default async function FAQSession() {
           width={70}
           height={70}
           alt="Semana da Computação"
-          src={"/images/semanaComputacaoLogo.png"}
+          src={"/images/semanaCompLogo2024.png"}
           className="md:scale-90 scale-75"
         />
         <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
@@ -20,7 +20,7 @@ export default async function FAQSession() {
           width={70}
           height={70}
           alt="Semana da Computação"
-          src={"/images/semanaComputacaoLogo.png"}
+          src={"/images/semanaCompLogo2024.png"}
           className="md:scale-90 scale-75"
         />
       </div>
