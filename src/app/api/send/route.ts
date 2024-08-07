@@ -6,13 +6,22 @@ export async function POST(request: Request): Promise<Response> {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body: EmailForm = await request.json();
+
+    const receiverEmail = process.env.RESEND_EMAIL_CORE;
+
+    if (!receiverEmail) {
+      throw new Error("Email core not found");
+    }
+
+    const domain = process.env.RESEND_EMAIL_DOMAIN;
+
+    if (!domain) {
+      throw new Error("Email domain not found");
+    }
+
     const { data, error } = await resend.emails.send({
-      from: `Acme <${body.email}>`,
-      to: [
-        process.env.RESEND_EMAIL_CORE
-          ? process.env.RESEND_EMAIL_CORE
-          : "delivered@resend.dev",
-      ],
+      from: `Acme <no-reply@${domain}>`,
+      to: [receiverEmail],
       subject: body.subject,
       react: TwitchResetPasswordEmail({
         emailContent: body.content,
@@ -33,6 +42,7 @@ export async function POST(request: Request): Promise<Response> {
     // });
 
     if (error) {
+      console.error(error);
       return Response.json({ error }, { status: 500 });
     }
 
