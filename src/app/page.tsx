@@ -1,60 +1,38 @@
+
+import { getAllPresenters } from "./api/fetch/presenter.fetch"; 
+import { getAllEvents } from "./api/fetch/event.fetch";
+import { getAllSponsors } from "./api/fetch/sponsor.fetch";
+import SpeakerTable from "@/components/SpeakerTable";
+import { Presenter } from "@/types/presenter";
+import { Sponsor } from "@/types/sponsor";
+import { Event } from "@/types/event";
 import FAQSession from "@/components/faq/faq-session";
 import SponsorsSession from "@/components/sponsors/sponsors-session";
 import ContactSession from "@/components/contact/contact-session";
 import Footer from "@/components/navbar footer/Footer";
 import NavBar from "@/components/navbar footer/navBar";
-import SpeakerTable from "@/components/SpeakerTable";
-import Title from "@/components/Title";
 import CodeSection from "@/components/code-tech/CodeSection";
 import CardTechnology from "@/components/code-tech/CardTechnology";
 import ScheduleClient from "./schedule/scheduleClient";
 import { fakeEventApi } from "@/util/fakeApi";
-import { Event } from "@/types/event";
 import Presentation from "./presentation/page";
 import RedirectButton from "@/components/RedirectButton";
-import { Presenter } from "@/types/presenter";
 
-const events: Event[] = fakeEventApi();
+export default async function Home() {
+  const speakers: Presenter[] = await getAllPresenters();
+  // const events: Event[] = await getAllEvents();
+  const sponsors: Sponsor[] = await getAllSponsors();
 
-const speakerData: Presenter[] = [
-  {
-    id: "1",
-    name: "John",
-    bond: "Professor",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-    participation: "Palestra sobre Machine Learning",
-    pictureURL: "/images/example-photo.png",
-  },
-  {
-    id: "2",
-    name: "Jane",
-    bond: "Desenvolvedora",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only cinco séculos",
-    participation: "Workshop de Desenvolvimento Web",
-    pictureURL: "/images/example-photo.png",
-  },
-  {
-    id: "3",
-    name: "Carlos",
-    bond: "Especialista em Segurança",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only cinco séculos",
-    participation: "Painel sobre Cybersecurity",
-    pictureURL: "/images/example-photo.png",
-  },
-];
 
-export default function Home() {
   return (
+    
     <main className="flex min-h-screen flex-col items-center justify-between">
       <NavBar />
       <div className="shadow-[-20px_-20px_50px_-20px_rgba(0,0,0,0.5)] w-full h-[0.5px] opacity-80"></div>
       <Cover />
       <Presentation />
-      <ScheduleClient events={events} />
-      <div className="w-full bg-white text-black flex flex-col  text-center py-10">
+      {/* <ScheduleClient events={events} /> */}
+      <div className="w-full bg-white text-black flex flex-col text-center py-10">
         <h1 className="text-5xl"> Patrocinadores</h1>
         <SponsorsSession />
       </div>
@@ -62,7 +40,7 @@ export default function Home() {
         <h1 className="xl:text-5xl lg:4xl md:text-3xl text-2xl text-center mb-11">
           Conheça nossos palestrantes!
         </h1>
-        <SpeakerTable speakerData={speakerData} />
+        <SpeakerTable speakerData={speakers} />
       </div>
       <div className="bg-white">
         <CodeSection />
@@ -87,7 +65,7 @@ export default function Home() {
           <RedirectButton
             redirectTo={"/contato"}
             text="Entre em Contato"
-          ></RedirectButton>
+          />
         </div>
       </div>
       <ContactSession />

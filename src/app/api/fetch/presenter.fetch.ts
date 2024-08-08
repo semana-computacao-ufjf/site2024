@@ -19,7 +19,16 @@ export async function getAllPresenters(): Promise<Presenter[]> {
     },
   });
 
-  return data.presenters;
+  return data.presenters.map((presenter: any) => ({
+    id: presenter.id,
+    name: presenter.name,
+    description: presenter.description.raw.children
+      .map((child: any) => child.children.map((subChild: any) => subChild.text).join(''))
+      .join(''),
+    participation: presenter.participation,
+    bond: presenter.bond,
+    pictureURL: presenter.pictureURL,
+  }));
 }
 
 export async function getPresenterById(id: string): Promise<Presenter> {

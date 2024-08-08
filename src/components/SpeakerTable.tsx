@@ -2,7 +2,9 @@
 import NextImage from "next/image";
 import { useState } from "react";
 import { inter } from "@/app/fonts";
-
+import { getAllEvents } from "@/app/api/fetch/event.fetch";
+import { getAllSponsors } from "@/app/api/fetch/sponsor.fetch";
+import { getAllPresenters } from "@/app/api/fetch/presenter.fetch";
 
 interface Presenter {
   id: string;
@@ -10,7 +12,7 @@ interface Presenter {
   description: string;
   participation: string;
   bond: string;
-  pictureURL: string;
+  pictureURL?: string;
 }
 
 interface SpeakerTableProps {
@@ -18,6 +20,9 @@ interface SpeakerTableProps {
 }
 
 export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
+  
+
+ 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage: number = 5;
 
@@ -69,7 +74,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
               <td className="px-4 py-2 mt-2 border-l p-2 rounded-tl-xl rounded-bl-xl">
                 <div className="flex flex-col items-center">
                   <NextImage
-                    src={item.pictureURL}
+                    src={item.pictureURL || '/images/unknown.jpg'}
                     alt={item.name}
                     width={120}
                     height={120}

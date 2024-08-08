@@ -20,11 +20,11 @@ interface CardProps {
               className="rounded-full "
             />
           </div>
-          <h1 className="text-center font-viga text-2xl sm:text-3xl uppercase pt-16 text-black">
+          <h1 className="text-center text-2xl sm:text-3xl uppercase pt-16 text-black">
             <strong>{title}</strong>
           </h1>
         </div>
-        <p className={`mt-3 text-center font-quicksand text-2xl card-responsive3:text-lg card-responsive2:text-xl card-responsive:text-2xl px-8 pb-4 text-black ${quickSand.className}`}>
+        <p className={`mt-3 text-center  text-2xl card-responsive3:text-lg card-responsive2:text-xl font-extralight card-responsive:text-2xl px-8 pb-4 text-black ${quickSand.className}`}>
         {description}
         </p>
       </div>
