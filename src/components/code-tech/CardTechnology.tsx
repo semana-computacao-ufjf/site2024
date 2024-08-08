@@ -1,5 +1,6 @@
 "use client";
 import NextImage from "next/image";
+import { quickSand } from "@/app/fonts";
 
 interface CardProps {
     title?: string;
@@ -23,8 +24,8 @@ interface CardProps {
             <strong>{title}</strong>
           </h1>
         </div>
-        <p className="mt-3 text-center font-quicksand text-2xl card-responsive3:text-lg card-responsive2:text-xl card-responsive:text-2xl px-8 pb-4  text-black">
-          {description}
+        <p className={`mt-3 text-center font-quicksand text-2xl card-responsive3:text-lg card-responsive2:text-xl card-responsive:text-2xl px-8 pb-4 text-black ${quickSand.className}`}>
+        {description}
         </p>
       </div>
     );
