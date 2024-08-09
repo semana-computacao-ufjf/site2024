@@ -3,56 +3,68 @@ import SponsorsSession from "@/components/sponsors/sponsors-session";
 import ContactSession from "@/components/contact/contact-session";
 import Footer from "@/components/navbar footer/Footer";
 import NavBar from "@/components/navbar footer/navBar";
-import SpeakerTable from "../components/SpeakerTable";
+import SpeakerTable from "@/components/SpeakerTable";
 import Title from "@/components/Title";
 import CodeSection from "@/components/code-tech/CodeSection";
 import CardTechnology from "@/components/code-tech/CardTechnology";
-import Slider from "@/components/slider";
 import ScheduleClient from "./schedule/scheduleClient";
 import { fakeEventApi } from "@/util/fakeApi";
-import { EventDetail } from "@/types/event";
+import { Event } from "@/types/event";
 import Presentation from "./presentation/page";
+import RedirectButton from "@/components/RedirectButton";
+import { Presenter } from "@/types/presenter";
 
-const events: EventDetail[] = fakeEventApi();
+const events: Event[] = fakeEventApi();
 
-const speakerData = [
+const speakerData: Presenter[] = [
   {
-    speakerName: "John",
+    id: "1",
+    name: "John",
+    bond: "Professor",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
     participation: "Palestra sobre Machine Learning",
-    filiation: "Universidade XYZ",
     pictureURL: "/images/example-photo.png",
   },
   {
-    speakerName: "Jane",
+    id: "2",
+    name: "Jane",
+    bond: "Desenvolvedora",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only cinco séculos",
     participation: "Workshop de Desenvolvimento Web",
-    filiation: "Empresa ABC",
     pictureURL: "/images/example-photo.png",
   },
   {
-    speakerName: "Carlos",
+    id: "3",
+    name: "Carlos",
+    bond: "Especialista em Segurança",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only cinco séculos",
     participation: "Painel sobre Cybersecurity",
-    filiation: "Instituto DEF",
     pictureURL: "/images/example-photo.png",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-[#181426]">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <NavBar />
+      <div className="shadow-[-20px_-20px_50px_-20px_rgba(0,0,0,0.5)] w-full h-[0.5px] opacity-80"></div>
       <Cover />
       <Presentation />
-      <SponsorsSession />
       <ScheduleClient events={events} />
-      <Title Title="Conheça nossos palestrantes" />
-      <SpeakerTable speakerData={speakerData} />
-      <div className="bg-white mb-20">
+      <div className="w-full bg-white text-black flex flex-col  text-center py-10">
+        <h1 className="text-5xl"> Patrocinadores</h1>
+        <SponsorsSession />
+      </div>
+      <div className="mt-10 w-screen gap-y-11">
+        <h1 className="xl:text-5xl lg:4xl md:text-3xl text-2xl text-center mb-11">
+          Conheça nossos palestrantes!
+        </h1>
+        <SpeakerTable speakerData={speakerData} />
+      </div>
+      <div className="bg-white">
         <CodeSection />
         <div className="flex flex-col sectionBreak:flex-row justify-around px-6 gap-0 sectionBreak:gap-8 items-center sectionBreak:items-stretch">
           <CardTechnology
@@ -70,6 +82,12 @@ export default function Home() {
             title="Sistemas"
             description="Deseja modernizar e trazer tecnologia para seu negócio? Com o Laravel, podemos trazer o sistema de gerenciamento mais moderno do mercado!"
           />
+        </div>
+        <div className="mb-12">
+          <RedirectButton
+            redirectTo={"/contato"}
+            text="Entre em Contato"
+          ></RedirectButton>
         </div>
       </div>
       <ContactSession />

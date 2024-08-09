@@ -1,3 +1,4 @@
+import { Event } from "@/types/event";
 import { getClient } from "../apollo/apollo-client";
 import {
   eventQueryById,
@@ -5,8 +6,8 @@ import {
   eventQueryOnDate,
   eventsQueryAll,
 } from "../querys/event.query";
-
 const client = getClient();
+
 export async function getAllEvents(): Promise<Event[]> {
   const { data } = await client.query({
     query: eventsQueryAll(),

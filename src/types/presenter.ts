@@ -1,9 +1,8 @@
-export type Presenter = {
+export interface Presenter {
   id: string;
   name: string;
-  description?: {
-    raw: string;
-  };
-  events: Event[];
-  bond?: string;
-};
+  description: string;
+  participation: string;
+  bond: string; 
+  pictureURL: string;
+}

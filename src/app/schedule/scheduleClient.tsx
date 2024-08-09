@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { EventDetail , EventType } from "@/types/event";
+import { Event, EventType } from "@/types/event";
 import { getWeekday } from "@/util/getWeekday";
 
 interface ScheduleClientProps {
-  events: EventDetail [];
+  events: Event[];
 }
 
 const formatEventType = (type: number): string => {
@@ -155,7 +155,7 @@ export default function ScheduleClient({ events }: ScheduleClientProps) {
         <h2 className="font-viga text-[24px] sm:text-[36px] font-normal text-center mt-10">
           Premiações
         </h2>
-        <div className="text-black mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 mt-5">
+        <div className="text-black mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 mt-5  mb-40">
           <div className="grid grid-cols-4 gap-4 mb-4">
             <div></div>
             <div className="font-bold text-center text-white p-4">1º lugar</div>

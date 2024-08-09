@@ -2,8 +2,7 @@ import { Faq } from "@/types/faq";
 
 const Faqs: Faq[] = [
   {
-    answer:
-      "Para participar é preciso pagar uma taxa de inscrição de 6 reais e encaminhar junto com suas informações no formulário seguinte: <a href='https://forms.google.com/semcomp' target='_blank' rel='noopener noreferrer'>https://forms.google.com/semcomp</a>",
+    answer: "A definir",
     question: "Como faço para participar do evento?",
   },
   {
@@ -18,7 +17,8 @@ const Faqs: Faq[] = [
   },
   {
     question: "Quais são os principais temas que serão abordados?",
-    answer: "Pendente de resposta.",
+    answer:
+      "Os temas estarão relacionado a Ciência de Dados, Inteligência Artificial, Segurança, Empreendedorismo e boas práticas para o mercado de TI.",
   },
   {
     question: "Quem pode participar?",

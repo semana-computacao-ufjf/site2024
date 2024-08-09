@@ -14,8 +14,10 @@ export default function ContactForm() {
 
   const [loading, setLoading] = useState(false);
 
+  const [error, setError] = useState("");
   const onSubmit = async (data: EmailForm) => {
     try {
+      setError("");
       setLoading(true);
       const response = await fetch("/api/send", {
         method: "POST",
@@ -29,11 +31,12 @@ export default function ContactForm() {
         console.error(response.statusText);
         throw new Error("Erro ao enviar email");
       }
-      reset();
-      setLoading(false);
     } catch (error) {
+      setError("Erro ao enviar email");
       console.error(error);
     }
+    reset();
+    setLoading(false);
   };
 
   const requestLayout =
@@ -51,6 +54,7 @@ export default function ContactForm() {
           <div className={requestLayout}>
             <input
               type="text"
+              autoComplete="off"
               placeholder="Assunto"
               className={inputLayout}
               {...register("subject")}
@@ -67,7 +71,8 @@ export default function ContactForm() {
             <input
               type="email"
               placeholder="exemplo@codejr.com.br"
-              className={` ${inputLayout} `}
+              className={` ${inputLayout}`}
+              autoComplete="off"
               {...register("email")}
             />
             <button type="button" onClick={() => setValue("email", "")}>
@@ -81,6 +86,7 @@ export default function ContactForm() {
           <textarea
             className={`${requestLayout} md:min-h-[200px]  resize-none flex-grow`}
             placeholder="Conteúdo"
+            autoComplete="off"
             {...register("content")}
           />
           <label className="text-red-500">{errors.content?.message}</label>
@@ -98,6 +104,7 @@ export default function ContactForm() {
           Entrar em contato
         </button>
       </div>
+      <label className="text-red-500 text-center">{error}</label>
     </form>
   );
 }
