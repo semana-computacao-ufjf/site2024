@@ -74,19 +74,19 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center">
           <p className="text-white text-2xl font-bold mb-2">Nossas redes</p>
           <div className="flex flex-row items-center gap-3 md:flex-col socialMediaAdjust:flex-row">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-3xl">
+            <a href="https://www.instagram.com/codejr/" target="_blank" rel="noopener noreferrer" className="text-3xl">
               <InstagramIcon style={{ color: 'white', fontSize: '35px' }} />
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-3xl">
+            <a href="https://www.facebook.com/codeempresajunior/?locale=pt_BR" target="_blank" rel="noopener noreferrer" className="text-3xl">
               <FacebookIcon style={{ color: 'white', fontSize: '35px' }} />
             </a>
             <a href="" className="text-3xl">
               <EmailIcon style={{ color: 'white', fontSize: '35px' }} />
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-3xl">
+            <a href="https://www.linkedin.com/company/codejr/" target="_blank" rel="noopener noreferrer" className="text-3xl">
               <LinkedInIcon style={{ color: 'white', fontSize: '35px' }} />
             </a>
-            <a href="tel:+32321023327" className="text-3xl">
+            <a href="+5524999114310" className="text-3xl">
               <PhoneIcon style={{ color: 'white', fontSize: '35px' }} />
             </a>
           </div>

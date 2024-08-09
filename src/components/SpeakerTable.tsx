@@ -1,6 +1,10 @@
 "use client";
 import NextImage from "next/image";
 import { useState } from "react";
+import { inter } from "@/app/fonts";
+import { getAllEvents } from "@/app/api/fetch/event.fetch";
+import { getAllSponsors } from "@/app/api/fetch/sponsor.fetch";
+import { getAllPresenters } from "@/app/api/fetch/presenter.fetch";
 
 interface Presenter {
   id: string;
@@ -8,7 +12,7 @@ interface Presenter {
   description: string;
   participation: string;
   bond: string;
-  pictureURL: string;
+  pictureURL?: string;
 }
 
 interface SpeakerTableProps {
@@ -16,6 +20,9 @@ interface SpeakerTableProps {
 }
 
 export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
+  
+
+ 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage: number = 5;
 
@@ -61,46 +68,40 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
           {currentItems.map((item, index) => (
             <tr
               key={index}
-              className={`${
-                index % 2 === 0 ? "bg-tableGray" : "bg-gray-100"
-              } space-y-2`}
+              className={`${index % 2 === 0 ? "bg-tableGray" : "bg-gray-100"
+                } space-y-2`}
             >
               <td className="px-4 py-2 mt-2 border-l p-2 rounded-tl-xl rounded-bl-xl">
                 <div className="flex flex-col items-center">
                   <NextImage
-                    src={item.pictureURL}
+                    src={item.pictureURL || '/images/unknown.jpg'}
                     alt={item.name}
                     width={120}
                     height={120}
                     className="pt-3"
                   />
                   <p
-                    className={`px-4 py-2 font-inter text-center w-full truncate ${
-                      index % 2 === 0 ? "text-white" : "text-black"
-                    }`}
+                    className={`px-4 py-2 font-inter text-center w-full truncate ${index % 2 === 0 ? "text-white" : "text-black"
+                      }`}
                   >
                     {item.name}
                   </p>
                 </div>
               </td>
               <td
-                className={` w-100 h-32 px-4 font-inter py-2 text-base table-responsive:block hidden  ${
-                  index % 2 === 0 ? "text-white" : "text-black"
-                }`}
+                className={` w-100 h-32 px-4 font-inter py-2 text-base table-responsive:block hidden  ${index % 2 === 0 ? "text-white" : "text-black"
+                  }`}
               >
-                <p className="max-w-5xl line-clamp-4">{item.description}</p>
-              </td>
+                <p className={`max-w-5xl line-clamp-4 ${inter.className}`}>{item.description}</p></td>
               <td
-                className={`px-4 py-2 font-inter text-base text-center ${
-                  index % 2 === 0 ? "text-white" : "text-black"
-                }`}
+                className={`px-4 py-2 font-inter text-base text-center ${index % 2 === 0 ? "text-white" : "text-black"
+                  }`}
               >
                 <p className="max-w-2xl ">{item.participation}</p>
               </td>
               <td
-                className={`px-4 py-2 mt-2 border-r p-2 text-base rounded-tr-xl rounded-br-xl text-center ${
-                  index % 2 === 0 ? "text-white" : "text-black"
-                }`}
+                className={`px-4 py-2 mt-2 border-r p-2 text-base rounded-tr-xl rounded-br-xl text-center ${index % 2 === 0 ? "text-white" : "text-black"
+                  }`}
               >
                 <p className="max-w-2xl ">{item.bond}</p>
               </td>
@@ -128,11 +129,10 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
           <button
             key={index + 1}
             onClick={() => handlePageChange(index + 1)}
-            className={`px-4 py-2 mx-1 bg-codePurple rounded-xl ${
-              currentPage === index + 1
+            className={`px-4 py-2 mx-1 bg-codePurple rounded-xl ${currentPage === index + 1
                 ? "bg-codePurple text-white"
                 : "bg-white text-black"
-            }`}
+              }`}
           >
             {index + 1}
           </button>

@@ -1,9 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { Event, EventType } from "@/types/event";
+import { EventType } from "@/types/event";
 import { getWeekday } from "@/util/getWeekday";
+import { Presenter } from "@/types/presenter";
 
+interface Event{
+  id: string;
+  title: string;
+  description?: {
+    raw: string;
+  };
+  event_type: number;
+  presenters: Presenter[];
+  schedule: Date;
+  location: string;
+}
 interface ScheduleClientProps {
   events: Event[];
 }
