@@ -13,7 +13,7 @@ id
     events {
     id
     title}  
-    `;
+`;
 
 export function presenterQueryById(id: string) {
   return gql`

@@ -15,8 +15,6 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage: number = 5;
 
-  console.log(speakerData);
-
   const indexOfLastItem: number = currentPage * itemsPerPage;
   const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;
   const currentItems: Presenter[] = speakerData.slice(
@@ -95,7 +93,12 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                   index % 2 === 0 ? "text-white" : "text-black"
                 }`}
               >
-                <p className="max-w-2xl ">{item.participation}</p>
+                {item.events.map((event, index) => (
+                  <span key={index} className="text-sm">
+                    {event.title}
+                    {index < item.events.length - 1 && ", "}
+                  </span>
+                ))}
               </td>
               <td
                 className={`px-4 py-2 mt-2 border-r p-2 text-base rounded-tr-xl rounded-br-xl text-center ${
