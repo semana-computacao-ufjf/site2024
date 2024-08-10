@@ -30,7 +30,7 @@ export default async function Home() {
       <Presentation />
       {/* <ScheduleClient events={events} /> */}
       <div className="w-full bg-white text-black flex flex-col text-center py-10">
-        <h1 className="text-5xl"> Patrocinadores</h1>
+        <h1 className="lg:text-5xl md:text-4xl text-3xl"> Patrocinadores</h1>
         <SponsorsSession />
       </div>
       <div className="mt-10 w-screen gap-y-11">
