@@ -5,8 +5,11 @@ id
     name
     bond
     description {
-      raw
-    } 
+      text
+  } 
+      image {
+      url
+      }
     events {
     id
     title}  

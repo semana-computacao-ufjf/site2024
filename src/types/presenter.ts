@@ -1,8 +1,12 @@
 export type Presenter = {
   id: string;
   name: string;
-  description: string;
+  description: {
+    text: string;
+  };
   participation: string;
-  bond: string; 
-  pictureURL?: string;
-}
+  bond: string;
+  image: {
+    url: string;
+  };
+};

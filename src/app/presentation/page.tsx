@@ -1,4 +1,5 @@
 import Slider from "@/components/slider";
+import { quickSand } from "../fonts";
 
 // TODO: query dos logos das empresas
 const images = [
@@ -33,48 +34,55 @@ const About = () => {
   // TODO: query do número de cursos
   const talks = 15;
 
+  const cardsTitleClasses =
+    " lg:text-[50px] md:text-[40px] text-[30px] font-normal mb-5";
+  const cardsDescriptionClasses = ` lg:text-[24px] md:text-[20px] text-[16px] font-normal leading-6 sm:leading-7`;
+
   return (
     <>
-      <div className="text-black font-normal text-center mx-5 my-10 sm:mx-20">
-        <h1 className="font-viga text-[32px] sm:text-[48px] leading-[40px] sm:leading-[64.51px]">
+      <div className="text-black font-normal text-center lg:mx-5 sm:px-2  my-10 sm:mx-20">
+        <h1 className=" md:text-[48px] text-[40px] mb-[40px] sm:leading-[64.51px]">
           O Evento
         </h1>
         {/* TODO: instalar a fonte quicksand */}
-        <div className="font-quicksand text-lg sm:text-2xl font-medium leading-6 sm:leading-8">
+        <div
+          className={`${quickSand.className} text-lg sm:text-2xl font-medium leading-6 sm:leading-8 space-y-10`}
+        >
           <p>
-            A Semana da Computação é um evento anual organizado pelo
-            Departamento de Ciência da Computação da Universidade Federal de
-            Juiz de Fora, em parceria com a Code Empresa Júnior.
+            A Semana da Computação é um evento anual realizado pelo Departamento
+            de Ciência da Computação da Universidade Federal de Juiz de Fora
+            durante a Semana do Instituto de Ciências Exatas. Pela primeira vez,
+            a Code Empresa Júnior está a frente da organização do evento.
           </p>
           <p>{editionDescription}</p>
         </div>
       </div>
       <div className="font-bold text-black flex flex-col sectionBreak:flex-row justify-around text-center px-6 gap-6 items-center sectionBreak:items-stretch mb-5">
         <div className="bg-[#001FC187] w-full sm:w-1/3 shadow-[4px_4px_8px_0px_#00000040] p-5 rounded-[20px]">
-          <p className="font-viga text-[64px] lg:text-[64px] md:text-[48px] sm:text-[40px] font-normal">
-            <span>{participants}</span> inscritos
+          <p className={`${cardsTitleClasses}`}>
+            <span>Públco alvo </span>
           </p>
-          <p className=" text-[24px] md:text-[24px] sm:text-[24px] lg:text-[24px] font-normal leading-6 sm:leading-7">
-            Dentre eles, alunos da área de computação da UFJF e região, empresas
-            e profissionais de tecnologia.
+          <p className={`${cardsDescriptionClasses} ${quickSand.className} `}>
+            Alunos da área de Computação, empresas e profissionais de tecnologia
+            de Juiz de Fora e região.
           </p>
         </div>
         <div className="bg-[#861DCE80] w-full sm:w-1/3 shadow-[4px_4px_8px_0px_#00000040] p-5 rounded-[20px]">
-          <p className="font-viga text-[64px] lg:text-[64px] md:text-[48px] sm:text-[40px] font-normal">
-            <span>{courses}</span> cursos
+          <p className={`${cardsTitleClasses}`}>
+            <span>Cursos</span>
           </p>
-          <p className=" text-[24px] md:text-[24px] sm:text-[24px] lg:text-[24px] font-normal leading-6 sm:leading-7">
-            Alinhados ao mercado: Amazon Web Services, NodeJS, Git, Figma,
-            React, entre outros.
+          <p className={`${cardsDescriptionClasses} ${quickSand.className}`}>
+            Alinhados ao mercado: Análise e visualzação de dados,
+            Desenvolvimento Web, Aprendizado de Máquina, Chatbots, entre outros.
           </p>
         </div>
         <div className="bg-[#FFBE004D] w-full sm:w-1/3 shadow-[4px_4px_8px_0px_#00000040] p-5 rounded-[20px]">
-          <p className="font-viga text-[64px] lg:text-[64px] md:text-[48px] sm:text-[40px] font-normal">
-            <span>{talks}</span> palestras
+          <p className={`${cardsTitleClasses}`}>
+            <span>Palestras</span>
           </p>
-          <p className=" text-[24px] md:text-[24px] sm:text-[24px] lg:text-[24px] font-normal leading-6 sm:leading-7">
-            Temas variados: Inteligência Artificial, Boas práticas no mercado de
-            TI, Ciência de Dados, entre outros.
+          <p className={`${cardsDescriptionClasses} ${quickSand.className}`}>
+            Temas variados: Ciência de Dados, Inteligência Artificial,
+            Blockchain, Empreendedorismo, Modelagem Computacional, entre outros.
           </p>
         </div>
       </div>

@@ -1,5 +1,4 @@
-
-import { getAllPresenters } from "./api/fetch/presenter.fetch"; 
+import { getAllPresenters } from "./api/fetch/presenter.fetch";
 import { getAllEvents } from "./api/fetch/event.fetch";
 import { getAllSponsors } from "./api/fetch/sponsor.fetch";
 import SpeakerTable from "@/components/SpeakerTable";
@@ -23,9 +22,7 @@ export default async function Home() {
   // const events: Event[] = await getAllEvents();
   const sponsors: Sponsor[] = await getAllSponsors();
 
-
   return (
-    
     <main className="flex min-h-screen flex-col items-center justify-between">
       <NavBar />
       <div className="shadow-[-20px_-20px_50px_-20px_rgba(0,0,0,0.5)] w-full h-[0.5px] opacity-80"></div>
@@ -62,10 +59,7 @@ export default async function Home() {
           />
         </div>
         <div className="mb-12">
-          <RedirectButton
-            redirectTo={"/contato"}
-            text="Entre em Contato"
-          />
+          <RedirectButton redirectTo={"/contato"} text="Entre em Contato" />
         </div>
       </div>
       <ContactSession />

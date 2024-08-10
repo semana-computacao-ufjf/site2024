@@ -5,7 +5,7 @@ import { EventType } from "@/types/event";
 import { getWeekday } from "@/util/getWeekday";
 import { Presenter } from "@/types/presenter";
 
-interface Event{
+interface Event {
   id: string;
   title: string;
   description?: {

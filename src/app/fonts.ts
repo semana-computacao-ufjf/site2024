@@ -9,7 +9,7 @@ export const inter = Inter({
 });
 
 export const quickSand = Quicksand({
-  weight: ["700"],
+  weight: ["700", "400", "500"],
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
