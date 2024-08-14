@@ -1,8 +1,12 @@
-import { getAllFaqs } from "@/app/api/faq/faq.question";
 import Image from "next/image";
 import FaqModel from "./faq-model";
-export default async function FAQSession() {
-  const faqs = getAllFaqs();
+import { Faq } from "@/types/faq";
+
+interface FAQSessionProps {
+  faqs: Faq[];
+}
+
+export default function FAQSession({ faqs }: FAQSessionProps) {
   return (
     <div className="w-full min-h-screen bg-white text-black flex flex-col py-10 gap-y-20">
       <div className="flex lg:gap-x-8 md:gap-x-4 w-full justify-center items-center">

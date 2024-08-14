@@ -63,13 +63,13 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
             >
               <td className="px-4 py-2 mt-2 border-l p-2 rounded-tl-xl rounded-bl-xl">
                 <div className="flex flex-col items-center">
-                  <NextImage
-                    src={item.image.url || "/images/unknown.jpg"}
+                  {/* <NextImage
+                     src={item.image.url || "/images/unknown.jpg"}
                     alt={item.name}
                     width={120}
                     height={120}
                     className="pt-3"
-                  />
+                  /> */}
                   <p
                     className={`px-4 py-2 font-inter text-center w-full truncate ${
                       index % 2 === 0 ? "text-white" : "text-black"
@@ -85,7 +85,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                 }`}
               >
                 <p className={`max-w-5xl line-clamp-4 ${inter.className}`}>
-                  {item.description.text}
+                  {/* {item.description.text} */}
                 </p>
               </td>
               <td

@@ -3,12 +3,10 @@ import { quickSand } from "../fonts";
 
 // TODO: query dos logos das empresas
 const images = [
-  "/images/bronze-solucionar.webp",
-  "/images/diamante-4matt.webp",
-  "/images/diamante-levty.webp",
-  "/images/diamante-rerum.webp",
-  "/images/ouro-codi.webp",
-  "/images/prata-ciadoleite.webp",
+  "/images/20231025_140937-1-1024x768.jpg",
+  "/images/a68cc476-12f6-4b16-9047-762f860abec1.jpeg",
+  "/images/Porte-dinmica-4.jpg",
+  "/images/Figura-5-Noite-de-jogos-na-Semana-da-ComputacComputacComputacao-da-UFJF-em-2017.png",
 ];
 
 export default function Presentation() {

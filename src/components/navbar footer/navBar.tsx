@@ -1,10 +1,21 @@
 "use client";
+
 import { useState } from "react";
-import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 
-export default function NavBar() {
+interface NavBarProps {
+  sections: {
+    name: string;
+    ref: React.RefObject<HTMLDivElement>;
+  }[];
+}
+
+export default function NavBar({ sections }: NavBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleScroll = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main className="w-full m-0 p-0">
@@ -13,8 +24,8 @@ export default function NavBar() {
           flex flex-col md:flex-row items-center justify-center
           font-viga text-2xl leading-loose
           px-4 py-2 md:px-7 md:py-4 
-          shadow-[0px_15px_30px_-10px_rgba(0,0,0,0.4)]
-          h-[145px]
+          shadow-[0px_3px_10px_0px_rgba(0,0,0,0.25)]
+          h-auto md:h-[125px]
           w-full
         "
       >
@@ -35,41 +46,16 @@ export default function NavBar() {
           </div>
           <nav className="flex-grow px-4 relative">
             <ul className="hidden md:flex flex-wrap gap-6 justify-center">
-              <li>
-                <Link href="/">
-                  <span className="hover:underline m-1">Home</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/presentation">
-                  <span className="hover:underline m-1">Apresentação</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/schedule">
-                  <span className="hover:underline m-1">Programação</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <span className="hover:underline m-1">Patrocinadores</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <span className="hover:underline m-1">Contato</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/schedule">
-                  <span className="hover:underline m-1">Code JR</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <span className="hover:underline m-1">Palestrantes</span>
-                </Link>
-              </li>
+              {sections.map((section, index) => (
+                <li key={index}>
+                  <span
+                    className="hover:underline m-1 cursor-pointer"
+                    onClick={() => handleScroll(section.ref)}
+                  >
+                    {section.name}
+                  </span>
+                </li>
+              ))}
             </ul>
             <div className="md:hidden flex items-center justify-end">
               <FaBars
@@ -83,41 +69,16 @@ export default function NavBar() {
               }`}
             >
               <ul className="flex flex-col gap-2 mt-4 p-4">
-                <li>
-                  <Link href="/">
-                    <span className="m-1">Home</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/presentation">
-                    <span className="m-1">Apresentação</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/schedule">
-                    <span className="m-1">Programação</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">
-                    <span className="m-1">Patrocinadores</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">
-                    <span className="m-1">Contato</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/schedule">
-                    <span className="m-1">Code JR</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">
-                    <span className="m-1">Palestrantes</span>
-                  </Link>
-                </li>
+                {sections.map((section, index) => (
+                  <li key={index}>
+                    <span
+                      className="m-1 cursor-pointer"
+                      onClick={() => handleScroll(section.ref)}
+                    >
+                      {section.name}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
           </nav>
