@@ -1,35 +1,46 @@
 "use client";
-import { useEffect, useRef } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
+
 interface SliderProps {
   images: string[];
 }
 
 const Slider = ({ images }: SliderProps) => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const duration = 50;
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const wrapper = wrapperRef.current;
-    if (wrapper) {
-      wrapper.style.animationDuration = `${duration}s`;
-    }
-  }, [duration]);
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
-    <div className="w-full   min-h-[130px] relative">
-      <div ref={wrapperRef} className="flex absolute animate-slide space-x-40">
-        {images.concat(images, images).map((image, index) => (
-          <Image
-            width={150}
-            height={130}
+    <div className="overflow-hidden w-full h-[300px] md:h-[500px] relative">
+      <div
+        className="flex w-full h-full transition-transform duration-300 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((image, index) => (
+          <img
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className="max-h-[130px] max-w-[150px] "
+            className="w-full h-full object-cover flex-shrink-0"
           />
         ))}
       </div>
+      <div
+        className="absolute top-0 left-0 h-full w-1/2 cursor-pointer"
+        onClick={handlePrev}
+      />
+      <div
+        className="absolute top-0 right-0 h-full w-1/2 cursor-pointer"
+        onClick={handleNext}
+      />
     </div>
   );
 };
