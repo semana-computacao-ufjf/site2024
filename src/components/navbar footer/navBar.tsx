@@ -1,5 +1,6 @@
 "use client";
 
+import { weekLogoWhite } from "@/util/logos";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 
@@ -32,7 +33,7 @@ export default function NavBar({ sections }: NavBarProps) {
         <div className="flex items-center w-full max-w-7xl justify-between md:justify-center">
           <div className="flex items-center gap-4">
             <img
-              src="/images/whiteLogo.png"
+              src={`/images/${weekLogoWhite}`}
               alt="Logo"
               className="max-h-20 lg:max-h-32 brightness-0 invert h-full"
             />
