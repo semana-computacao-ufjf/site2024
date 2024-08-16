@@ -20,3 +20,10 @@ export enum EventType {
   visita_tecnica,
   show_de_talentos,
 }
+
+export type Prize = {
+  title: string;
+  firstPlace: string;
+  secondPlace: string;
+  thirdPlace: string;
+};
