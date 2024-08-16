@@ -22,7 +22,7 @@ export default function NavBar({ sections }: NavBarProps) {
       <section
         className="
           flex flex-col md:flex-row items-center justify-center
-          font-viga text-2xl leading-loose
+          text-2xl leading-loose
           px-4 py-2 md:px-7 md:py-4 
           shadow-[0px_3px_10px_0px_rgba(0,0,0,0.25)]
           h-auto md:h-[125px]
@@ -32,7 +32,7 @@ export default function NavBar({ sections }: NavBarProps) {
         <div className="flex items-center w-full max-w-7xl justify-between md:justify-center">
           <div className="flex items-center gap-4">
             <img
-              src="/images/semanaComputacaoLogo.png"
+              src="/images/whiteLogo.png"
               alt="Logo"
               className="max-h-20 lg:max-h-32 brightness-0 invert h-full"
             />
