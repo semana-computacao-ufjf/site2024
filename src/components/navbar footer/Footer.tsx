@@ -5,6 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { codeLogo, dccLogo, ufjfLogo, weekLogoWhite } from "@/util/logos";
 
 export default function Footer() {
   return (
@@ -26,7 +27,7 @@ export default function Footer() {
             className=""
             width={150}
             height={150}
-            src="/images/whiteLogo.png"
+            src={`/images/${weekLogoWhite}`}
             alt="Logo Semana da Computação 2024"
             layout="intrinsic"
             objectFit="contain"
@@ -38,7 +39,7 @@ export default function Footer() {
             <NextImage
               width={179}
               height={41}
-              src="/images/code-logo.png"
+              src={`/images/${codeLogo}`}
               alt="Logo Code Jr."
               layout="intrinsic"
               objectFit="contain"
@@ -47,7 +48,7 @@ export default function Footer() {
             <NextImage
               width={81}
               height={31}
-              src="/images/dcc-logo.png"
+              src={`/images/${dccLogo}`}
               alt="Logo DCC-UFJF."
               layout="intrinsic"
               objectFit="contain"
@@ -56,7 +57,7 @@ export default function Footer() {
             <NextImage
               width={81}
               height={61}
-              src="/images/ufjf-logo.png"
+              src={`/images/${ufjfLogo}`}
               alt="Logo UFJF."
               layout="intrinsic"
               objectFit="contain"

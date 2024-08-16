@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FaqModel from "./faq-model";
 import { Faq } from "@/types/faq";
+import { thisYearLogo } from "@/util/logos";
 
 interface FAQSessionProps {
   faqs: Faq[];
@@ -14,7 +15,7 @@ export default function FAQSession({ faqs }: FAQSessionProps) {
           width={70}
           height={70}
           alt="Semana da Computação"
-          src={"/images/logo2024.png"}
+          src={`/images/${thisYearLogo}`}
           className="md:scale-90 scale-75"
         />
         <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
@@ -24,7 +25,7 @@ export default function FAQSession({ faqs }: FAQSessionProps) {
           width={70}
           height={70}
           alt="Semana da Computação"
-          src={"/images/logo2024.png"}
+          src={`/images/${thisYearLogo}`}
           className="md:scale-90 scale-75"
         />
       </div>

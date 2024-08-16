@@ -1,7 +1,7 @@
 import React from "react";
+import { thisYearLogo } from "@/util/logos";
 
 export default function Cover() {
-  const thisYearLogo = "logo2024.png";
   return (
     <div className="flex items-center justify-around flex-wrap p-4">
       <div className="text-center">
