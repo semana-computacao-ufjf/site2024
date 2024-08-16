@@ -2,27 +2,24 @@
 import NextImage from "next/image";
 import { useState } from "react";
 import { inter } from "@/app/fonts";
-import { getAllEvents } from "@/app/api/fetch/event.fetch";
-import { getAllSponsors } from "@/app/api/fetch/sponsor.fetch";
-import { getAllPresenters } from "@/app/api/fetch/presenter.fetch";
 import { Presenter } from "@/types/presenter";
 
 interface SpeakerTableProps {
-  speakerData: Presenter[];
+  presenters: Presenter[];
 }
 
-export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
+export default function SpeakerTable({ presenters }: SpeakerTableProps) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage: number = 5;
 
   const indexOfLastItem: number = currentPage * itemsPerPage;
   const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;
-  const currentItems: Presenter[] = speakerData.slice(
+  const currentItems: Presenter[] = presenters.slice(
     indexOfFirstItem,
     indexOfLastItem
   );
 
-  const totalPages: number = Math.ceil(speakerData.length / itemsPerPage);
+  const totalPages: number = Math.ceil(presenters.length / itemsPerPage);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -63,13 +60,13 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
             >
               <td className="px-4 py-2 mt-2 border-l p-2 rounded-tl-xl rounded-bl-xl">
                 <div className="flex flex-col items-center">
-                  {/* <NextImage
-                     src={item.image.url || "/images/unknown.jpg"}
+                  <NextImage
+                    src={item.image?.url || "/images/unknown.jpg"}
                     alt={item.name}
                     width={120}
                     height={120}
                     className="pt-3"
-                  /> */}
+                  />
                   <p
                     className={`px-4 py-2 font-inter text-center w-full truncate ${
                       index % 2 === 0 ? "text-white" : "text-black"
@@ -85,7 +82,7 @@ export default function SpeakerTable({ speakerData }: SpeakerTableProps) {
                 }`}
               >
                 <p className={`max-w-5xl line-clamp-4 ${inter.className}`}>
-                  {/* {item.description.text} */}
+                  {item.description?.text}
                 </p>
               </td>
               <td
