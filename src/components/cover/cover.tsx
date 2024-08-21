@@ -3,7 +3,7 @@ import { thisYearLogo } from "@/util/logos";
 
 export default function Cover() {
   return (
-    <div className="flex items-center justify-around flex-wrap p-4">
+    <div className="flex items-center justify-around flex-wrap p-4 mt-20">
       <div className="text-center">
         <h1 className="text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[6vw] font-bold leading-tight text-left">
           XXVI

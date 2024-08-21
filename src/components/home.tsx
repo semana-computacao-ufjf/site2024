@@ -55,7 +55,7 @@ export default function Home({
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-[#181426]">
+    <main className="flex min-h-screen flex-col items-center justify-between ">
       <NavBar sections={sections} />
       <div ref={coverRef}>
         <Cover />
