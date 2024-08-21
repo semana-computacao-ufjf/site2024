@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Prize {
+  id Int @id @default(autoincrement())
+
+  prize    String  @db.Text
+  position String? @db.Text
+
+  eventId Int?   @map("event_id")
+  event   Event? @relation(fields: [eventId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([prize, eventId])
+  @@map("prize")
+}
+
+model Presenter {
+  id Int @id @default(autoincrement())
+
+  name        String  @db.Text
+  description String? @db.Text
+  imageUrl    String? @map("image_url") @db.Text
+  bond        String? @db.Text
+
+  events Event[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([name, bond])
+  @@map("presenter")
+}
+
+enum eventTypes {
+  PALESTRA          @map("Palestra")
+  MINICURSO         @map("Minicurso")
+  COMPETICAO        @map("Competicao")
+  PROCESSO_SELETIVO @map("Processo Seletivo")
+  VISITA_TECNICA    @map("Visita Tecnica")
+  SHOW_DE_TALENTOS  @map("Show de Talentos")
+
+  @@map("event_types")
+}
+
+model Event {
+  id Int @id @default(autoincrement())
+
+  title       String     @unique() @db.Text
+  description String?    @db.Text
+  eventType   eventTypes @map("event_type")
+  location    String     @db.Text
+  schedule    DateTime
+
+  presenters Presenter[]
+  prizes     Prize[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("event")
+}
+
+model Faq {
+  id Int @id @default(autoincrement())
+
+  question String @db.Text
+  answer   String @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([question, answer])
+  @@map("faq")
+}
+
+enum sponsorTierTypes {
+  BRONZE   @map("Bronze")
+  PRATA    @map("Prata")
+  OUTO     @map("Ouro")
+  PLATINA  @map("Platina")
+  DIAMANTE @map("Diamante")
+
+  @@map("sponsor_tier_types")
+}
+
+model Sponsor {
+  id Int @id @default(autoincrement())
+
+  name        String           @unique @db.Text
+  description String?          @db.Text
+  sponsorTier sponsorTierTypes @map("sponsor_tier")
+  imageUrl    String?          @map("image_url") @db.Text
+  contactUrl  String?          @map("contact_url") @db.Text
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("sponsor")
+}
