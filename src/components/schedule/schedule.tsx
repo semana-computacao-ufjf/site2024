@@ -1,35 +1,40 @@
 "use client";
 
 import { useState } from "react";
-import { EventType } from "@/types/event";
 import { getWeekday } from "@/util/getWeekday";
-import { Event, Prize } from "@/types/event";
+import { Event, Prize, Presenter, eventTypes } from "@prisma/client";
 
-interface ScheduleProps {
-  events: Event[];
-  prizes: Prize[];
-}
-
-const formatEventType = (type: number): string => {
+const formatEventType = (type: eventTypes): string => {
   switch (type) {
-    case 0:
+    case "PALESTRA":
       return "Palestra";
-    case 1:
+    case "MINICURSO":
       return "Minicurso";
-    case 2:
+    case "COMPETICAO":
       return "Competição";
-    case 3:
+    case "PROCESSO_SELETIVO":
       return "Processo Seletivo";
-    case 4:
+    case "VISITA_TECNICA":
       return "Visita Técnica";
-    case 5:
+    case "SHOW_DE_TALENTOS":
       return "Show de Talentos";
     default:
       return "Evento";
   }
 };
 
-export default function Schedule({ events, prizes }: ScheduleProps) {
+export default function Schedule({
+  events,
+  prizes,
+}: {
+  events: (Event & {
+    prizes: Prize[];
+    presenters: Presenter[];
+  })[];
+  prizes: (Prize & {
+    event: Event | null;
+  })[];
+}) {
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
 
   const eventsWithWeekday = events.map((event) => ({
@@ -81,14 +86,14 @@ export default function Schedule({ events, prizes }: ScheduleProps) {
                       <td className="px-2 py-4 [#D7D7D7]space-nowrap text-center relative">
                         <div className="text-sm flex flex-col items-center pl-4">
                           <img
-                            src={`/icons/${EventType[event.event_type]}.png`}
-                            alt={EventType[event.event_type]}
+                            src={`/icons/${event.eventType}.png`}
+                            alt={formatEventType(event.eventType)}
                             className={`h-8 w-8 ${
                               index % 2 !== 0 ? "invert" : ""
                             }`}
                           />
                           <span className="mt-2 ">
-                            {formatEventType(event.event_type)}
+                            {formatEventType(event.eventType)}
                           </span>
                         </div>
                         <span className="separator"></span>

@@ -1,14 +1,14 @@
 "use client";
 import NextImage from "next/image";
 import { useState } from "react";
-import { Presenter } from "@/types/presenter";
 import Title from "./Title";
+import { Presenter } from "@prisma/client";
 
-interface SpeakerTableProps {
+export default function SpeakerTable({
+  presenters,
+}: {
   presenters: Presenter[];
-}
-
-export default function SpeakerTable({ presenters }: SpeakerTableProps) {
+}) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage: number = 5;
 
@@ -16,7 +16,7 @@ export default function SpeakerTable({ presenters }: SpeakerTableProps) {
   const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;
   const currentItems: Presenter[] = presenters.slice(
     indexOfFirstItem,
-    indexOfLastItem
+    indexOfLastItem,
   );
 
   const totalPages: number = Math.ceil(presenters.length / itemsPerPage);
@@ -62,7 +62,7 @@ export default function SpeakerTable({ presenters }: SpeakerTableProps) {
               <td className="px-4 py-2 mt-2 border-l p-2 rounded-tl-xl rounded-bl-xl">
                 <div className="flex flex-col items-center">
                   <NextImage
-                    src={item.image?.url || "/images/unknown.jpg"}
+                    src={item.imageUrl ?? "/images/unknown.jpg"}
                     alt={item.name}
                     width={120}
                     height={120}

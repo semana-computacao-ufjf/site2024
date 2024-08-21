@@ -12,29 +12,28 @@ import CardTechnology from "@/components/code-tech/CardTechnology";
 import ContactSection from "@/components/contact/contact-section";
 import FAQSection from "@/components/faq/faq-section";
 import Footer from "@/components/navbar footer/Footer";
+import { Event, Faq, Presenter, Prize, Sponsor } from "@prisma/client";
 
-import { Sponsor } from "@/types/sponsor";
-import { Event, Prize } from "@/types/event";
-import { Presenter } from "@/types/presenter";
-import { Faq } from "@/types/faq";
-
-interface HomeProps {
-  presentationImages: string[];
-  sponsors: Sponsor[];
-  events: Event[];
-  prizes: Prize[];
-  presenters: Presenter[];
-  faqs: Faq[];
-}
-
-export default function Home({
-  presentationImages,
+const Home = ({
   sponsors,
   events,
   prizes,
   presenters,
   faqs,
-}: HomeProps) {
+}: {
+  sponsors: Sponsor[];
+  events: (Event & {
+    prizes: Prize[];
+    presenters: Presenter[];
+  })[];
+  prizes: (Prize & {
+    event: Event | null;
+  })[];
+  presenters: (Presenter & {
+    events: Event[];
+  })[];
+  faqs: Faq[];
+}) => {
   const coverRef = useRef<HTMLDivElement>(null);
   const presentationRef = useRef<HTMLDivElement>(null);
   const sponsorsRef = useRef<HTMLDivElement>(null);
@@ -51,6 +50,13 @@ export default function Home({
     { name: "Palestrantes", ref: speakersRef },
     { name: "Contato", ref: contactRef },
     { name: "FAQ", ref: faqRef },
+  ];
+
+  const presentationImages = [
+    "/images/exampleImages/20231025_140937-1-1024x768.jpg",
+    "/images/exampleImages/a68cc476-12f6-4b16-9047-762f860abec1.jpeg",
+    "/images/exampleImages/Porte-dinmica-4.jpg",
+    "/images/exampleImages/Figura-5-Noite-de-jogos-na-Semana-da-ComputacComputacComputacao-da-UFJF-em-2017.png",
   ];
 
   return (
@@ -100,4 +106,6 @@ export default function Home({
       <Footer />
     </main>
   );
-}
+};
+
+export { Home };

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface SliderProps {
   images: string[];
@@ -14,7 +15,7 @@ const Slider = ({ images }: SliderProps) => {
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
 
@@ -26,6 +27,7 @@ const Slider = ({ images }: SliderProps) => {
       >
         {images.map((image, index) => (
           <img
+            // fill={true}
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}

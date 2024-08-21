@@ -1,5 +1,6 @@
 import React from "react";
 import { thisYearLogo } from "@/util/logos";
+import Image from "next/image";
 
 export default function Cover() {
   return (
@@ -24,10 +25,12 @@ export default function Cover() {
           </button> */}
         </div>
       </div>
-      <img
+      <Image
+        width={350}
+        height={350}
         src={`/images/${thisYearLogo}`}
         alt="HomeImage"
-        className="max-h-[350px] mt-6 sm:mt-8 md:mt-10 lg:mt-12"
+        className="mt-6 sm:mt-8 md:mt-10 lg:mt-12"
       />
     </div>
   );

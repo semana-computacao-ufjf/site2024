@@ -6,8 +6,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
-  // prettier-ignore
-  const { handleSubmit, register, reset, setValue, formState: { errors } } = useForm<EmailForm>({
+  const {
+    handleSubmit,
+    register,
+    reset,
+    setValue,
+    formState: { errors },
+  } = useForm<EmailForm>({
     resolver: zodResolver(emailFormSchema),
   });
 
