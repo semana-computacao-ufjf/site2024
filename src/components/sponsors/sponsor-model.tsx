@@ -20,7 +20,10 @@ export default function SponsorModel({ sponsor }: { sponsor: Sponsor }) {
         alt={sponsor.name}
         title={sponsor.name}
         className="rounded-2xl md:max-h-[250px] md:max-w-[250px]  max-w-[175px] max-h-[175px]"
-      />
+        style={{
+          maxWidth: "100%",
+          height: "auto"
+        }} />
     </div>
   );
 }

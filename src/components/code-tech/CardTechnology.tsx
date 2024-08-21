@@ -21,7 +21,10 @@ export default function CardTechnology({
             width={100}
             height={100}
             className="rounded-full "
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
         <h1 className="font-gotham text-[#DCDFE5] text-center text-2xl sm:text-3xl uppercase pt-16">
           <p>{title}</p>

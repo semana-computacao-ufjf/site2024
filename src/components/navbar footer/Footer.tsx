@@ -18,9 +18,11 @@ export default function Footer() {
             height={150}
             src={`/images/${thisYearLogo}`}
             alt="Logo Semana da Computação 2024"
-            layout="intrinsic"
-            objectFit="contain"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              objectFit: "contain"
+            }} />
         </div>
         <div className="flex flex-col gap-2">
           <p className="font-gotham text-[#DCDFE5]e text-2xl">Realização:</p>
@@ -30,28 +32,34 @@ export default function Footer() {
               height={61}
               src={`/images/${ufjfWhiteLogo}`}
               alt="Logo UFJF."
-              layout="intrinsic"
-              objectFit="contain"
               className="max-w-full h-auto"
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain"
+              }} />
             <NextImage
               width={81}
               height={31}
               src={`/images/${dccLogo}`}
               alt="Logo DCC-UFJF."
-              layout="intrinsic"
-              objectFit="contain"
               className="max-w-full h-auto"
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain"
+              }} />
             <NextImage
               width={179}
               height={41}
               src={`/images/${codeLogo}`}
               alt="Logo Code Jr."
-              layout="intrinsic"
-              objectFit="contain"
               className="max-w-full h-auto"
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain"
+              }} />
           </div>
         </div>
         <div className="flex flex-col items-center md:items-start justify-center">

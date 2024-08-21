@@ -10,7 +10,10 @@ export default function CodeSection() {
           width={381}
           height={98}
           className="mt-10"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
       <div className="flex flex-col sectionBreak:flex-row px-8 w-full  ">
         <div className="leftSide w-full sectionBreak:w-1/3  flex items-center px-10 sectionBreak:px-0">
@@ -20,14 +23,20 @@ export default function CodeSection() {
             width={449}
             height={607}
             className="hidden sectionBreak:block"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <NextImage
             src="/images/code-members.jpg"
             alt="Code Jr."
             width={1600}
             height={900}
             className=" block sectionBreak:hidden border-2 rounded-xl border-[#FF7506]"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
         <div
           className={

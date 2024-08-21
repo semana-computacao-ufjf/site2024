@@ -67,7 +67,10 @@ export default function SpeakerTable({
                     width={120}
                     height={120}
                     className="pt-3"
-                  />
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                   <p
                     className={`px-4 py-2 text-center w-full truncate ${
                       index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
@@ -122,7 +125,10 @@ export default function SpeakerTable({
             width={20}
             height={20}
             className=""
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </button>
 
         {Array.from({ length: totalPages }, (_, index) => (
@@ -148,7 +154,10 @@ export default function SpeakerTable({
             width={20}
             height={20}
             className=""
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </button>
       </div>
     </div>

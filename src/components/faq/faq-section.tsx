@@ -17,7 +17,10 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
           alt="Semana da Computação"
           src={`/images/${thisYearLogo}`}
           className="md:scale-90 scale-75"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
         <h1 className="font-gotham text-[#DCDFE5] lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
           Perguntas Frequentes
         </h1>
@@ -27,7 +30,10 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
           alt="Semana da Computação"
           src={`/images/${thisYearLogo}`}
           className="md:scale-90 scale-75"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
       <div className="lg:px-52 md:px-32 px-10">
         {faqs?.map((faq) => (
