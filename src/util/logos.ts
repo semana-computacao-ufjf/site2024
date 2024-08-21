@@ -1,6 +1,6 @@
-const weekLogoWhite = "whiteLogo.png";
+const weekLogoWhite = "semanaComputacaoSmallLogo.png";
 const thisYearLogo = "logo2024.png";
-const ufjfLogo = "ufjfLogo.png";
+const ufjfLogo = "UFJFSmallLogo.png";
 const codeLogo = "code-logo.png";
 const dccLogo = "dcc-logo.png";
 

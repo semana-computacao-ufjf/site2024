@@ -1,6 +1,6 @@
 "use client";
 
-import { weekLogoWhite } from "@/util/logos";
+import { weekLogoWhite, ufjfLogo } from "@/util/logos";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 
@@ -22,26 +22,28 @@ export default function NavBar({ sections }: NavBarProps) {
     <main className="w-full m-0 p-0">
       <section
         className="
-          flex flex-col md:flex-row items-center justify-center
-          text-2xl leading-loose
-          px-4 py-2 md:px-7 md:py-4 
-          shadow-[0px_3px_10px_0px_rgba(0,0,0,0.25)]
-          h-auto md:h-[125px]
-          w-full
-        "
+        flex flex-row items-center justify-center
+        text-2xl
+        px-0 py-0
+        h-[6.5em] md:h-auto
+        w-full
+        bg-[#121212]
+        border-b border-[#2E2E2E]
+        fixed top-0 z-10
+"
       >
         <div className="flex items-center w-full max-w-7xl justify-between md:justify-center">
           <div className="flex items-center gap-4">
             <img
               src={`/images/${weekLogoWhite}`}
               alt="Logo"
-              className="max-h-20 lg:max-h-32 brightness-0 invert h-full"
+              className="max-h-20 lg:max-h-32 h-full mt-5 mb-5"
             />
             <div className="md:hidden lg:hidden sm:flex items-center gap-4">
               <img
-                src="/images/ufjfLogo.png"
+                src={`/images/${ufjfLogo}`}
                 alt="UFJF"
-                className="max-h-10 md:max-h-20"
+                className="max-h-10 md:max-h-20 mt-5 mb-5"
               />
             </div>
           </div>
@@ -85,9 +87,9 @@ export default function NavBar({ sections }: NavBarProps) {
           </nav>
           <div className="hidden md:flex lg:flex sm:hidden items-center gap-4">
             <img
-              src="/images/ufjfLogo.png"
+              src={`/images/${ufjfLogo}`}
               alt="UFJF"
-              className="max-h-10 md:max-h-20"
+              className="max-h-10 md:max-h-20 mt-2 mb-2"
             />
           </div>
         </div>
