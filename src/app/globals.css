@@ -40,6 +40,14 @@ body {
   background-size: cover;
 }
 
+.button-transition {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-transition:hover {
+  transform: scale(1.2); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
 
 
 
@@ -87,4 +95,36 @@ html, body {
     font-size: 0.875rem;
     padding: 0.5rem 1rem;
   }
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html, body {
+  font-family: 'Gotham', 'Inter', sans-serif;
 }

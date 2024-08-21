@@ -6,12 +6,11 @@ import Cover from "@/components/cover/cover";
 import Presentation from "./presentation/page";
 import SponsorsSection from "@/components/sponsors/sponsors-section";
 import Schedule from "./schedule/schedule";
-import Title from "@/components/Title";
 import SpeakerTable from "@/components/SpeakerTable";
 import CodeSection from "@/components/code-tech/CodeSection";
 import CardTechnology from "@/components/code-tech/CardTechnology";
-import ContactSession from "@/components/contact/contact-session";
-import FAQSession from "@/components/faq/faq-session";
+import ContactSection from "@/components/contact/contact-section";
+import FAQSection from "@/components/faq/faq-section";
 import Footer from "@/components/navbar footer/Footer";
 
 import { Sponsor } from "@/types/sponsor";
@@ -55,7 +54,7 @@ export default function Home({
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between ">
+    <main className="flex min-h-screen flex-col items-stretch justify-between">
       <NavBar sections={sections} />
       <div ref={coverRef}>
         <Cover />
@@ -70,10 +69,9 @@ export default function Home({
         <Schedule events={events} prizes={prizes} />
       </div>
       <div ref={speakersRef}>
-        <Title Title="Conheça nossos palestrantes" />
         <SpeakerTable presenters={presenters} />
       </div>
-      <div className="bg-white mb-20">
+      <div className="mb-20">
         <CodeSection />
         <div className="flex flex-col sectionBreak:flex-row justify-around px-6 gap-0 sectionBreak:gap-8 items-center sectionBreak:items-stretch">
           <CardTechnology
@@ -94,10 +92,10 @@ export default function Home({
         </div>
       </div>
       <div ref={contactRef}>
-        <ContactSession />
+        <ContactSection />
       </div>
       <div ref={faqRef}>
-        <FAQSession faqs={faqs} />
+        <FAQSection faqs={faqs} />
       </div>
       <Footer />
     </main>

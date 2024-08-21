@@ -1,8 +1,8 @@
 "use client";
 import NextImage from "next/image";
 import { useState } from "react";
-import { inter } from "@/app/fonts";
 import { Presenter } from "@/types/presenter";
+import Title from "./Title";
 
 interface SpeakerTableProps {
   presenters: Presenter[];
@@ -34,28 +34,29 @@ export default function SpeakerTable({ presenters }: SpeakerTableProps) {
   };
 
   return (
-    <div className="overflow-x-auto shadow-md">
+    <div className="overflow-x-auto shadow-md bg-[#202020]">
+      <Title Title="Conheça nossos palestrantes" />
       <table className="mx-auto w-10/12 border-separate border-spacing-y-3 p-2 text-black">
         <thead>
-          <tr className="bg-white ">
-            <th className="px-3 py-3 font-inter text-center border-l-transparent p-2 rounded-tl-xl rounded-bl-xl">
+          <tr className="bg-[#D7D7D7] font-inter font-bold">
+            <th className="px-3 py-3 text-center border-l-transparent p-2 rounded-tl-xl rounded-bl-xl">
               Palestrante
             </th>
-            <th className="px-3 py-3 font-inter text-center table-responsive:block hidden">
+            <th className="px-3 py-3 text-center table-responsive:block hidden">
               Descrição
             </th>
-            <th className="px-3 py-3 font-inter text-center">Participação</th>
-            <th className="px-3 py-3 font-inter text-center border-r-0 p-2 rounded-tr-xl rounded-br-xl">
+            <th className="px-3 py-3 text-center">Participação</th>
+            <th className="px-3 py-3 text-center border-r-0 p-2 rounded-tr-xl rounded-br-xl">
               Filiação
             </th>
           </tr>
         </thead>
-        <tbody className="space-y-4">
+        <tbody className="font-inter space-y-4">
           {currentItems.map((item, index) => (
             <tr
               key={index}
               className={`${
-                index % 2 === 0 ? "bg-tableGray" : "bg-gray-100"
+                index % 2 === 0 ? "bg-[#121212]" : "bg-[#D7D7D7]"
               } space-y-2`}
             >
               <td className="px-4 py-2 mt-2 border-l p-2 rounded-tl-xl rounded-bl-xl">
@@ -68,8 +69,8 @@ export default function SpeakerTable({ presenters }: SpeakerTableProps) {
                     className="pt-3"
                   />
                   <p
-                    className={`px-4 py-2 font-inter text-center w-full truncate ${
-                      index % 2 === 0 ? "text-white" : "text-black"
+                    className={`px-4 py-2 text-center w-full truncate ${
+                      index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
                     }`}
                   >
                     {item.name}
@@ -77,17 +78,17 @@ export default function SpeakerTable({ presenters }: SpeakerTableProps) {
                 </div>
               </td>
               <td
-                className={` w-100 h-32 px-4 font-inter py-2 text-base table-responsive:block hidden  ${
-                  index % 2 === 0 ? "text-white" : "text-black"
+                className={` w-100 h-32 px-4 py-2 text-base table-responsive:block hidden  ${
+                  index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
                 }`}
               >
-                <p className={`max-w-5xl line-clamp-4 ${inter.className}`}>
+                <p className={"max-w-5xl line-clamp-4"}>
                   {item.description?.text}
                 </p>
               </td>
               <td
-                className={`px-4 py-2 font-inter text-base text-center ${
-                  index % 2 === 0 ? "text-white" : "text-black"
+                className={`px-4 py-2 text-base text-center ${
+                  index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
                 }`}
               >
                 {item.events.map((event, index) => (
@@ -99,7 +100,7 @@ export default function SpeakerTable({ presenters }: SpeakerTableProps) {
               </td>
               <td
                 className={`px-4 py-2 mt-2 border-r p-2 text-base rounded-tr-xl rounded-br-xl text-center ${
-                  index % 2 === 0 ? "text-white" : "text-black"
+                  index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
                 }`}
               >
                 <p className="max-w-2xl ">{item.bond}</p>
@@ -128,10 +129,8 @@ export default function SpeakerTable({ presenters }: SpeakerTableProps) {
           <button
             key={index + 1}
             onClick={() => handlePageChange(index + 1)}
-            className={`px-4 py-2 mx-1 bg-codePurple rounded-xl ${
-              currentPage === index + 1
-                ? "bg-codePurple text-white"
-                : "bg-white text-black"
+            className={`px-4 py-2 mx-1 bg-[#FF7506] rounded-xl text-black button-transition ${
+              currentPage === index + 1 ? "bg-[#FF7506] " : "bg-white "
             }`}
           >
             {index + 1}

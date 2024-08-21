@@ -1,6 +1,5 @@
 "use client";
 
-import { inter } from "@/app/fonts";
 import { EmailForm, emailFormSchema } from "@/schema/email.form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
@@ -40,13 +39,15 @@ export default function ContactForm() {
   };
 
   const requestLayout =
-    "border-2 border-gray-300 bg-blue-700/30 p-4  flex justify-between w-full rounded-[8px]";
+    "border-2 border-gray-300 bg-[#D7D7D7] p-4  flex justify-between w-full rounded-[8px]";
   const inputLayout = "bg-transparent border-none w-full  focus:outline-none";
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={`bg-white h-full text-gray-900 lg:w-[90%]  max-w-full ${inter.className} font-medium md:text-xl text-sm border-2 border-purple-700 flex flex-col md:p-6 p-4 rounded-[12px] space-y-[10px]`}
+      className={
+        "bg-[#202020] h-full font-inter text-[#D7D7D7] lg:w-[90%]  max-w-full md:text-xl text-sm border-2 border-[#FF7506] flex flex-col md:p-6 p-4 rounded-[12px] space-y-[10px]"
+      }
     >
       <div className="flex flex-col flex-grow space-y-[10px]">
         <div className="space-y-[8px]">
@@ -95,11 +96,7 @@ export default function ContactForm() {
       <div className="flex justify-center mt-4">
         <button
           type="submit"
-          className={`text-white ${
-            loading
-              ? "select-none bg-gray-400"
-              : "bg-purple-900 hover:bg-purple-950"
-          }  lg:text-lg md:text-xl xl:w-5/12 lg:w-7/12  py-2 px-6 rounded-xl `}
+          className={`text-black font-bold ${loading} bg-[#FF7506] lg:text-lg md:text-xl xl:w-5/12 lg:w-7/12  py-2 px-6 rounded-xl button-transition`}
         >
           Entrar em contato
         </button>

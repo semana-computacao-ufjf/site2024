@@ -3,13 +3,13 @@ import FaqModel from "./faq-model";
 import { Faq } from "@/types/faq";
 import { thisYearLogo } from "@/util/logos";
 
-interface FAQSessionProps {
+interface FAQSectionProps {
   faqs: Faq[];
 }
 
-export default function FAQSession({ faqs }: FAQSessionProps) {
+export default function FAQSection({ faqs }: FAQSectionProps) {
   return (
-    <div className="w-full min-h-screen bg-white text-black flex flex-col py-10 gap-y-20">
+    <div className="w-full min-h-screen text-black flex flex-col py-10 gap-y-20">
       <div className="flex lg:gap-x-8 md:gap-x-4 w-full justify-center items-center">
         <Image
           width={70}
@@ -18,7 +18,7 @@ export default function FAQSession({ faqs }: FAQSessionProps) {
           src={`/images/${thisYearLogo}`}
           className="md:scale-90 scale-75"
         />
-        <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
+        <h1 className="font-gotham text-[#DCDFE5] lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
           Perguntas Frequentes
         </h1>
         <Image

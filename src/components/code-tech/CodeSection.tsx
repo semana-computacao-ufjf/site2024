@@ -1,6 +1,5 @@
 "use client";
 import NextImage from "next/image";
-import { quickSand } from "@/app/fonts";
 export default function CodeSection() {
   return (
     <div className="w-full mb-10 ">
@@ -27,13 +26,17 @@ export default function CodeSection() {
             alt="Code Jr."
             width={1600}
             height={900}
-            className=" block sectionBreak:hidden border-2 rounded-xl border-codePurple"
+            className=" block sectionBreak:hidden border-2 rounded-xl border-[#FF7506]"
           />
         </div>
-        <div className={`rightSide w-full sectionBreak:w-2/3 pt-7 flex flex-col font-normal gap-4 sectionBreak:gap-4 ${quickSand.className}`}>
-        <p className="px-8  leading-7 text-black font-normal">
+        <div
+          className={
+            "rightSide w-full sectionBreak:w-2/3 pt-7 flex flex-col gap-4 sectionBreak:gap-4 "
+          }
+        >
+          <p className="px-8  leading-7 font-inter text-[#D7D7D7]">
             Fundada em 2014 por alunos da UFJF,{" "}
-            <span className="text-codePurple underline">
+            <span className="text-[#FF7506] underline">
               a Code é uma empresa júnior atuante no mercado de computação que
               trabalha com soluções tecnológicas como sites, sistemas e
               aplicativos.
@@ -42,18 +45,18 @@ export default function CodeSection() {
             a nosso alcance, visando sempre oferecer serviços de melhor
             qualidade a quem merece o melhor.{" "}
           </p>
-          <p className="px-8  leading-7 text-black font-normal">
+          <p className="px-8  leading-7 font-inter text-[#D7D7D7]">
             Com uma cultura voltada ao cliente, estamos sempre investindo
             emnovas tecnologias e qualificação dos membros,{" "}
-            <span className="text-codePurple underline">
+            <span className="text-[#FF7506] underline">
               para que nossassoluções sejam entregues com muita eficiência e
               qualidade
             </span>
             , simplesmente por acreditar que a satisfação de nossos clientes
             precisa ser completa.
           </p>
-          <p className={`px-8 leading-7 text-black font-normal ${quickSand.className}`}>
-          Atualmente estamos entre as melhores empresas juniores de TI da zona
+          <p className={"px-8 leading-7 font-inter text-[#D7D7D7] "}>
+            Atualmente estamos entre as melhores empresas juniores de TI da zona
             da mata, sendo essa conquista de muito orgulho entre os membros da
             empresa, o que é reflexo do comprometimento de todos e da clareza
             dos nossos objetivos.

@@ -22,14 +22,11 @@ export default function NavBar({ sections }: NavBarProps) {
     <main className="w-full m-0 p-0">
       <section
         className="
+        font-inter text-[#D7D7D7]
         flex flex-row items-center justify-center
-        text-2xl
-        px-0 py-0
-        h-[6.5em] md:h-auto
-        w-full
-        bg-[#121212]
-        border-b border-[#2E2E2E]
+        px-0 py-0 h-[6.5em] md:h-auto w-full
         fixed top-0 z-10
+        bg-[#121212] border-b border-[#2E2E2E]
 "
       >
         <div className="flex items-center w-full max-w-7xl justify-between md:justify-center">
@@ -52,7 +49,7 @@ export default function NavBar({ sections }: NavBarProps) {
               {sections.map((section, index) => (
                 <li key={index}>
                   <span
-                    className="hover:underline m-1 cursor-pointer"
+                    className="hover:text-[#FF7506] transition-colors duration-300 m-1 cursor-pointer"
                     onClick={() => handleScroll(section.ref)}
                   >
                     {section.name}

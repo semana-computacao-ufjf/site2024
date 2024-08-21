@@ -28,7 +28,7 @@ export default function MapComponent() {
     //     }
     //   >
     //     <Popup>
-    //       <span className="text-red-950 font-bold">
+    //       <span className="text-red-950">
     //         Instituto de Ciências Exatas - ICE <br /> Universidade Federal de
     //         Juiz de Fora
     //       </span>

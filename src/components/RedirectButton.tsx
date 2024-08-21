@@ -13,7 +13,7 @@ export default function RedirectButton({ text, redirectTo }: ButtonProps) {
     <div className="mt-12 flex justify-center">
       <button
         onClick={handleRedirect}
-        className="bg-darkerPurple text-white font-normal text-3xl rounded-2xl hover:bg-codePurple px-7 py-4"
+        className="bg-[#FF7506] text-white text-3xl rounded-2xl hover:bg-[#FF7506] px-7 py-4"
       >
         {text}
       </button>

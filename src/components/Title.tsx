@@ -5,7 +5,7 @@ interface TitleProps {
 
 export default function Title({ Title }: TitleProps) {
   return (
-    <h1 className="text-5xl text-white text-center font-normal mb-10">
+    <h1 className="text-5xl font-gotham text-[#DCDFE5] text-center mb-10">
       {Title}
     </h1>
   );

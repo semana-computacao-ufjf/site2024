@@ -5,42 +5,31 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { codeLogo, dccLogo, ufjfLogo, weekLogoWhite } from "@/util/logos";
+import { codeLogo, dccLogo, thisYearLogo, ufjfWhiteLogo } from "@/util/logos";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full flex items-center justify-center min-h-[200px] md:min-h-[150px]">
-      <div className="absolute inset-0">
-        <NextImage
-          src="/images/dark-purple-gradient.png"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top center"
-          alt="Footer background"
-          quality={100}
-          className="z-0"
-        />
-      </div>
-      <div className="relative z-10 w-full text-center grid grid-cols-1 md:grid-cols-3 eventLogo:grid-cols-4 gap-5 md:gap-10 eventLogo:gap-20 p-5 items-start">
+    <footer className="relative w-full flex items-center justify-center bg-[#202020]">
+      <div className="relative z-10 w-full text-center grid grid-cols-1 md:grid-cols-3 eventLogo:grid-cols-4 gap-5 md:gap-10 p-5 items-start">
         <div className="items-center justify-center hidden eventLogo:block">
           <NextImage
             className=""
             width={150}
             height={150}
-            src={`/images/${weekLogoWhite}`}
+            src={`/images/${thisYearLogo}`}
             alt="Logo Semana da Computação 2024"
             layout="intrinsic"
             objectFit="contain"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <p className="text-white text-2xl font-bold">Realização:</p>
+          <p className="font-gotham text-[#DCDFE5]e text-2xl">Realização:</p>
           <div className="flex  gap-5 justify-center items-center md:flex-col eventLogo:flex-row">
             <NextImage
-              width={179}
-              height={41}
-              src={`/images/${codeLogo}`}
-              alt="Logo Code Jr."
+              width={81}
+              height={61}
+              src={`/images/${ufjfWhiteLogo}`}
+              alt="Logo UFJF."
               layout="intrinsic"
               objectFit="contain"
               className="max-w-full h-auto"
@@ -55,10 +44,10 @@ export default function Footer() {
               className="max-w-full h-auto"
             />
             <NextImage
-              width={81}
-              height={61}
-              src={`/images/${ufjfLogo}`}
-              alt="Logo UFJF."
+              width={179}
+              height={41}
+              src={`/images/${codeLogo}`}
+              alt="Logo Code Jr."
               layout="intrinsic"
               objectFit="contain"
               className="max-w-full h-auto"
@@ -66,8 +55,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center md:items-start justify-center">
-          <p className="text-white text-2xl font-bold mb-2">Contato:</p>
-          <div className="text-white text-left">
+          <p className="font-gotham text-[#DCDFE5] text-2xl mb-2">Contato:</p>
+          <div className="font-inter text-[#D7D7D7] text-left">
             <p className="mb-5">
               <span className="underline">Telefone</span>:{" "}
               <a href="tel:+32321023327">(32) 2102-3327</a> (Secretaria do DCC)
@@ -80,7 +69,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <p className="text-white text-2xl font-bold mb-2">Nossas redes</p>
+          <p className="font-gotham text-[#DCDFE5] text-2xl mb-2">
+            Nossas redes
+          </p>
           <div className="flex flex-row items-center gap-3 md:flex-col socialMediaAdjust:flex-row">
             <a
               href="https://www.instagram.com/codejr/"

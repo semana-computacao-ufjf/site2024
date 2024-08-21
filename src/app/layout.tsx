@@ -9,7 +9,7 @@ const viga = Viga({
 });
 
 export const metadata: Metadata = {
-  title: "Site Semana Computação UFJF 2024",
+  title: "Semana Computação UFJF 2024",
   description: "Site da Semana da Computação da UFJF 2024",
 };
 
