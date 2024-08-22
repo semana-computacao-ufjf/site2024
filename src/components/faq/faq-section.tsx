@@ -1,13 +1,9 @@
 import Image from "next/image";
 import FaqModel from "./faq-model";
-import { Faq } from "@/types/faq";
 import { thisYearLogo } from "@/util/logos";
+import { Faq } from "@prisma/client";
 
-interface FAQSectionProps {
-  faqs: Faq[];
-}
-
-export default function FAQSection({ faqs }: FAQSectionProps) {
+export default function FAQSection({ faqs }: { faqs: Faq[] }) {
   return (
     <div className="w-full min-h-screen text-black flex flex-col py-10 gap-y-20">
       <div className="flex lg:gap-x-8 md:gap-x-4 w-full justify-center items-center">
@@ -19,8 +15,9 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
           className="md:scale-90 scale-75"
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
         <h1 className="font-gotham text-[#DCDFE5] lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
           Perguntas Frequentes
         </h1>
@@ -32,13 +29,12 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
           className="md:scale-90 scale-75"
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
       </div>
       <div className="lg:px-52 md:px-32 px-10">
-        {faqs?.map((faq) => (
-          <FaqModel faq={faq} key={faq.question} />
-        ))}
+        {faqs?.map((faq) => <FaqModel faq={faq} key={faq.question} />)}
       </div>
     </div>
   );

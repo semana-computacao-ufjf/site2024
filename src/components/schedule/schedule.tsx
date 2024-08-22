@@ -102,7 +102,7 @@ export default function Schedule({
                         <div className="text-sm pl-4">{event.title}</div>
                         {event.description && (
                           <div className="text-sm mt-1">
-                            {event.description.raw}
+                            {event.description ?? ""}
                           </div>
                         )}
                         <span className="separator"></span>

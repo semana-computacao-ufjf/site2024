@@ -1,13 +1,10 @@
 "use client";
 
-import { Faq } from "@/types/faq";
+import { Faq } from "@prisma/client";
 import { useState } from "react";
 import { IoMdArrowDropup } from "react-icons/io";
 
-interface FaqModelProps {
-  faq: Faq;
-}
-export default function FaqModel({ faq }: FaqModelProps) {
+export default function FaqModel({ faq }: { faq: Faq }) {
   const [isQuestionOpen, setIsQuestionOpen] = useState(false);
 
   return (
