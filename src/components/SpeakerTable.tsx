@@ -2,24 +2,23 @@
 import NextImage from "next/image";
 import { useState } from "react";
 import Title from "./Title";
-import { Presenter } from "@prisma/client";
+import { Presenter, Event } from "@prisma/client";
 
 export default function SpeakerTable({
   presenters,
 }: {
-  presenters: Presenter[];
+  presenters: (Presenter & {
+    events: Event[];
+  })[];
 }) {
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage: number = 5;
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
-  const indexOfLastItem: number = currentPage * itemsPerPage;
-  const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;
-  const currentItems: Presenter[] = presenters.slice(
-    indexOfFirstItem,
-    indexOfLastItem,
-  );
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = presenters.slice(indexOfFirstItem, indexOfLastItem);
 
-  const totalPages: number = Math.ceil(presenters.length / itemsPerPage);
+  const totalPages = Math.ceil(presenters.length / itemsPerPage);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -69,8 +68,9 @@ export default function SpeakerTable({
                     className="pt-3"
                     style={{
                       maxWidth: "100%",
-                      height: "auto"
-                    }} />
+                      height: "auto",
+                    }}
+                  />
                   <p
                     className={`px-4 py-2 text-center w-full truncate ${
                       index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
@@ -86,7 +86,7 @@ export default function SpeakerTable({
                 }`}
               >
                 <p className={"max-w-5xl line-clamp-4"}>
-                  {item.description?.text}
+                  {item.description ?? ""}
                 </p>
               </td>
               <td
@@ -127,8 +127,9 @@ export default function SpeakerTable({
             className=""
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </button>
 
         {Array.from({ length: totalPages }, (_, index) => (
@@ -156,8 +157,9 @@ export default function SpeakerTable({
             className=""
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </button>
       </div>
     </div>
