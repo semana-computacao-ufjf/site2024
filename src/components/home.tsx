@@ -17,7 +17,6 @@ import { Event, Faq, Presenter, Prize, Sponsor } from "@prisma/client";
 const Home = ({
   sponsors,
   events,
-  prizes,
   presenters,
   faqs,
 }: {
@@ -25,9 +24,6 @@ const Home = ({
   events: (Event & {
     prizes: Prize[];
     presenters: Presenter[];
-  })[];
-  prizes: (Prize & {
-    event: Event | null;
   })[];
   presenters: (Presenter & {
     events: Event[];
@@ -72,7 +68,7 @@ const Home = ({
         <SponsorsSection sponsors={sponsors} />
       </div>
       <div ref={scheduleRef}>
-        <Schedule events={events} prizes={prizes} />
+        <Schedule events={events} />
       </div>
       <div ref={speakersRef}>
         <SpeakerTable presenters={presenters} />

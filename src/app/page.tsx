@@ -9,11 +9,6 @@ const App = async () => {
       prizes: true,
     },
   });
-  const prizes = await prisma.prize.findMany({
-    include: {
-      event: true,
-    },
-  });
   const presenters = await prisma.presenter.findMany({
     include: {
       events: true,
@@ -25,7 +20,6 @@ const App = async () => {
     <Home
       sponsors={sponsors}
       events={events}
-      prizes={prizes}
       presenters={presenters}
       faqs={faqs}
     />

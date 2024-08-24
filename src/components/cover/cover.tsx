@@ -28,13 +28,15 @@ export default function Cover() {
       <Image
         width={350}
         height={350}
+        loading="eager"
         src={`/images/${thisYearLogo}`}
         alt="HomeImage"
         className="mt-6 sm:mt-8 md:mt-10 lg:mt-12"
         style={{
           maxWidth: "100%",
-          height: "auto"
-        }} />
+          height: "auto",
+        }}
+      />
     </div>
   );
 }
