@@ -7,6 +7,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id String @id @unique
+
+  username        String  @unique @db.VarChar(255)
+  active          Boolean @default(false)
+  hashed_password String
+
+  auth_session Session[]
+
+  @@index([username])
+  @@map("user")
+}
+
+model Session {
+  id String @id @unique
+
+  expiresAt DateTime @map("expires_at")
+
+  userId String @map("user_id")
+  user   User   @relation(references: [id], fields: [userId], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("session")
+}
+
 model Prize {
   id Int @id @default(autoincrement())
 
