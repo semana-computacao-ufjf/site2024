@@ -1,43 +1,100 @@
 import React from "react";
-import { thisYearLogo } from "@/util/logos";
+import { thisYearHalfLogo } from "@/util/logos";
 import Image from "next/image";
 
 export default function Cover() {
   return (
-    <div className="flex items-center justify-center flex-wrap p-4 mt-20">
-      <div className="text-center font-gotham text-[#DCDFE5]">
-        <h1 className="text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[6vw] text-left">
-          XXVI
-        </h1>
-        <h1 className=" text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw] leading-tight text-left">
-          <div>Semana da</div>
-          <div>Computação</div>
-        </h1>
-        <h2 className="text-[4vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[2vw] leading-tight text-left mt-6 sm:mt-8 md:mt-10 lg:mt-12">
-          25 a 29 de Novembro, 2024
-        </h2>
-        <div className="flex items-start flex-wrap mt-6 sm:mt-8 md:mt-10 lg:mt-12">
-          <button className="bg-[#FF7506] font-bold text-black text-2xl py-4 px-8 rounded-[32px] border-2 border-[#FF7506] hover:bg-transparent hover:text-[#FF7506] button-transition">
-            Inscreva-se Já
-          </button>
-
-          {/* <button className="bg-transparent text-white py-2 px-4 rounded-lg border-2 border-white shadow-md hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-400 ml-4 sm:ml-6 md:ml-8 lg:ml-10">
-            Dúvidas?
-          </button> */}
+    <>
+      <div className="grid grid-cols-4 items-center p-4 mt-40 gap-4">
+        <div className="col-span-1 max-w-64 ml-24">
+          <Image
+            width={250}
+            height={500}
+            loading="eager"
+            src={`/images/${thisYearHalfLogo}`}
+            alt="Logo2024"
+            className="w-full"
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
+          />
+        </div>
+        <div className="col-span-3 text-center font-gotham text-[#DCDFE5]">
+          <h1 className="font-bold text-7xl">Semana da computação</h1>
+          <h2 className="text-3xl text-left mx-12 my-12">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum
+          </h2>
+          <div className="grid col-span-3">
+            <button className="bg-[#FF7506] font-bold text-white text-5xl text-center rounded-[13px] border-2 border-[#FF7506] hover:bg-transparent hover:text-[#FF7506] button-transition ml-12 mr-2 p-3">
+              Inscrever
+            </button>
+          </div>
         </div>
       </div>
-      <Image
-        width={500}
-        height={500}
-        loading="eager"
-        src={`/images/${thisYearLogo}`}
-        alt="HomeImage"
-        className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 ml-24"
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-        }}
-      />
-    </div>
+      <Cards />
+    </>
   );
 }
+
+const Cards = () => {
+  const vector = "/images/vectors.png";
+  const cardsTitleClasses = "font-gotham font-bold text-[#DCDFE5] text-7xl";
+  const cardsDescriptionClasses =
+    "font-inter text-[#D7D7D7] lg:text-[24px] md:text-[20px] text-[16px] leading-6 sm:leading-7";
+
+  return (
+    <>
+      <div className="text-black flex flex-col sectionBreak:flex-row justify-around text-center px-6 gap-6 items-center sectionBreak:items-stretch mb-5">
+        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
+          <img
+            src={vector}
+            alt="vectors"
+            className="inline-block mb-2 bottom-0 translate-y-[-50%] w-full"
+          />
+          <p className={cardsTitleClasses}>
+            <span>Público</span>
+          </p>
+          <p className={cardsDescriptionClasses}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod
+          </p>
+        </div>
+        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
+          <img
+            src={vector}
+            alt="vectors"
+            className="inline-block mb-2 bottom-0 translate-y-[-50%] w-full"
+          />
+          <p className={cardsTitleClasses}>
+            <span>Cursos</span>
+          </p>
+          <p className={cardsDescriptionClasses}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod
+          </p>
+        </div>
+        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
+          <img
+            src={vector}
+            alt="vectors"
+            className="inline-block mb-2 bottom-0 translate-y-[-50%] w-full"
+          />
+          <p className={cardsTitleClasses}>
+            <span>Palestras</span>
+          </p>
+          <p className={cardsDescriptionClasses}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
