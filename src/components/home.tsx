@@ -40,12 +40,12 @@ const Home = ({
 
   const sections = [
     { name: "Início", ref: coverRef },
-    { name: "Apresentação", ref: presentationRef },
-    { name: "Patrocinadores", ref: sponsorsRef },
     { name: "Programação", ref: scheduleRef },
     { name: "Palestrantes", ref: speakersRef },
+    { name: "Patrocinadores", ref: sponsorsRef },
     { name: "Contato", ref: contactRef },
     { name: "FAQ", ref: faqRef },
+    // { name: "Apresentação", ref: presentationRef },
   ];
 
   const presentationImages = [
@@ -62,9 +62,9 @@ const Home = ({
         <div ref={coverRef}>
           <Cover />
         </div>
-        <div ref={presentationRef}>
+        {/* <div ref={presentationRef}>
           <Presentation presentationImages={presentationImages} />
-        </div>
+        </div> */}
         <div ref={sponsorsRef}>
           <SponsorsSection sponsors={sponsors} />
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { weekLogoWhite, ufjfLogo } from "@/util/logos";
+import { thisYearLogo } from "@/util/logos";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 
@@ -22,7 +22,7 @@ export default function NavBar({ sections }: NavBarProps) {
     <main className="w-full m-0 p-0">
       <section
         className="
-        font-inter text-[#D7D7D7]
+        font-inter text-[#FF7506]
         flex flex-row items-center justify-center
         px-0 py-0 h-[6.5em] md:h-auto w-full
         fixed top-0 z-10
@@ -32,24 +32,17 @@ export default function NavBar({ sections }: NavBarProps) {
         <div className="flex items-center w-full max-w-7xl justify-between md:justify-center">
           <div className="flex items-center gap-4">
             <img
-              src={`/images/${weekLogoWhite}`}
+              src={`/images/${thisYearLogo}`}
               alt="Logo"
-              className="max-h-20 lg:max-h-32 h-full mt-5 mb-5"
+              className="max-h-20 lg:max-h-32 h-full"
             />
-            <div className="md:hidden lg:hidden sm:flex items-center gap-4">
-              <img
-                src={`/images/${ufjfLogo}`}
-                alt="UFJF"
-                className="max-h-10 md:max-h-20 mt-5 mb-5"
-              />
-            </div>
           </div>
           <nav className="flex-grow px-4 relative">
             <ul className="hidden md:flex flex-wrap gap-6 justify-center">
               {sections.map((section, index) => (
                 <li key={index}>
                   <span
-                    className="hover:text-[#FF7506] transition-colors duration-300 m-1 cursor-pointer"
+                    className="text-3xl hover:text-[#D7D7D7] transition-colors duration-300 m-1 cursor-pointer"
                     onClick={() => handleScroll(section.ref)}
                   >
                     {section.name}
@@ -82,13 +75,6 @@ export default function NavBar({ sections }: NavBarProps) {
               </ul>
             </div>
           </nav>
-          <div className="hidden md:flex lg:flex sm:hidden items-center gap-4">
-            <img
-              src={`/images/${ufjfLogo}`}
-              alt="UFJF"
-              className="max-h-10 md:max-h-20 mt-2 mb-2"
-            />
-          </div>
         </div>
       </section>
     </main>
