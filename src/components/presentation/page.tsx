@@ -57,18 +57,15 @@ const About = ({ presentationImages }: PresentationProps) => {
         </div>
       </div>
       <Slider images={presentationImages} />
-      <div className="text-black text-center lg:mx-5 sm:px-2  my-10 sm:mx-20">
+      <div className="text-black text-center lg:mx-5 sm:px-2 my-10 sm:mx-20">
         <h1 className="font-gotham text-[#DCDFE5] md:text-[48px] text-[40px] mb-[40px] sm:leading-[64.51px]">
           O Evento
         </h1>
-        <div
-          className={`font-inter text-[#D7D7D7] text-lg sm:text-2xl leading-6 sm:leading-8 space-y-10`}
-        >
+        <div className="grid sm:grid-cols-2 gap-10 font-inter text-[#D7D7D7] text-lg sm:text-2xl leading-6 sm:leading-8">
           <p>
             A Semana da Computação é um evento anual realizado pelo Departamento
             de Ciência da Computação da Universidade Federal de Juiz de Fora
-            durante a Semana do Instituto de Ciências Exatas. Pela primeira vez,
-            a Code Empresa Júnior está a frente da organização do evento.
+            durante a Semana do Instituto de Ciências Exatas.
           </p>
           <p>{editionDescription}</p>
         </div>

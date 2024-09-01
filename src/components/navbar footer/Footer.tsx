@@ -21,8 +21,9 @@ export default function Footer() {
             style={{
               maxWidth: "100%",
               height: "auto",
-              objectFit: "contain"
-            }} />
+              objectFit: "contain",
+            }}
+          />
         </div>
         <div className="flex flex-col gap-2">
           <p className="font-gotham text-[#DCDFE5]e text-2xl">Realização:</p>
@@ -36,8 +37,9 @@ export default function Footer() {
               style={{
                 maxWidth: "100%",
                 height: "auto",
-                objectFit: "contain"
-              }} />
+                objectFit: "contain",
+              }}
+            />
             <NextImage
               width={81}
               height={31}
@@ -47,8 +49,9 @@ export default function Footer() {
               style={{
                 maxWidth: "100%",
                 height: "auto",
-                objectFit: "contain"
-              }} />
+                objectFit: "contain",
+              }}
+            />
             <NextImage
               width={179}
               height={41}
@@ -58,8 +61,9 @@ export default function Footer() {
               style={{
                 maxWidth: "100%",
                 height: "auto",
-                objectFit: "contain"
-              }} />
+                objectFit: "contain",
+              }}
+            />
           </div>
         </div>
         <div className="flex flex-col items-center md:items-start justify-center">

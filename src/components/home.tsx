@@ -56,51 +56,55 @@ const Home = ({
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-stretch justify-between">
+    <div className="w-full flex flex-col items-center">
       <NavBar sections={sections} />
-      <div ref={coverRef}>
-        <Cover />
-      </div>
-      <div ref={presentationRef}>
-        <Presentation presentationImages={presentationImages} />
-      </div>
-      <div ref={sponsorsRef}>
-        <SponsorsSection sponsors={sponsors} />
-      </div>
-      <div ref={scheduleRef}>
-        <Schedule events={events} />
-      </div>
-      <div ref={speakersRef}>
-        <SpeakerTable presenters={presenters} />
-      </div>
-      <div className="mb-20">
-        <CodeSection />
-        <div className="flex flex-col sectionBreak:flex-row justify-around px-6 gap-0 sectionBreak:gap-8 items-center sectionBreak:items-stretch">
-          <CardTechnology
-            image="/images/app-icon.png"
-            title="Aplicativos"
-            description="Não quer ficar para trás no mundo dos aplicativos? Com o React Native a Code pode ajudar você e a sua empresa!"
-          />
-          <CardTechnology
-            image="/images/web-icon.png"
-            title="Sites expositivos"
-            description="Deseja divulgar sua marca e ter mais clientes? Nós desenvolvemos um site expositivo profissional para ajudar o seu negócio a alcançar esses objetivos."
-          />
-          <CardTechnology
-            image="/images/laravel-icon.png"
-            title="Sistemas"
-            description="Deseja modernizar e trazer tecnologia para seu negócio? Com o Laravel, podemos trazer o sistema de gerenciamento mais moderno do mercado!"
-          />
+      <main className="flex min-h-screen flex-col items-stretch justify-between max-w-[1600px]">
+        <div ref={coverRef}>
+          <Cover />
         </div>
-      </div>
-      <div ref={contactRef}>
-        <ContactSection />
-      </div>
-      <div ref={faqRef}>
-        <FAQSection faqs={faqs} />
-      </div>
+        <div ref={presentationRef}>
+          <Presentation presentationImages={presentationImages} />
+        </div>
+        <div ref={sponsorsRef}>
+          <SponsorsSection sponsors={sponsors} />
+        </div>
+        <div className="relative" ref={scheduleRef}>
+          <div className="absolute w-[200vw] h-full -z-[1] bg-[#202020] ml-[-100vw]" />
+          <Schedule events={events} />
+        </div>
+        <div className="relative" ref={speakersRef}>
+          <div className="absolute w-[200vw] h-full -z-[1] bg-[#202020] ml-[-100vw]" />
+          <SpeakerTable presenters={presenters} />
+        </div>
+        <div className="mb-20">
+          <CodeSection />
+          <div className="flex flex-col sectionBreak:flex-row justify-around px-6 gap-0 sectionBreak:gap-8 items-center sectionBreak:items-stretch">
+            <CardTechnology
+              image="/images/app-icon.png"
+              title="Aplicativos"
+              description="Não quer ficar para trás no mundo dos aplicativos? Com o React Native a Code pode ajudar você e a sua empresa!"
+            />
+            <CardTechnology
+              image="/images/web-icon.png"
+              title="Sites expositivos"
+              description="Deseja divulgar sua marca e ter mais clientes? Nós desenvolvemos um site expositivo profissional para ajudar o seu negócio a alcançar esses objetivos."
+            />
+            <CardTechnology
+              image="/images/laravel-icon.png"
+              title="Sistemas"
+              description="Deseja modernizar e trazer tecnologia para seu negócio? Com o Laravel, podemos trazer o sistema de gerenciamento mais moderno do mercado!"
+            />
+          </div>
+        </div>
+        <div ref={contactRef}>
+          <ContactSection />
+        </div>
+        <div ref={faqRef}>
+          <FAQSection faqs={faqs} />
+        </div>
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
 

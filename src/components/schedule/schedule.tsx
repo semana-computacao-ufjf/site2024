@@ -53,12 +53,20 @@ const EventTable = ({
       </h1>
       <div className="text-black w-full">
         <div className="mt-5 mb-10 flex justify-center gap-2">
+          <button
+            onClick={() => setSelectedDay(null)}
+            className={`w-1/5 sm:w-1/12 m-2 p-2 rounded-[30px] ${
+              selectedDay === null ? "bg-[#FF7506]" : "bg-[#DCDFE5]"
+            } button-transition font-gotham font-bold`}
+          >
+            Todos
+          </button>
           {["SEG", "TER", "QUA", "QUI", "SEX"].map((day) => (
             <button
               key={day}
               onClick={() => setSelectedDay(day)}
               className={`w-1/5 sm:w-1/12 m-2 p-2 rounded-[30px] ${
-                selectedDay === day ? "bg-[#FF7506]" : "bg-[#DCDFE5] "
+                selectedDay === day ? "bg-[#FF7506]" : "bg-[#DCDFE5]"
               } button-transition font-gotham font-bold`}
             >
               {day}
@@ -84,7 +92,7 @@ const EventTable = ({
                           src={`/icons/${event.eventType}.png`}
                           alt={formatEventType(event.eventType)}
                           className={`h-8 w-8 ${
-                            index % 2 !== 0 ? "invert" : ""
+                            index % 2 !== 0 ? "" : "invert"
                           }`}
                         />
                         <span className="mt-2 ">
@@ -153,7 +161,9 @@ const PrizeTable = ({
               <div
                 className={`grid grid-cols-4 gap-4 mb-4`}
                 style={{
-                  gridTemplateColumns: `repeat(${mostPrizes + 1}, minmax(0, 1fr))`,
+                  gridTemplateColumns: `repeat(${
+                    mostPrizes + 1
+                  }, minmax(0, 1fr))`,
                 }}
               >
                 <div />
@@ -197,7 +207,7 @@ export default function Schedule({
   })[];
 }) {
   return (
-    <div className="min-h-screen w-full bg-cover bg-center bg-[#202020] flex flex-col items-center">
+    <div className="min-h-screen w-full bg-cover bg-center flex flex-col items-center">
       <EventTable events={events} />
       <PrizeTable events={events} />
     </div>

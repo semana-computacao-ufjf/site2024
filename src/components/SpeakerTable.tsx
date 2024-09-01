@@ -33,7 +33,7 @@ export default function SpeakerTable({
   };
 
   return (
-    <div className="overflow-x-auto shadow-md bg-[#202020]">
+    <div className="overflow-x-auto">
       <Title Title="Conheça nossos palestrantes" />
       <table className="mx-auto w-10/12 border-separate border-spacing-y-3 p-2 text-black">
         <thead>
