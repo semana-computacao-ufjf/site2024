@@ -10,7 +10,7 @@ export default function FaqModel({ faq }: { faq: Faq }) {
   return (
     <div
       className={
-        "font-inter text-[#D7D7D7] flex flex-col border-b  border-[#D7D7D7]"
+        "font-inter text-[#D7D7D7] text-3xl flex flex-col border-b-2 border-[#E67119] max-w-[1600px] mx-auto"
       }
     >
       <div
@@ -18,7 +18,7 @@ export default function FaqModel({ faq }: { faq: Faq }) {
         onClick={() => setIsQuestionOpen(!isQuestionOpen)}
       >
         <h1 className="lg:text-2xl md:text-xl text-base">{faq.question}</h1>
-        <button className="lg:text-5xl text-3xl">
+        <button className="lg:text-5xl">
           {isQuestionOpen ? (
             <IoMdArrowDropup />
           ) : (

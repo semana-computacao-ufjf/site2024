@@ -1,43 +1,32 @@
-import Image from "next/image";
 import FaqModel from "./faq-model";
-import { thisYearLogo } from "@/util/logos";
 import { Faq } from "@prisma/client";
 
 export default function FAQSection({ faqs }: { faqs: Faq[] }) {
+  const leftCorner = "/images/left-corner.png";
+  const rightCorner = "/images/right-corner.png";
   return (
-    <div className="w-full min-h-screen text-black flex flex-col py-10 gap-y-20">
-      <div className="flex lg:gap-x-8 md:gap-x-4 w-full justify-center items-center">
-        {/* <Image
-          width={70}
-          height={70}
-          alt="Semana da Computação"
-          src={`/images/${thisYearLogo}`}
-          className="md:scale-90 scale-75"
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-          }}
-        /> */}
-        <h1 className="font-gotham text-white lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
+    <div className="relative overflow-hidden">
+      <img
+        src={leftCorner}
+        alt="vectors"
+        className="absolute bottom-0 left-0 translate-y-[-55%] translate-x-[-40%] -z-5"
+      />
+
+      <div className="">
+        <h1 className="font-gotham text-white text-7xl text-center font-bold ml-[168px] mb-12 pt-28 relative">
           Perguntas Frequentes
         </h1>
-        {/* <Image
-          width={70}
-          height={70}
-          alt="Semana da Computação"
-          src={`/images/${thisYearLogo}`}
-          className="md:scale-90 scale-75"
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-          }}
-        /> */}
       </div>
-      <div className="lg:px-52 md:px-32 px-10">
+      <div className="relative  mb-36">
         {faqs?.map((faq) => (
           <FaqModel faq={faq} key={faq.question} />
         ))}
       </div>
+      <img
+        src={rightCorner}
+        alt="vectors"
+        className="absolute bottom-0 left-0 translate-y-[15%] translate-x-[870%] -z-5"
+      />
     </div>
   );
 }
