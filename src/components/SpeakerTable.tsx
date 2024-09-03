@@ -1,10 +1,9 @@
 "use client";
 import NextImage from "next/image";
 import { useState } from "react";
-import Title from "./Title";
 import { Presenter, Event } from "@prisma/client";
 
-export default function SpeakerTable({
+export default function SpeakerGrid({
   presenters,
 }: {
   presenters: (Presenter & {
@@ -12,7 +11,7 @@ export default function SpeakerTable({
   })[];
 }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 6;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -34,96 +33,59 @@ export default function SpeakerTable({
 
   return (
     <div className="overflow-x-auto">
-      <Title Title="Conheça nossos palestrantes" />
-      <table className="mx-auto w-10/12 border-separate border-spacing-y-3 p-2 text-black">
-        <thead>
-          <tr className="bg-[#D7D7D7] font-inter font-bold">
-            <th className="px-3 py-3 text-center border-l-transparent p-2 rounded-tl-xl rounded-bl-xl">
-              Palestrante
-            </th>
-            <th className="px-3 py-3 text-center table-responsive:block hidden">
-              Descrição
-            </th>
-            <th className="px-3 py-3 text-center">Participação</th>
-            <th className="px-3 py-3 text-center border-r-0 p-2 rounded-tr-xl rounded-br-xl">
-              Filiação
-            </th>
-          </tr>
-        </thead>
-        <tbody className="font-inter space-y-4">
-          {currentItems.map((item, index) => (
-            <tr
-              key={index}
-              className={`${
-                index % 2 === 0 ? "bg-[#121212]" : "bg-[#D7D7D7]"
-              } space-y-2`}
-            >
-              <td className="px-4 py-2 mt-2 border-l p-2 rounded-tl-xl rounded-bl-xl">
-                <div className="flex flex-col items-center">
-                  <NextImage
-                    src={item.imageUrl ?? "/images/unknown.jpg"}
-                    alt={item.name}
-                    width={120}
-                    height={120}
-                    className="pt-3"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto",
-                    }}
-                  />
-                  <p
-                    className={`px-4 py-2 text-center w-full truncate ${
-                      index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
-                    }`}
-                  >
-                    {item.name}
-                  </p>
-                </div>
-              </td>
-              <td
-                className={` w-100 h-32 px-4 py-2 text-base table-responsive:block hidden  ${
-                  index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
-                }`}
-              >
-                <p className={"max-w-5xl line-clamp-4"}>
-                  {item.description ?? ""}
-                </p>
-              </td>
-              <td
-                className={`px-4 py-2 text-base text-center ${
-                  index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
-                }`}
-              >
+      <h1 className="font-gotham text-white text-7xl text-center mt-16 mb-20">
+        Palestrantes
+      </h1>
+      <div className="max-w-[1600px] grid grid-cols-2 mx-auto gap-8">
+        {currentItems.map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-2 items-center bg-[#2C2B2B] rounded-[30px]"
+          >
+            <div className="flex flex-col items-center space-y-2">
+              <div className="w-32 h-32 overflow-hidden rounded-full">
+                <NextImage
+                  src={item.imageUrl ?? "/images/unknown.jpg"}
+                  alt={item.name}
+                  width={120}
+                  height={120}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="text-2xl text-center flex flex-col items-center space-y-1 bg-[#E67119] rounded-[8px] m-12 p-2">
                 {item.events.map((event, index) => (
-                  <span key={index} className="text-sm">
+                  <span key={index}>
                     {event.title}
                     {index < item.events.length - 1 && ", "}
                   </span>
                 ))}
-              </td>
-              <td
-                className={`px-4 py-2 mt-2 border-r p-2 text-base rounded-tr-xl rounded-br-xl text-center ${
-                  index % 2 === 0 ? "text-[#DCDFE5]" : "text-black"
-                }`}
-              >
-                <p className="max-w-2xl ">{item.bond}</p>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+              </div>
+            </div>
+            <div className="space-y-2 mb-9">
+              <p className="text-3xl font-bold mt-9">{item.name}</p>
+              <p className="text-2xl mr-8 mt-1">{item.description ?? ""}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <div className="flex justify-center mt-4 items-center mb-5 ">
+      <div className="flex justify-center items-center ">
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
-          className="px-4 py-2 mx-1 bg-white text-black rounded-xl disabled:opacity-50 w-10 h-10"
+          className={`w-20 h-20 rounded-full flex items-center justify-center mx-7 my-20
+      ${
+        currentPage === 1
+          ? "bg-[#202020] border-2 border-[#E67119]"
+          : "bg-[#E67119] text-white"
+      } 
+      disabled:cursor-not-allowed`}
         >
           <NextImage
-            src="/images/arrow_back.svg"
+            src="/images/left-arrow.svg"
             alt="Página anterior"
-            width={20}
-            height={20}
+            width={30}
+            height={30}
             className=""
             style={{
               maxWidth: "100%",
@@ -132,28 +94,22 @@ export default function SpeakerTable({
           />
         </button>
 
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            onClick={() => handlePageChange(index + 1)}
-            className={`px-4 py-2 mx-1 bg-[#E67119] rounded-xl text-black button-transition ${
-              currentPage === index + 1 ? "bg-[#E67119] " : "bg-white "
-            }`}
-          >
-            {index + 1}
-          </button>
-        ))}
-
         <button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
-          className="px-4 py-2 mx-1 bg-white text-black rounded-xl disabled:opacity-50 w-10 h-10"
+          className={`w-20 h-20 rounded-full flex items-center justify-center mx-7 my-20
+      ${
+        currentPage === totalPages
+          ? "bg-[#202020] border-2 border-[#E67119]"
+          : "bg-[#E67119] text-white"
+      } 
+      disabled:cursor-not-allowed`}
         >
           <NextImage
-            src="/images/arrow_front.svg"
+            src="/images/right-arrow.svg"
             alt="Página posterior"
-            width={20}
-            height={20}
+            width={30}
+            height={30}
             className=""
             style={{
               maxWidth: "100%",
