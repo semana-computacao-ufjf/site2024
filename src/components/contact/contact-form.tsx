@@ -51,7 +51,7 @@ export default function ContactForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={
-        "bg-[#202020] h-full font-inter text-[#D7D7D7] lg:w-[90%]  max-w-full md:text-xl text-sm border-2 border-[#FF7506] flex flex-col md:p-6 p-4 rounded-[12px] space-y-[10px]"
+        "bg-[#2C2B2B] h-full font-inter text-[#D7D7D7] lg:w-[90%]  max-w-full md:text-xl text-sm border-2 border-[#E67119] flex flex-col md:p-6 p-4 rounded-[12px] space-y-[10px]"
       }
     >
       <div className="flex flex-col flex-grow space-y-[10px]">
@@ -101,7 +101,7 @@ export default function ContactForm() {
       <div className="flex justify-center mt-4">
         <button
           type="submit"
-          className={`text-black font-bold ${loading} bg-[#FF7506] lg:text-lg md:text-xl xl:w-5/12 lg:w-7/12  py-2 px-6 rounded-xl button-transition`}
+          className={`text-black font-bold ${loading} bg-[#E67119] lg:text-lg md:text-xl xl:w-5/12 lg:w-7/12  py-2 px-6 rounded-xl button-transition`}
         >
           Entrar em contato
         </button>

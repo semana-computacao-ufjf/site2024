@@ -9,7 +9,7 @@ import { codeLogo, dccLogo, thisYearLogo, ufjfWhiteLogo } from "@/util/logos";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full flex items-center justify-center bg-[#202020]">
+    <footer className="relative w-full flex items-center justify-center bg-[#2C2B2B]">
       <div className="relative z-10 w-full text-center grid grid-cols-1 md:grid-cols-3 eventLogo:grid-cols-4 gap-5 md:gap-10 p-5 items-start">
         <div className="items-center justify-center hidden eventLogo:block">
           <NextImage

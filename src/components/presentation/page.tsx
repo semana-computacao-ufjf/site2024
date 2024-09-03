@@ -26,7 +26,7 @@ const About = ({ presentationImages }: PresentationProps) => {
   return (
     <>
       <div className="text-black flex flex-col sectionBreak:flex-row justify-around text-center px-6 gap-6 items-center sectionBreak:items-stretch mb-5">
-        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px]">
+        <div className="bg-[#2C2B2B] w-full sm:w-1/3 p-5 rounded-[20px]">
           <p className={`${cardsTitleClasses}`}>
             <span>Públco alvo </span>
           </p>
@@ -37,7 +37,7 @@ const About = ({ presentationImages }: PresentationProps) => {
             de Juiz de Fora e região.
           </p>
         </div>
-        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px]">
+        <div className="bg-[#2C2B2B] w-full sm:w-1/3 p-5 rounded-[20px]">
           <p className={`${cardsTitleClasses}`}>
             <span>Cursos</span>
           </p>
@@ -46,7 +46,7 @@ const About = ({ presentationImages }: PresentationProps) => {
             Desenvolvimento Web, Aprendizado de Máquina, Chatbots, entre outros.
           </p>
         </div>
-        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px]">
+        <div className="bg-[#2C2B2B] w-full sm:w-1/3 p-5 rounded-[20px]">
           <p className={`${cardsTitleClasses}`}>
             <span>Palestras</span>
           </p>

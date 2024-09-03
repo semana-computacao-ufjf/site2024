@@ -12,7 +12,7 @@ export default function CardTechnology({
   description,
 }: CardProps) {
   return (
-    <div className="relative card w-card-width h-card-heihgt border-1 rounded-xl border-[#FF7506] mt-16">
+    <div className="relative card w-card-width h-card-heihgt border-1 rounded-xl border-[#E67119] mt-16">
       <div>
         <div className="absolute top-[-50px] left-1/2 transform -translate-x-1/2">
           <NextImage
@@ -23,8 +23,9 @@ export default function CardTechnology({
             className="rounded-full "
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </div>
         <h1 className="font-gotham text-[#DCDFE5] text-center text-2xl sm:text-3xl uppercase pt-16">
           <p>{title}</p>

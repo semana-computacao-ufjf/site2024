@@ -22,7 +22,7 @@ export default function NavBar({ sections }: NavBarProps) {
     <main className="w-full m-0 p-0">
       <section
         className="
-        font-inter text-[#FF7506]
+        font-inter text-[#E67119]
         flex flex-row items-center justify-center
         px-0 py-0 h-[6.5em] md:h-auto w-full
         fixed top-0 z-10

@@ -12,8 +12,9 @@ export default function CodeSection() {
           className="mt-10"
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
       </div>
       <div className="flex flex-col sectionBreak:flex-row px-8 w-full  ">
         <div className="leftSide w-full sectionBreak:w-1/3  flex items-center px-10 sectionBreak:px-0">
@@ -25,18 +26,20 @@ export default function CodeSection() {
             className="hidden sectionBreak:block"
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
           <NextImage
             src="/images/code-members.jpg"
             alt="Code Jr."
             width={1600}
             height={900}
-            className=" block sectionBreak:hidden border-2 rounded-xl border-[#FF7506]"
+            className=" block sectionBreak:hidden border-2 rounded-xl border-[#E67119]"
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </div>
         <div
           className={
@@ -45,7 +48,7 @@ export default function CodeSection() {
         >
           <p className="px-8  leading-7 font-inter text-[#D7D7D7]">
             Fundada em 2014 por alunos da UFJF,{" "}
-            <span className="text-[#FF7506] underline">
+            <span className="text-[#E67119] underline">
               a Code é uma empresa júnior atuante no mercado de computação que
               trabalha com soluções tecnológicas como sites, sistemas e
               aplicativos.
@@ -57,7 +60,7 @@ export default function CodeSection() {
           <p className="px-8  leading-7 font-inter text-[#D7D7D7]">
             Com uma cultura voltada ao cliente, estamos sempre investindo
             emnovas tecnologias e qualificação dos membros,{" "}
-            <span className="text-[#FF7506] underline">
+            <span className="text-[#E67119] underline">
               para que nossassoluções sejam entregues com muita eficiência e
               qualidade
             </span>

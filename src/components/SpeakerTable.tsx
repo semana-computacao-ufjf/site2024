@@ -136,8 +136,8 @@ export default function SpeakerTable({
           <button
             key={index + 1}
             onClick={() => handlePageChange(index + 1)}
-            className={`px-4 py-2 mx-1 bg-[#FF7506] rounded-xl text-black button-transition ${
-              currentPage === index + 1 ? "bg-[#FF7506] " : "bg-white "
+            className={`px-4 py-2 mx-1 bg-[#E67119] rounded-xl text-black button-transition ${
+              currentPage === index + 1 ? "bg-[#E67119] " : "bg-white "
             }`}
           >
             {index + 1}

@@ -32,7 +32,7 @@ export default function Cover() {
             culpa qui officia deserunt mollit anim id est laborum
           </h2>
           <div className="grid col-span-3">
-            <button className="bg-[#FF7506] font-bold text-white text-5xl text-center rounded-[13px] border-2 border-[#FF7506] hover:bg-transparent hover:text-[#FF7506] button-transition ml-12 mr-2 p-3">
+            <button className="bg-[#E67119] font-bold text-white text-5xl text-center rounded-[13px] border-2 border-[#E67119] hover:bg-transparent hover:text-[#E67119] button-transition ml-12 mr-2 p-3">
               Inscrever
             </button>
           </div>
@@ -52,11 +52,11 @@ const Cards = () => {
   return (
     <>
       <div className="text-black flex flex-col sectionBreak:flex-row justify-around text-center px-6 gap-6 items-center sectionBreak:items-stretch mb-5">
-        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
+        <div className="bg-[#2C2B2B] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
           <img
             src={vector}
             alt="vectors"
-            className="inline-block mb-2 bottom-0 translate-y-[-50%] w-full"
+            className="inline-block mb-2 bottom-0 translate-y-[-65%] w-full"
           />
           <p className={cardsTitleClasses}>
             <span>Público</span>
@@ -66,11 +66,11 @@ const Cards = () => {
             eiusmod
           </p>
         </div>
-        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
+        <div className="bg-[#2C2B2B] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
           <img
             src={vector}
             alt="vectors"
-            className="inline-block mb-2 bottom-0 translate-y-[-50%] w-full"
+            className="inline-block mb-2 bottom-0 translate-y-[-65%] w-full"
           />
           <p className={cardsTitleClasses}>
             <span>Cursos</span>
@@ -80,11 +80,11 @@ const Cards = () => {
             eiusmod
           </p>
         </div>
-        <div className="bg-[#202020] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
+        <div className="bg-[#2C2B2B] w-full sm:w-1/3 p-5 rounded-[20px] overflow-hidden">
           <img
             src={vector}
             alt="vectors"
-            className="inline-block mb-2 bottom-0 translate-y-[-50%] w-full"
+            className="inline-block mb-2 bottom-0 translate-y-[-65%] w-full"
           />
           <p className={cardsTitleClasses}>
             <span>Palestras</span>

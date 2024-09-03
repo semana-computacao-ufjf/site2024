@@ -26,13 +26,13 @@ const Table = <T extends string, K extends string>({
         <table className="min-w-[2000px] border-collapse border-2 border-black">
           <thead>
             <tr>
-              <th className="bg-[#FF7506] text-white border-2 border-black">
+              <th className="bg-[#E67119] text-white border-2 border-black">
                 editar
               </th>
               {columnNames.map((column, index) => {
                 return (
                   <th
-                    className="bg-[#FF7506] text-white border-2 border-black"
+                    className="bg-[#E67119] text-white border-2 border-black"
                     scope="col"
                     key={index}
                   >
@@ -43,7 +43,7 @@ const Table = <T extends string, K extends string>({
               {connectionNames.map((column, index) => {
                 return (
                   <th
-                    className="bg-[#FF7506] text-white border-2 border-black"
+                    className="bg-[#E67119] text-white border-2 border-black"
                     scope="col"
                     key={index}
                   >
