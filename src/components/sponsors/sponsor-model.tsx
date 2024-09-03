@@ -14,16 +14,17 @@ export default function SponsorModel({ sponsor }: { sponsor: Sponsor }) {
       }}
     >
       <Image
-        width={250}
-        height={250}
+        width={350}
+        height={350}
         src={sponsor.imageUrl ?? ""}
         alt={sponsor.name}
         title={sponsor.name}
         className="rounded-2xl md:max-h-[250px] md:max-w-[250px]  max-w-[175px] max-h-[175px]"
         style={{
           maxWidth: "100%",
-          height: "auto"
-        }} />
+          height: "auto",
+        }}
+      />
     </div>
   );
 }
