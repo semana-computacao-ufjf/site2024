@@ -26,7 +26,7 @@ export default function Footer() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <p className="font-gotham text-[#DCDFE5]e text-2xl">Realização:</p>
+          <p className="font-gotham text-whitee text-2xl">Realização:</p>
           <div className="flex  gap-5 justify-center items-center md:flex-col eventLogo:flex-row">
             <NextImage
               width={81}
@@ -67,7 +67,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center md:items-start justify-center">
-          <p className="font-gotham text-[#DCDFE5] text-2xl mb-2">Contato:</p>
+          <p className="font-gotham text-white text-2xl mb-2">Contato:</p>
           <div className="font-inter text-[#D7D7D7] text-left">
             <p className="mb-5">
               <span className="underline">Telefone</span>:{" "}
@@ -81,9 +81,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <p className="font-gotham text-[#DCDFE5] text-2xl mb-2">
-            Nossas redes
-          </p>
+          <p className="font-gotham text-white text-2xl mb-2">Nossas redes</p>
           <div className="flex flex-row items-center gap-3 md:flex-col socialMediaAdjust:flex-row">
             <a
               href="https://www.instagram.com/codejr/"

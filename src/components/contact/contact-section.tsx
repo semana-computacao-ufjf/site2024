@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 export default function ContactSection() {
   return (
     <div className="w-full flex-col space-y-4 xl:px-16 lg:px-8 md:px-10 px-5 md:py-24 py-12  bg-cover">
-      <h1 className="font-gotham text-[#DCDFE5] md:text-5xl text-3xl lg:mb-16 mb-8">
+      <h1 className="font-gotham text-white md:text-5xl text-3xl lg:mb-16 mb-8">
         Contato
       </h1>
       <div className="lg:flex lg:w-full lg:justify-between max-lg:flex max-lg:flex-col  max-lg:space-y-10">

@@ -20,7 +20,7 @@ export default function Cover() {
             }}
           />
         </div>
-        <div className="col-span-3 text-center font-gotham text-[#DCDFE5]">
+        <div className="col-span-3 text-center font-gotham text-white">
           <h1 className="font-bold text-7xl">Semana da computação</h1>
           <h2 className="text-3xl text-left mx-12 my-12">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -45,7 +45,7 @@ export default function Cover() {
 
 const Cards = () => {
   const vector = "/images/vectors.png";
-  const cardsTitleClasses = "font-gotham font-bold text-[#DCDFE5] text-7xl";
+  const cardsTitleClasses = "font-gotham font-bold text-white text-7xl";
   const cardsDescriptionClasses =
     "font-inter text-[#D7D7D7] lg:text-[24px] md:text-[20px] text-[16px] leading-6 sm:leading-7";
 

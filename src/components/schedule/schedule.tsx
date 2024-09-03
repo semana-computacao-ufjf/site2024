@@ -48,7 +48,7 @@ const EventTable = ({
 
   return (
     <div className="bg-cover bg-center bg-[#2C2B2B]">
-      <h1 className="max-w-[1600px] font-gotham text-[#DCDFE5] text-7xl text-start font-bold ml-[168px] mt-28 mb-16">
+      <h1 className="font-gotham text-white text-7xl text-start font-bold ml-[168px] mt-28 mb-16">
         Programação
       </h1>
       <div className="text-black w-full">
@@ -129,7 +129,7 @@ const PrizeTable = ({
 
   return (
     <>
-      <h2 className="font-gotham text-[#DCDFE5] text-[24px] sm:text-[36px] font-normal text-center mt-10">
+      <h2 className="font-gotham text-white text-[24px] sm:text-[36px] font-normal text-center mt-10">
         Premiações
       </h2>
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 mt-5  mb-40">

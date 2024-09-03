@@ -18,7 +18,7 @@ export default function FAQSection({ faqs }: { faqs: Faq[] }) {
             height: "auto",
           }}
         /> */}
-        <h1 className="font-gotham text-[#DCDFE5] lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
+        <h1 className="font-gotham text-white lg:text-5xl md:text-4xl sm:text-3xl text-[1.35rem]">
           Perguntas Frequentes
         </h1>
         {/* <Image

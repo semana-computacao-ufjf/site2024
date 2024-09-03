@@ -19,7 +19,7 @@ const About = ({ presentationImages }: PresentationProps) => {
     "Neste ano, na edição de 26 anos do evento, a programação prevê palestras e minicursos sobre temas atuais e um espaço de interação entre empresas e a universidade.";
 
   const cardsTitleClasses =
-    "font-gotham text-[#DCDFE5] lg:text-[50px] md:text-[40px] text-[30px] mb-5";
+    "font-gotham text-white lg:text-[50px] md:text-[40px] text-[30px] mb-5";
   const cardsDescriptionClasses =
     "font-inter text-[#D7D7D7] lg:text-[24px] md:text-[20px] text-[16px] leading-6 sm:leading-7";
 
@@ -58,7 +58,7 @@ const About = ({ presentationImages }: PresentationProps) => {
       </div>
       <Slider images={presentationImages} />
       <div className="text-black text-center lg:mx-5 sm:px-2 my-10 sm:mx-20">
-        <h1 className="font-gotham text-[#DCDFE5] md:text-[48px] text-[40px] mb-[40px] sm:leading-[64.51px]">
+        <h1 className="font-gotham text-white md:text-[48px] text-[40px] mb-[40px] sm:leading-[64.51px]">
           O Evento
         </h1>
         <div className="grid sm:grid-cols-2 gap-10 font-inter text-[#D7D7D7] text-lg sm:text-2xl leading-6 sm:leading-8">

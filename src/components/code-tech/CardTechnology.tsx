@@ -27,7 +27,7 @@ export default function CardTechnology({
             }}
           />
         </div>
-        <h1 className="font-gotham text-[#DCDFE5] text-center text-2xl sm:text-3xl uppercase pt-16">
+        <h1 className="font-gotham text-white text-center text-2xl sm:text-3xl uppercase pt-16">
           <p>{title}</p>
         </h1>
       </div>
