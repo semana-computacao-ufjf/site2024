@@ -33,7 +33,7 @@ export default function SpeakerGrid({
 
   return (
     <div className="overflow-x-auto">
-      <h1 className="font-gotham text-white text-7xl text-center mt-16 mb-20">
+      <h1 className="font-gotham text-white text-7xl text-center font-bold mt-16 mb-20">
         Palestrantes
       </h1>
       <div className="max-w-[1600px] grid grid-cols-2 mx-auto gap-8">
