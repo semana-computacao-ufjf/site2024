@@ -47,90 +47,68 @@ const EventTable = ({
   });
 
   return (
-    <>
-      <h1 className="font-gotham text-[#DCDFE5] text-[36px] sm:text-[48px] text-center mt-10">
+    <div className="bg-cover bg-center bg-[#2C2B2B]">
+      <h1 className="max-w-[1600px] font-gotham text-[#DCDFE5] text-7xl text-start font-bold ml-[168px] mt-28 mb-16">
         Programação
       </h1>
       <div className="text-black w-full">
-        <div className="mt-5 mb-10 flex justify-center gap-2">
+        <div className="flex justify-start">
           <button
             onClick={() => setSelectedDay(null)}
-            className={`w-1/5 sm:w-1/12 m-2 p-2 rounded-[30px] ${
-              selectedDay === null ? "bg-[#FF7506]" : "bg-[#DCDFE5]"
-            } button-transition font-gotham font-bold`}
+            className={`text-4xl font-gotham font-bold rounded-[10px] border-2 border-[#E67119] ml-[168px] mb-16 mx-5 py-[10px] px-[20px] ${
+              selectedDay === null
+                ? "bg-[#E67119] text-white"
+                : "bg-[#121212] text-[#E67119]"
+            } button-transition`}
           >
             Todos
           </button>
-          {["SEG", "TER", "QUA", "QUI", "SEX"].map((day) => (
+          {["Segunda", "Terça", "Quarta", "Quinta", "Sexta"].map((day) => (
             <button
               key={day}
               onClick={() => setSelectedDay(day)}
-              className={`w-1/5 sm:w-1/12 m-2 p-2 rounded-[30px] ${
-                selectedDay === day ? "bg-[#FF7506]" : "bg-[#DCDFE5]"
-              } button-transition font-gotham font-bold`}
+              className={`text-4xl font-gotham font-bold rounded-[10px] border-2 border-[#E67119] mb-14 mx-5 py-[10px] px-[20px] ${
+                selectedDay === day
+                  ? "bg-[#E67119] text-white"
+                  : "bg-[#121212] text-[#E67119]"
+              } button-transition`}
             >
               {day}
             </button>
           ))}
         </div>
-        <div className="px-4 sm:px-6 lg:px-20">
-          <div className="overflow-x-auto rounded-[30px] w-[80%] mx-auto">
-            <table className="font-inter min-w-full divide-y divide-[#DCDFE5] w-full h-[224px] gap-[10px]">
-              <tbody className="bg-[#D7D7D7] divide-y divide-[#DCDFE5]">
-                {sortedEvents.map((event, index) => (
-                  <tr
-                    key={event.id}
-                    className={`${
-                      index % 2 === 0
-                        ? "bg-[#121212] text-[#D7D7D7]"
-                        : "bg-[#D7D7D7] text-black"
-                    }`}
-                  >
-                    <td className="px-2 py-4 [#D7D7D7]space-nowrap text-center relative">
-                      <div className="text-sm flex flex-col items-center pl-4">
-                        <img
-                          src={`/icons/${event.eventType}.png`}
-                          alt={formatEventType(event.eventType)}
-                          className={`h-8 w-8 ${
-                            index % 2 !== 0 ? "" : "invert"
-                          }`}
-                        />
-                        <span className="mt-2 ">
-                          {formatEventType(event.eventType)}
+        <div className="max-w-[1600px] overflow-x-auto mx-auto">
+          <table className="min-w-full border-separate border-spacing-2">
+            <tbody className="text-3xl text-center font-mono text-white bg-[#121212]">
+              {sortedEvents.map((event, index) => (
+                <tr key={event.id}>
+                  <td className="">
+                    <div className="relative flex items-center justify-center h-full">
+                      <div className="relative">
+                        <span className="absolute w-1 h-24 bg-[#E67119] -top-12" />
+                      </div>
+                      <div className="flex items-center justify-center h-full pl-5 py-2">
+                        <span className="inline-block w-6 h-6 bg-[#E67119] rounded-full translate-x-[-121%]" />
+                        <span className="pr-6">
+                          {new Intl.DateTimeFormat("pt-BR", {
+                            timeStyle: "short",
+                          }).format(new Date(event.schedule))}
                         </span>
                       </div>
-                      <span className="separator"></span>
-                    </td>
-                    <td className="px-2 py-4 [#D7D7D7]space-nowrap text-left relative">
-                      <div className="text-sm pl-4">{event.title}</div>
-                      {event.description && (
-                        <div className="text-sm mt-1">
-                          {event.description ?? ""}
-                        </div>
-                      )}
-                      <span className="separator"></span>
-                    </td>
-                    <td className="px-2 py-4 [#D7D7D7]space-nowrap text-center relative">
-                      <div className="text-sm font-bold pl-4">
-                        {new Intl.DateTimeFormat("pt-BR", {
-                          timeStyle: "short",
-                        }).format(new Date(event.schedule))}
-                      </div>
-                      <span className="separator"></span>
-                    </td>
-                    <td className="px-2 py-4 [#D7D7D7]space-nowrap text-center">
-                      <div className="text-sm font-bold pl-4">
-                        {event.location}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-2">
+                    {formatEventType(event.eventType)}
+                  </td>
+                  <td className="px-3 py-2">{event.title}</td>
+                  <td className="px-3 py-2">{event.location}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -206,10 +184,12 @@ export default function Schedule({
     presenters: Presenter[];
   })[];
 }) {
+  const transitionImage = "/images/transition.png";
+
   return (
-    <div className="min-h-screen w-full bg-cover bg-center flex flex-col items-center">
+    <div className="min-h-screen w-full flex flex-col">
       <EventTable events={events} />
-      <PrizeTable events={events} />
+      <img src={transitionImage} alt="vectors" className="w-full" />
     </div>
   );
 }
