@@ -58,7 +58,7 @@ const Home = ({
   return (
     <div className="w-full flex flex-col items-center">
       <NavBar sections={sections} />
-      <main className="min-h-screen flex flex-col items-stretch justify-between">
+      <main className="w-full min-h-screen flex flex-col items-stretch justify-between">
         <div className="max-w-[1600px] mx-auto" ref={coverRef}>
           <Cover />
         </div>
@@ -66,16 +66,14 @@ const Home = ({
           <Schedule events={events} />
         </div>
         <div ref={speakersRef}>
-          <SpeakerTable presenters={presenters} />
+          {/* <SpeakerTable presenters={presenters} /> */}
         </div>
         <div ref={sponsorsRef}>
-          <SponsorsSection sponsors={sponsors} />
+          {/* <SponsorsSection sponsors={sponsors} /> */}
         </div>
-        <div ref={faqRef}>
-          <FAQSection faqs={faqs} />
-        </div>
+        <div ref={faqRef}>{/* <FAQSection faqs={faqs} /> */}</div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
