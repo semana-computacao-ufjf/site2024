@@ -19,26 +19,32 @@ export default function NavBar({ sections }: NavBarProps) {
   };
 
   return (
-    <main className="w-full m-0 p-0">
+    <div className="w-full m-0 p-0">
       <section
         className="
         font-inter text-[#E67119]
-        flex flex-row items-center justify-center
-        px-0 py-0 h-[6.5em] md:h-auto w-full
+        flex items-center justify-center
+        h-[6.5em] lg:h-auto w-full
         fixed top-0 z-10
         bg-[#121212] border-b border-[#2E2E2E]
-"
+      "
       >
-        <div className="flex items-center w-full max-w-7xl justify-between md:justify-center">
-          <div className="flex items-center gap-4">
-            <img
-              src={`/images/${thisYearLogo}`}
-              alt="Logo"
-              className="max-h-20 lg:max-h-32 h-full"
+        <div className="flex items-center w-full max-w-7xl justify-between">
+          <div className="flex items-center lg:hidden">
+            <FaBars
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="cursor-pointer text-2xl ml-4"
             />
           </div>
-          <nav className="flex-grow px-4 relative">
-            <ul className="hidden md:flex flex-wrap gap-6 justify-center">
+          <div className="flex items-center justify-end w-full lg:justify-start">
+            <img
+              src={`/images/${thisYearLogo}`}
+              alt="2024 Logo"
+              className="max-h-20 lg:max-h-32 h-full mr-4 lg:mr-0"
+            />
+          </div>
+          <nav className="hidden lg:flex flex-grow px-4">
+            <ul className="flex gap-6 justify-center w-full">
               {sections.map((section, index) => (
                 <li key={index}>
                   <span
@@ -50,33 +56,27 @@ export default function NavBar({ sections }: NavBarProps) {
                 </li>
               ))}
             </ul>
-            <div className="md:hidden flex items-center justify-end">
-              <FaBars
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="cursor-pointer"
-              />
-            </div>
-            <div
-              className={`absolute top-full left-0 right-0 bg-[#181426] shadow-md rounded-md z-50 overflow-hidden transition-max-height duration-500 ease-in-out ${
-                menuOpen ? "max-h-screen" : "max-h-0"
-              }`}
-            >
-              <ul className="flex flex-col gap-2 mt-4 p-4">
-                {sections.map((section, index) => (
-                  <li key={index}>
-                    <span
-                      className="m-1 cursor-pointer"
-                      onClick={() => handleScroll(section.ref)}
-                    >
-                      {section.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </nav>
+          <div
+            className={`absolute top-full left-0 bg-[#2E2E2E] shadow-md rounded-md z-10 overflow-hidden transition-max-height duration-500 ease-in-out ${
+              menuOpen ? "max-h-screen" : "max-h-0"
+            }`}
+          >
+            <ul className="flex flex-col gap-2 mt-4 p-4">
+              {sections.map((section, index) => (
+                <li key={index}>
+                  <span
+                    className="m-1 cursor-pointer"
+                    onClick={() => handleScroll(section.ref)}
+                  >
+                    {section.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
