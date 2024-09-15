@@ -47,15 +47,15 @@ const EventTable = ({
   });
 
   return (
-    <div className="bg-cover bg-center bg-[#2C2B2B]">
-      <h1 className="font-gotham text-white text-7xl text-start font-bold ml-[168px] mt-28 mb-16">
+    <div className="w-full bg-cover bg-center bg-[#2C2B2B]">
+      <h1 className="font-gotham text-white text-3xl sm:text-7xl text-start font-bold sm:ml-[168px] ml-8 sm:mt-28 mt-12 sm:mb-16 mb-11">
         Programação
       </h1>
-      <div className="text-black w-full">
-        <div className="flex justify-start">
+      <div className="text-black w-full flex flex-wrap">
+        <div className="flex flex-wrap sm:flex-row sm:justify-start ml-6 sm:ml-0">
           <button
             onClick={() => setSelectedDay(null)}
-            className={`text-4xl font-gotham font-bold rounded-[10px] border-2 border-[#E67119] ml-[168px] mb-16 mx-5 py-[10px] px-[20px] ${
+            className={`text-xl sm:text-4xl font-gotham font-bold rounded-[10px] border-2 border-[#E67119] sm:ml-[168px] mb-5 sm:mb-16 mr-4 sm:mx-5 py-[5px] sm:py-[10px] px-[20px] ${
               selectedDay === null
                 ? "bg-[#E67119] text-white"
                 : "bg-[#121212] text-[#E67119]"
@@ -67,7 +67,7 @@ const EventTable = ({
             <button
               key={day}
               onClick={() => setSelectedDay(day)}
-              className={`text-4xl font-gotham font-bold rounded-[10px] border-2 border-[#E67119] mb-14 mx-5 py-[10px] px-[20px] ${
+              className={`text-xl sm:text-4xl font-gotham font-bold rounded-[10px] border-2 border-[#E67119] mb-5 sm:mb-16 mr-4 sm:mx-5 py-[5px] sm:py-[10px] px-[20px] ${
                 selectedDay === day
                   ? "bg-[#E67119] text-white"
                   : "bg-[#121212] text-[#E67119]"
@@ -77,18 +77,16 @@ const EventTable = ({
             </button>
           ))}
         </div>
-        <div className="max-w-[1600px] overflow-x-auto mx-auto">
+        <div className="max-w-[1600px] overflow-x-auto overflow-y-hidden mx-auto mt-8 sm:mt-0 pb-7 sm:pb-24">
           <table className="min-w-full border-separate border-spacing-2">
-            <tbody className="text-3xl text-center font-mono text-white bg-[#121212]">
+            <tbody className="text-xl sm:text-3xl text-center font-mono text-white bg-[#121212]">
               {sortedEvents.map((event, index) => (
                 <tr key={event.id}>
-                  <td className="">
-                    <div className="relative flex items-center justify-center h-full">
-                      <div className="relative">
-                        <span className="absolute w-1 h-24 bg-[#E67119] -top-12" />
-                      </div>
-                      <div className="flex items-center justify-center h-full pl-5 py-2">
-                        <span className="inline-block w-6 h-6 bg-[#E67119] rounded-full translate-x-[-121%]" />
+                  <td className="relative">
+                    <div className="flex items-center justify-start h-full">
+                      <span className="absolute w-1 bg-[#E67119] h-[120%] left-0" />
+                      <span className="inline-block w-6 h-6 bg-[#E67119] rounded-full left-0 -translate-x-[9px]" />
+                      <div className="flex items-center justify-center pl-5 py-2 ml-1">
                         <span className="pr-6">
                           {new Intl.DateTimeFormat("pt-BR", {
                             timeStyle: "short",
@@ -189,7 +187,12 @@ export default function Schedule({
   return (
     <div className="min-h-screen w-full flex flex-col">
       <EventTable events={events} />
-      <img src={transitionImage} alt="vectors" className="w-full" />
+      {/* <img
+        src={transitionImage}
+        alt="vectors"
+        className="w-full overflow-hidden"
+      /> */}
+      <div className="h-72 w-full bg-cover bg-no-repeat bg-[url('/images/transition.png')]" />
     </div>
   );
 }
