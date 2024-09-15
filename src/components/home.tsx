@@ -69,7 +69,7 @@ const Home = ({
           <SpeakerTable presenters={presenters} />
         </div>
         <div ref={sponsorsRef}>
-          {/* <SponsorsSection sponsors={sponsors} /> */}
+          <SponsorsSection sponsors={sponsors} />
         </div>
         <div ref={faqRef}>{/* <FAQSection faqs={faqs} /> */}</div>
       </main>
