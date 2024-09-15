@@ -66,7 +66,7 @@ const Home = ({
           <Schedule events={events} />
         </div>
         <div ref={speakersRef}>
-          {/* <SpeakerTable presenters={presenters} /> */}
+          <SpeakerTable presenters={presenters} />
         </div>
         <div ref={sponsorsRef}>
           {/* <SponsorsSection sponsors={sponsors} /> */}
