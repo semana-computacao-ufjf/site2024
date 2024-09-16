@@ -75,7 +75,7 @@ const Home = ({
           <FAQSection faqs={faqs} />
         </div>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
