@@ -10,14 +10,14 @@ export default function FaqModel({ faq }: { faq: Faq }) {
   return (
     <div
       className={
-        "font-inter text-[#D7D7D7] text-3xl flex flex-col border-b-2 border-[#E67119] max-w-[1600px] mx-auto"
+        "font-inter text-[#D7D7D7] text-3xl flex flex-col border-b-2 border-[#E67119] max-w-[85%] sm:max-w-[60%] mt-6 sm:mt-0 mx-auto"
       }
     >
       <div
-        className="flex justify-between cursor-pointer lg:p-12 md:p-6 p-4"
+        className="flex justify-between cursor-pointer sm:mt-7 sm:p-1"
         onClick={() => setIsQuestionOpen(!isQuestionOpen)}
       >
-        <h1 className="lg:text-2xl md:text-xl text-base">{faq.question}</h1>
+        <h1 className="md:text-xl text-base pb-4 sm:pb-0">{faq.question}</h1>
         <button className="lg:text-5xl">
           {isQuestionOpen ? (
             <IoMdArrowDropup />

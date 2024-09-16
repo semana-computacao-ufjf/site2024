@@ -43,8 +43,8 @@ const Home = ({
     { name: "Programação", ref: scheduleRef },
     { name: "Palestrantes", ref: speakersRef },
     { name: "Patrocinadores", ref: sponsorsRef },
-    { name: "Contato", ref: contactRef },
     { name: "FAQ", ref: faqRef },
+    { name: "Contato", ref: contactRef },
     // { name: "Apresentação", ref: presentationRef },
   ];
 
@@ -71,7 +71,9 @@ const Home = ({
         <div ref={sponsorsRef}>
           <SponsorsSection sponsors={sponsors} />
         </div>
-        <div ref={faqRef}>{/* <FAQSection faqs={faqs} /> */}</div>
+        <div ref={faqRef}>
+          <FAQSection faqs={faqs} />
+        </div>
       </main>
       {/* <Footer /> */}
     </div>
