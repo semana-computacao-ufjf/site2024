@@ -17,7 +17,9 @@ export default function FaqModel({ faq }: { faq: Faq }) {
         className="flex justify-between cursor-pointer sm:mt-7 sm:p-1"
         onClick={() => setIsQuestionOpen(!isQuestionOpen)}
       >
-        <h1 className="md:text-xl text-base pb-4 sm:pb-0">{faq.question}</h1>
+        <h1 className="text-xl sm:text-2xl pb-4 sm:pb-0 sm:ml-3">
+          {faq.question}
+        </h1>
         <button className="lg:text-5xl">
           {isQuestionOpen ? (
             <IoMdArrowDropup />
@@ -26,7 +28,6 @@ export default function FaqModel({ faq }: { faq: Faq }) {
           )}
         </button>
       </div>
-
       <span
         className={`lg:text-2xl md:text-xl text-base overflow-x-auto lg:px-16 md:px-12 px-8 duration-300 transition-max-height  ${
           isQuestionOpen ? "max-h-screen lg:mb-16 md:mb-6 mb-4 " : "max-h-0"

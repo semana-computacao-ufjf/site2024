@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Cover() {
   return (
     <>
-      <div className="flex flex-col sm:grid sm:grid-cols-4 items-center p-4 mt-40 gap-4">
+      <div className="flex flex-col sm:grid sm:grid-cols-4 items-center p-4 mt-28 sm:mt-40 gap-4">
         <div className="flex flex-row items-center sm:flex-col col-start-2 justify-center sm:col-span-1 sm:max-w-64 sm:ml-28">
           <Image
             width={250}

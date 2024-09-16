@@ -57,7 +57,7 @@ export default function SpeakerGrid({
             className="grid grid-cols-2 items-center w-11/12 sm:w-full mx-auto sm:mx-0 bg-[#2C2B2B] rounded-[30px] p-6"
           >
             <div className="flex flex-col items-center space-y-2">
-              <div className="w-20 h-20 sm:w-32 sm:h-32 overflow-hidden rounded-full">
+              <div className="w-20 h-20 sm:w-32 sm:h-32 overflow-hidden rounded-full mb-2 sm:mb-3">
                 <NextImage
                   src={item.imageUrl ?? "/images/unknown.jpg"}
                   alt={item.name}
@@ -66,7 +66,7 @@ export default function SpeakerGrid({
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="text-xl sm:text-2xl text-center flex justify-wrap items-center space-y-1 bg-[#E67119] rounded-[8px] m-12 p-2">
+              <div className="text-xl sm:text-2xl text-center flex justify-wrap items-center space-y-1 bg-[#E67119] rounded-[8px] sm:py-3 m-12 p-2">
                 <div>
                   {item.events.map((event, index) => (
                     <span key={index}>
