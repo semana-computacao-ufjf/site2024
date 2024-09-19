@@ -12,10 +12,16 @@ const App = async () => {
       presenters: true,
       prizes: true,
     },
+    orderBy: {
+      schedule: "asc",
+    },
   });
   const presenters = await prisma.presenter.findMany({
     include: {
       events: true,
+    },
+    orderBy: {
+      name: "desc",
     },
   });
   const faqs = await prisma.faq.findMany();
