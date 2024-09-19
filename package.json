@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8000",
     "vercel-build": "pnpm install --no-frozen-lockfile && next build",
     "lint": "next lint"
   },
