@@ -1,18 +1,18 @@
-"use client";
 import NextImage from "next/image";
 import { useState, useEffect } from "react";
 import { Presenter, Event } from "@prisma/client";
 import formatEventType from "@/util/formatEventType";
+import EventsModal from "./eventsModal";
 
-export default function SpeakerGrid({
-  presenters,
-}: {
-  presenters: (Presenter & {
-    events: Event[];
-  })[];
-}) {
+interface SpeakerGridProps {
+  presenters: (Presenter & { events: Event[] })[];
+}
+
+export default function SpeakerGrid({ presenters }: SpeakerGridProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [selectedEvents, setSelectedEvents] = useState<Event[] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const updateItemsPerPage = () => {
@@ -45,11 +45,18 @@ export default function SpeakerGrid({
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
   };
 
+  const handleEventClick = (events: Event[]) => {
+    setSelectedEvents(events);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedEvents(null);
+  };
+
   return (
     <div className="overflow-x-auto">
-      <h1 className="font-gotham text-white text-3xl sm:text-7xl text-center font-bold mt-0 sm:mt-24 mb-8 sm:mb-16">
-        Palestrantes
-      </h1>
       <div className="max-w-[1600px] grid grid-cols-1 sm:grid-cols-2 mx-auto gap-8">
         {currentItems.map((item, index) => (
           <div
@@ -66,7 +73,10 @@ export default function SpeakerGrid({
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="text-xl sm:text-2xl text-center flex justify-wrap items-center space-y-1 bg-[#E67119] rounded-[8px] sm:py-3 m-12 p-2">
+              <div
+                className="text-xl sm:text-2xl text-center flex justify-wrap items-center space-y-1 bg-[#E67119] rounded-[8px] sm:py-3 m-12 p-2 cursor-pointer"
+                onClick={() => handleEventClick(item.events)}
+              >
                 <div>
                   {item.events.map((event, index) => (
                     <span key={index}>
@@ -75,21 +85,18 @@ export default function SpeakerGrid({
                     </span>
                   ))}
                 </div>
-                <span>
+                <span className="grid place-items-center rounded-full ml-2 w-9 h-9 sm:w-12 sm:h-12">
                   <NextImage
-                    src="/images/right-arrow.svg"
+                    src="/icons/info.png"
                     alt="Detalhes"
-                    width={30}
-                    height={30}
-                    className="ml-4 pb-1 pr-3"
-                    style={{
-                      maxWidth: "100%",
-                      height: "auto",
-                    }}
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full invert"
                   />
                 </span>
               </div>
             </div>
+
             <div className="space-y-2 text-start sm:text-left">
               <p className="text-xl sm:text-3xl font-bold sm:mt-6">
                 {item.name}
@@ -151,6 +158,11 @@ export default function SpeakerGrid({
           />
         </button>
       </div>
+      <EventsModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        events={selectedEvents}
+      />
     </div>
   );
 }
