@@ -4,6 +4,7 @@ import { useState } from "react";
 import { getWeekday } from "@/util/getWeekday";
 import { Event, Prize, Presenter, eventTypes } from "@prisma/client";
 import formatEventType from "@/util/formatEventType";
+import EventsModal from "../eventsModal";
 
 const EventTable = ({
   events,
@@ -14,6 +15,18 @@ const EventTable = ({
   })[];
 }) => {
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null); // Armazena o evento selecionado
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleEventClick = (event: Event) => {
+    setSelectedEvent(event);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedEvent(null);
+  };
 
   const eventsWithWeekday = events.map((event) => ({
     ...event,
@@ -80,7 +93,21 @@ const EventTable = ({
                   <td className="px-6 py-2">
                     {formatEventType(event.eventType)}
                   </td>
-                  <td className="px-3 py-2">{event.title}</td>
+                  <td className="px-3 py-2">
+                    <div className="grid grid-cols-[1fr_auto] items-center gap-4">
+                      <span>{event.title}</span>
+                      <button
+                        onClick={() => handleEventClick(event)}
+                        className="bg-[#E67119] text-white rounded-full h-10 w-10 flex items-center justify-center overflow-hidden"
+                      >
+                        <img
+                          src={"/icons/info.png"}
+                          className="h-10 w-10 object-contain invert"
+                          alt="info"
+                        />
+                      </button>
+                    </div>
+                  </td>
                   <td className="px-3 py-2">{event.location}</td>
                 </tr>
               ))}
@@ -88,6 +115,11 @@ const EventTable = ({
           </table>
         </div>
       </div>
+      <EventsModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        events={selectedEvent ? [selectedEvent] : null}
+      />
     </div>
   );
 };
