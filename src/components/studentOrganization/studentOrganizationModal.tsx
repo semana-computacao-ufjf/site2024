@@ -52,7 +52,7 @@ const StudentOrganizationModal = ({
                 }
               }}
             >
-              <div className="text-xl text-center w-fit items-center bg-[#E67119] rounded-[8px] sm:p-2 sm:py-1">
+              <div className="text-xl text-center w-fit items-center bg-[#E67119] rounded-[8px] p-2 py-1">
                 Saiba mais
               </div>
             </div>

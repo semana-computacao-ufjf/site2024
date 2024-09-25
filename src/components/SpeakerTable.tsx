@@ -57,6 +57,9 @@ export default function SpeakerGrid({ presenters }: SpeakerGridProps) {
 
   return (
     <div className="overflow-x-auto">
+      <h1 className="font-gotham text-white text-3xl sm:text-7xl text-center font-bold mt-2 sm:mt-24 mb-8 sm:mb-16">
+        Palestrantes
+      </h1>
       <div className="max-w-[1600px] grid grid-cols-1 sm:grid-cols-2 mx-auto gap-8">
         {currentItems.map((item, index) => (
           <div

@@ -24,7 +24,7 @@ export default function NavBar({ sections }: NavBarProps) {
         className="
         font-inter text-[#E67119]
         flex items-center justify-center
-        h-[6.5em] lg:h-auto w-full
+        h-[6.5em] lg:h-[8em] w-full
         fixed top-0 z-10
         bg-[#121212] border-b border-[#2E2E2E]
       "

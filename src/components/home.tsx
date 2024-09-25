@@ -5,6 +5,7 @@ import NavBar from "@/components/navbar footer/navBar";
 import Cover from "@/components/cover/cover";
 import Presentation from "./presentation/page";
 import SponsorsSection from "@/components/sponsors/sponsors-section";
+import StudentOrganizationSection from "./studentOrganization/studentOrganizationSection";
 import Schedule from "./schedule/schedule";
 import SpeakerTable from "@/components/SpeakerTable";
 import CodeSection from "@/components/code-tech/CodeSection";
@@ -20,7 +21,6 @@ import {
   Sponsor,
   StudentOrganization,
 } from "@prisma/client";
-import StudentOrganizationSection from "./studentOrganization/studentOrganizationSection";
 
 const Home = ({
   sponsors,
@@ -71,29 +71,32 @@ const Home = ({
     <div className="w-full flex flex-col items-center">
       <NavBar sections={sections} />
       <main className="w-full min-h-screen flex flex-col items-stretch justify-between">
-        <div className="max-w-[1600px] mx-auto" ref={coverRef}>
+        <div
+          className="max-w-[1600px] mx-auto scroll-mt-[6.5em] lg:scroll-mt-[8em]"
+          ref={coverRef}
+        >
           <Cover />
         </div>
-        <div ref={scheduleRef}>
+        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]" ref={scheduleRef}>
           <Schedule events={events} />
         </div>
-        <div ref={speakersRef}>
+        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]" ref={speakersRef}>
           <SpeakerTable presenters={presenters} />
         </div>
-        <div ref={sponsorsRef}>
+        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]" ref={sponsorsRef}>
           <SponsorsSection sponsors={sponsors} />
         </div>
-        <div
-        // ref={studentOrganizationsRef}
-        >
+        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]">
           <StudentOrganizationSection
             studentOrganizations={studentOrganizations}
           />
         </div>
-        <div ref={faqRef}>
+        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]" ref={faqRef}>
           <FAQSection faqs={faqs} />
         </div>
       </main>
+
+      <div ref={contactRef} />
       <Footer />
     </div>
   );
