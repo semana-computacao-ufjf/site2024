@@ -12,15 +12,25 @@ import CardTechnology from "@/components/code-tech/CardTechnology";
 import ContactSection from "@/components/contact/contact-section";
 import FAQSection from "@/components/faq/faq-section";
 import Footer from "@/components/navbar footer/Footer";
-import { Event, Faq, Presenter, Prize, Sponsor } from "@prisma/client";
+import {
+  Event,
+  Faq,
+  Presenter,
+  Prize,
+  Sponsor,
+  StudentOrganization,
+} from "@prisma/client";
+import StudentOrganizationSection from "./studentOrganization/studentOrganizationSection";
 
 const Home = ({
   sponsors,
+  studentOrganizations,
   events,
   presenters,
   faqs,
 }: {
   sponsors: Sponsor[];
+  studentOrganizations: StudentOrganization[];
   events: (Event & {
     prizes: Prize[];
     presenters: Presenter[];
@@ -31,12 +41,13 @@ const Home = ({
   faqs: Faq[];
 }) => {
   const coverRef = useRef<HTMLDivElement>(null);
-  const presentationRef = useRef<HTMLDivElement>(null);
   const sponsorsRef = useRef<HTMLDivElement>(null);
   const scheduleRef = useRef<HTMLDivElement>(null);
   const speakersRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
+  // const studentOrganizationsRef = useRef<HTMLDivElement>(null);
+  // const presentationRef = useRef<HTMLDivElement>(null);
 
   const sections = [
     { name: "Início", ref: coverRef },
@@ -45,6 +56,7 @@ const Home = ({
     { name: "Patrocinadores", ref: sponsorsRef },
     { name: "FAQ", ref: faqRef },
     { name: "Contato", ref: contactRef },
+    // { name: "Patrocinadores", ref: studentOrganizationsRef },
     // { name: "Apresentação", ref: presentationRef },
   ];
 
@@ -70,6 +82,13 @@ const Home = ({
         </div>
         <div ref={sponsorsRef}>
           <SponsorsSection sponsors={sponsors} />
+        </div>
+        <div
+        // ref={studentOrganizationsRef}
+        >
+          <StudentOrganizationSection
+            studentOrganizations={studentOrganizations}
+          />
         </div>
         <div ref={faqRef}>
           <FAQSection faqs={faqs} />
