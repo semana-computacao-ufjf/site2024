@@ -29,12 +29,11 @@ export default function Cover() {
             Semana da computação
           </h1>
           <h2 className="w-4/5 text-start mx-auto sm:text-3xl sm:text-left sm:w-full sm:mx-12 my-2 sm:my-12">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident
+            A Semana da Computação é um evento anual organizado pelo
+            Departamento de Ciência da Computação da Universidade Federal de
+            Juiz de Fora. Em sua 26ª edição, o evento abarca a temática de
+            dados, promovendo palestras, minicursos, oficinas e competições de
+            programação.
           </h2>
           <div className="flex justify-center sm:grid sm:col-span-3 sm:justify-normal">
             <button
@@ -63,17 +62,17 @@ const Cards = () => {
     {
       title: "Público",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "Voltado para estudantes, profissionais e entusiastas da área de computação, o evento proporciona um espaço para aprendizado, networking e troca de experiências entre os participantes.",
     },
     {
       title: "Cursos",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "Serão oferecidos diversos minicursos e oficinas durante a Semana da Computação, abordando temas relevantes na área de dados e tecnologia. Os participantes terão a oportunidade de aprofundar conhecimentos e desenvolver novas habilidades práticas.",
     },
     {
       title: "Palestras",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+        "A programação contará com palestras que compartilharão insights e tendências sobre dados e tecnologia. Este é um momento ideal para se inspirar e expandir a visão sobre a área.",
     },
   ];
 
