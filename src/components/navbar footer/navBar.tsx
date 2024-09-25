@@ -1,7 +1,7 @@
 "use client";
 
 import { thisYearLogo } from "@/util/logos";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaBars } from "react-icons/fa";
 
 interface NavBarProps {
@@ -13,10 +13,30 @@ interface NavBarProps {
 
 export default function NavBar({ sections }: NavBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <div className="w-full m-0 p-0">
@@ -58,6 +78,7 @@ export default function NavBar({ sections }: NavBarProps) {
             </ul>
           </nav>
           <div
+            ref={menuRef}
             className={`absolute top-full left-0 bg-[#2E2E2E] shadow-md rounded-md z-10 overflow-hidden transition-max-height duration-500 ease-in-out ${
               menuOpen ? "max-h-screen" : "max-h-0"
             }`}
