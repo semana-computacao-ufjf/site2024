@@ -80,8 +80,9 @@ model Event {
   title       String     @unique() @db.Text
   description String?    @db.Text
   eventType   eventTypes @map("event_type")
-  location    String     @db.Text
-  schedule    DateTime
+  location    String?    @db.Text
+  schedule    DateTime?
+  endTime     DateTime?  @map("end_time")
 
   presenters Presenter[]
   prizes     Prize[]
