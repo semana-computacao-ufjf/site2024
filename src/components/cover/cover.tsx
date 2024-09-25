@@ -37,7 +37,15 @@ export default function Cover() {
             pariatur. Excepteur sint occaecat cupidatat non proident
           </h2>
           <div className="flex justify-center sm:grid sm:col-span-3 sm:justify-normal">
-            <button className="bg-[#E67119] w-4/5 sm:w-full font-bold text-white text-xl sm:text-5xl text-center rounded-[13px] border-2 border-[#E67119] hover:bg-transparent hover:text-[#E67119] button-transition mx-auto sm:ml-12 sm:mr-2 mt-5 mb-6 sm:my-0 p-2 sm:p-3">
+            <button
+              className="bg-[#E67119] w-4/5 sm:w-full font-bold text-white text-xl sm:text-5xl text-center rounded-[13px] border-2 border-[#E67119] hover:bg-transparent hover:text-[#E67119] button-transition mx-auto sm:ml-12 sm:mr-2 mt-5 mb-6 sm:my-0 p-2 sm:p-3"
+              onClick={() => {
+                window.open(
+                  "https://oauth.integra.nrc.ice.ufjf.br/login",
+                  "_blank"
+                );
+              }}
+            >
               Inscrever
             </button>
           </div>
