@@ -14,7 +14,7 @@ export default function Footer() {
           <a href="tel:+553221023327" className="text-3xl">
             <PhoneIcon style={{ color: "white", fontSize: "45px" }} />
           </a>
-          <span>(32) 2102-3327</span>
+          <span className="text-white">(32) 2102-3327</span>
         </div>
 
         <div className="flex items-center space-x-4 pb-3 sm:pb-0">
@@ -24,7 +24,7 @@ export default function Footer() {
           >
             <EmailIcon style={{ color: "white", fontSize: "45px" }} />
           </a>
-          <span>semana-da-computacao@ice.ufjf.br</span>
+          <span className="text-white">semana-da-computacao@ice.ufjf.br</span>
         </div>
 
         <div className="flex items-center space-x-4 pb-0 sm:pb-0">
@@ -36,7 +36,7 @@ export default function Footer() {
           >
             <InstagramIcon style={{ color: "white", fontSize: "45px" }} />
           </a>
-          <span>@semanadacomputacaoufjf</span>
+          <span className="text-white">@semanadacomputacaoufjf</span>
         </div>
       </div>
     </footer>

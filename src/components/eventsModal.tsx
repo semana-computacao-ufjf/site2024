@@ -33,19 +33,19 @@ const EventsModal = ({ isOpen, onClose, events }: EventsModalProps) => {
           </button>
         </div>
         <div className="font-gotham flex flex-col items-center">
-          <h2 className="text-3xl font-bold mb-4">Eventos</h2>
+          <h2 className="text-3xl font-bold mb-4 text-white">Eventos</h2>
           <ul className="space-y-4">
             {events.map((event, index) => (
               <li
                 key={index}
                 className="bg-cover bg-no-repeat bg-[url('/images/dotsbg.png')] p-4 rounded-lg w-full"
               >
-                <h3 className="text-regular sm:text-xl font-bold mb-2 border-b-2 border-[#E67119]">
+                <h3 className="text-regular sm:text-xl font-bold mb-2 border-b-2 border-[#E67119] text-white">
                   {event.title}
                 </h3>
                 <h3 className="text-regular sm:text-xl font-bold mb-2">
-                  <div>{event.eventType}</div>
-                  <div>
+                  <div className="text-white">{event.eventType}</div>
+                  <div className="text-white">
                     {event.schedule ? (
                       <>
                         {event.schedule.toLocaleDateString()} de{" "}
@@ -64,7 +64,7 @@ const EventsModal = ({ isOpen, onClose, events }: EventsModalProps) => {
                     )}
                   </div>
                 </h3>
-                <p className="text-base">{event.description}</p>{" "}
+                <p className="text-base text-white">{event.description}</p>
               </li>
             ))}
           </ul>

@@ -82,7 +82,7 @@ export default function SpeakerGrid({ presenters }: SpeakerGridProps) {
               >
                 <div>
                   {item.events.map((event, index) => (
-                    <span key={index}>
+                    <span className={"text-white"} key={index}>
                       {formatEventType(event.eventType)}
                       {index < item.events.length - 1 && ", "}
                     </span>
@@ -101,10 +101,10 @@ export default function SpeakerGrid({ presenters }: SpeakerGridProps) {
             </div>
 
             <div className="space-y-2 text-start sm:text-left">
-              <p className="text-xl sm:text-3xl font-bold sm:mt-6">
+              <p className="text-xl sm:text-3xl font-bold sm:mt-6 text-white">
                 {item.name}
               </p>
-              <p className="text-sm font-normal sm:text-2xl max-h-36 overflow-y-auto sm:max-h-56 sm:overflow-y-auto">
+              <p className="text-white text-sm font-normal sm:text-2xl max-h-36 overflow-y-auto sm:max-h-56 sm:overflow-y-auto">
                 {item.description ?? ""}
               </p>
             </div>
@@ -121,7 +121,7 @@ export default function SpeakerGrid({ presenters }: SpeakerGridProps) {
         currentPage === 1
           ? "bg-[#202020] border-2 border-[#E67119]"
           : "bg-[#E67119] text-white"
-      } 
+      }
       disabled:cursor-not-allowed`}
         >
           <NextImage
@@ -145,7 +145,7 @@ export default function SpeakerGrid({ presenters }: SpeakerGridProps) {
         currentPage === totalPages
           ? "bg-[#202020] border-2 border-[#E67119]"
           : "bg-[#E67119] text-white"
-      } 
+      }
       disabled:cursor-not-allowed`}
         >
           <NextImage
