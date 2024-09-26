@@ -1,12 +1,15 @@
 const getWeekday = (date: Date) => {
-    const weekdays = [
-      "Segunda",
-      "Terça",
-      "Quarta",
-      "Quinta",
-      "Sexta",
-    ];
-    return weekdays[date.getDay()];
-  };
+  const weekdays = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado",
+  ];
 
-export {getWeekday};
+  return weekdays[date.getDay()];
+};
+
+export { getWeekday };
