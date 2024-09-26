@@ -54,7 +54,7 @@ const StudentOrganizationModal = ({
                 }
               }}
             >
-              <div className="text-xl text-center w-fit items-center bg-[#E67119] rounded-[8px] p-2 py-1">
+              <div className="text-xl text-center w-fit items-center bg-[#E67119] rounded-[8px] p-2 py-1 text-white">
                 Saiba mais
               </div>
             </div>
