@@ -21,7 +21,7 @@ export default function StudentOrganizationModel({
           src={organization.imageUrl ?? ""}
           alt={organization.name}
           title={organization.name}
-          className="rounded-full object-cover sm:max-h-[150px] sm:max-w-[150px] max-w-[75px] max-h-[75px]"
+          className="object-cover sm:max-h-[150px] sm:max-w-[150px] max-w-[75px] max-h-[75px]"
         />
       </div>
 
