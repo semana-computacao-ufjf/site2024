@@ -38,14 +38,14 @@ export default function Cover() {
           <div className="flex justify-center sm:grid sm:col-span-3 sm:justify-normal">
             <button
               className="bg-[#E67119] w-4/5 sm:w-full font-bold text-white text-xl sm:text-5xl text-center rounded-[13px] border-2 border-[#E67119] hover:bg-transparent hover:text-[#E67119] button-transition mx-auto sm:ml-12 sm:mr-2 mt-5 mb-6 sm:my-0 p-2 sm:p-3"
-              onClick={() => {
-                window.open(
-                  "https://oauth.integra.nrc.ice.ufjf.br/login",
-                  "_blank"
-                );
-              }}
+              // onClick={() => {
+              //   window.open(
+              //     "https://oauth.integra.nrc.ice.ufjf.br/login",
+              //     "_blank"
+              //   );
+              // }}
             >
-              Inscrever
+              Inscrições em Breve
             </button>
           </div>
         </div>
@@ -86,7 +86,7 @@ const Cards = () => {
       {cardsData.map((card, index) => (
         <div
           key={index}
-          className="bg-[#2C2B2B] w-full sm:w-1/3 p-1 sm:p-5 rounded-[20px] overflow-hidden text-start"
+          className="bg-[#2C2B2B] w-full sm:h-[400px] sm:w-1/3 p-1 sm:p-5 rounded-[20px] overflow-hidden text-start"
         >
           <img
             src={vector}
