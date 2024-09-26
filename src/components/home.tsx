@@ -3,14 +3,10 @@
 import { useRef } from "react";
 import NavBar from "@/components/navbar footer/navBar";
 import Cover from "@/components/cover/cover";
-import Presentation from "./presentation/page";
 import SponsorsSection from "@/components/sponsors/sponsors-section";
 import StudentOrganizationSection from "./studentOrganization/studentOrganizationSection";
 import Schedule from "./schedule/schedule";
 import SpeakerTable from "@/components/SpeakerTable";
-import CodeSection from "@/components/code-tech/CodeSection";
-import CardTechnology from "@/components/code-tech/CardTechnology";
-import ContactSection from "@/components/contact/contact-section";
 import FAQSection from "@/components/faq/faq-section";
 import Footer from "@/components/navbar footer/Footer";
 import {
@@ -46,8 +42,6 @@ const Home = ({
   const speakersRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
-  // const studentOrganizationsRef = useRef<HTMLDivElement>(null);
-  // const presentationRef = useRef<HTMLDivElement>(null);
 
   const sections = [
     { name: "Início", ref: coverRef },
@@ -56,15 +50,6 @@ const Home = ({
     { name: "Palestrantes", ref: speakersRef },
     { name: "FAQ", ref: faqRef },
     { name: "Contato", ref: contactRef },
-    // { name: "Patrocinadores", ref: studentOrganizationsRef },
-    // { name: "Apresentação", ref: presentationRef },
-  ];
-
-  const presentationImages = [
-    "/images/exampleImages/20231025_140937-1-1024x768.jpg",
-    "/images/exampleImages/a68cc476-12f6-4b16-9047-762f860abec1.jpeg",
-    "/images/exampleImages/Porte-dinmica-4.jpg",
-    "/images/exampleImages/Figura-5-Noite-de-jogos-na-Semana-da-ComputacComputacComputacao-da-UFJF-em-2017.png",
   ];
 
   return (

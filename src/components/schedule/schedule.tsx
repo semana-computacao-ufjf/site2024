@@ -135,70 +135,6 @@ const EventTable = ({
   );
 };
 
-const PrizeTable = ({
-  events,
-}: {
-  events: (Event & {
-    prizes: Prize[];
-    presenters: Presenter[];
-  })[];
-}) => {
-  const eventsWithPrizes = events.filter((event) => event.prizes.length > 0);
-  let mostPrizes = 0;
-
-  for (const event of eventsWithPrizes) {
-    if (event.prizes.length > mostPrizes) mostPrizes = event.prizes.length;
-  }
-
-  return (
-    <>
-      <h2 className="font-gotham text-white text-[24px] sm:text-[36px] font-normal text-center mt-10">
-        Premiações
-      </h2>
-      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 mt-5  mb-40">
-        {eventsWithPrizes.map((event, index) => {
-          return (
-            <div key={index}>
-              <div
-                className={`grid grid-cols-4 gap-4 mb-4`}
-                style={{
-                  gridTemplateColumns: `repeat(${
-                    mostPrizes + 1
-                  }, minmax(0, 1fr))`,
-                }}
-              >
-                <div />
-                {event.prizes.map((value, index) => {
-                  return (
-                    <div
-                      className=" text-center text-[#FF7506] p-4"
-                      key={index}
-                    >
-                      {value.position ?? "Vencedor"}
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div
-                key={index}
-                className="font-inter font-bold grid grid-cols-4 gap-4 mb-4 bg-[#121212] text-[#D7D7D7] rounded-[10px] shadow-md p-4"
-              >
-                <div className="text-left">{event.title}</div>
-                {event.prizes.map((prize, index) => (
-                  <div key={index}>
-                    <div className="text-center">{prize.prize}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </>
-  );
-};
-
 export default function Schedule({
   events,
 }: {
@@ -212,11 +148,6 @@ export default function Schedule({
   return (
     <div className="min-h-screen w-full flex flex-col">
       <EventTable events={events} />
-      {/* <img
-        src={transitionImage}
-        alt="vectors"
-        className="w-full overflow-hidden"
-      /> */}
       <div className="h-72 w-full bg-cover bg-no-repeat bg-[url('/images/transition.png')]" />
     </div>
   );

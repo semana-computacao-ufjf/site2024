@@ -6,12 +6,6 @@ export default function FAQSection({ faqs }: { faqs: Faq[] }) {
   const rightCorner = "/images/right-corner.png";
   return (
     <div className="relative overflow-hidden">
-      <img
-        src={leftCorner}
-        alt="Left Corner"
-        className="absolute bottom-0 left-0 translate-y-[-25%] translate-x-[-25%] -z-5"
-      />
-
       <div className="">
         <h1 className="font-gotham text-white text-3xl sm:text-7xl text-center font-bold mx-auto mb-8 sm:mb-12 pt-16 sm:pt-28 relative">
           Perguntas Frequentes

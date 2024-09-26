@@ -1,9 +1,7 @@
 "use client";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export default function Footer() {
   return (
