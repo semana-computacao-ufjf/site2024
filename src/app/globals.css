@@ -45,7 +45,7 @@ body {
 }
 
 .button-transition:hover {
-  transform: scale(1.2); 
+  transform: scale(1.1); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
 }
 
@@ -150,5 +150,5 @@ html, body {
 /* para Firefox e Zen*/
 html {
   scrollbar-width: thin;
-  scrollbar-color: #5e5e5e #2c2c2c;
+  scrollbar-color: #686868 #424242;
 }
