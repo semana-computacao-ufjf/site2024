@@ -51,9 +51,9 @@ const Home = ({
 
   const sections = [
     { name: "Início", ref: coverRef },
+    { name: "Patrocinadores", ref: sponsorsRef },
     { name: "Programação", ref: scheduleRef },
     { name: "Palestrantes", ref: speakersRef },
-    { name: "Patrocinadores", ref: sponsorsRef },
     { name: "FAQ", ref: faqRef },
     { name: "Contato", ref: contactRef },
     // { name: "Patrocinadores", ref: studentOrganizationsRef },
@@ -72,26 +72,26 @@ const Home = ({
       <NavBar sections={sections} />
       <main className="w-full min-h-screen flex flex-col items-stretch justify-between">
         <div
-          className="max-w-[1600px] mx-auto scroll-mt-[6.5em] lg:scroll-mt-[8em]"
+          className="max-w-[1600px] mx-auto scroll-mt-[6.5em]"
           ref={coverRef}
         >
           <Cover />
         </div>
-        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]" ref={scheduleRef}>
-          <Schedule events={events} />
-        </div>
-        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]" ref={speakersRef}>
-          <SpeakerTable presenters={presenters} />
-        </div>
-        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]" ref={sponsorsRef}>
+        <div className="scroll-mt-[6.5em]" ref={sponsorsRef}>
           <SponsorsSection sponsors={sponsors} />
         </div>
-        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]">
+        <div className="scroll-mt-[6.5em]" ref={scheduleRef}>
+          <Schedule events={events} />
+        </div>
+        <div className="scroll-mt-[6.5em]" ref={speakersRef}>
+          <SpeakerTable presenters={presenters} />
+        </div>
+        <div className="scroll-mt-[6.5em]">
           <StudentOrganizationSection
             studentOrganizations={studentOrganizations}
           />
         </div>
-        <div className="scroll-mt-[6.5em] lg:scroll-mt-[8em]" ref={faqRef}>
+        <div className="scroll-mt-[6.5em]" ref={faqRef}>
           <FAQSection faqs={faqs} />
         </div>
       </main>
