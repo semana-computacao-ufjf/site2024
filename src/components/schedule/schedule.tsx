@@ -15,12 +15,14 @@ const EventTable = ({
   })[];
 }) => {
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null); // Armazena o evento selecionado
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleEventClick = (event: Event) => {
-    setSelectedEvent(event);
-    setIsModalOpen(true);
+    if (event.schedule) {
+      setSelectedEvent(event);
+      setIsModalOpen(true);
+    }
   };
 
   const handleCloseModal = () => {
@@ -30,7 +32,9 @@ const EventTable = ({
 
   const eventsWithWeekday = events.map((event) => ({
     ...event,
-    weekday: getWeekday(new Date(event.schedule)),
+    weekday: event.schedule
+      ? getWeekday(new Date(event.schedule))
+      : "Data não disponível",
   }));
 
   const filteredEvents = selectedDay
@@ -38,14 +42,20 @@ const EventTable = ({
     : eventsWithWeekday;
 
   const sortedEvents = filteredEvents.sort((a, b) => {
-    return new Date(a.schedule).getTime() - new Date(b.schedule).getTime();
+    return (
+      new Date(a.schedule ?? 0).getTime() - new Date(b.schedule ?? 0).getTime()
+    );
   });
 
   return (
     <div className="w-full bg-cover bg-center bg-[#2C2B2B]">
-      <h1 className="font-gotham text-white text-3xl sm:text-7xl text-start font-bold sm:ml-[168px] ml-8 sm:mt-28 mt-12 sm:mb-16 mb-11">
-        Programação
-      </h1>
+      <div className="relative flex items-center ml-8 sm:ml-[168px] mb-12 sm:mb-20 pt-10 sm:pt-28">
+        <h1 className="font-gotham text-white text-3xl sm:text-7xl font-bold">
+          Programação
+        </h1>
+        <div className="flex-grow h-[2px] bg-[#E67119] ml-4" />
+        <div className="w-6 h-6 bg-[#E67119] rounded-full mr-5 sm:mr-36"></div>
+      </div>
       <div className="text-black w-full flex flex-wrap">
         <div className="flex flex-wrap sm:flex-row sm:justify-start ml-6 sm:ml-0">
           <button
@@ -85,7 +95,8 @@ const EventTable = ({
                         <span className="pr-6">
                           {new Intl.DateTimeFormat("pt-BR", {
                             timeStyle: "short",
-                          }).format(new Date(event.schedule))}
+                            timeZone: "America/Sao_Paulo",
+                          }).format(new Date(event.schedule ?? 0))}
                         </span>
                       </div>
                     </div>
@@ -108,7 +119,7 @@ const EventTable = ({
                       </button>
                     </div>
                   </td>
-                  <td className="px-3 py-2">{event.location}</td>
+                  <td className="px-3 py-2">{event.location || "Em breve"}</td>
                 </tr>
               ))}
             </tbody>

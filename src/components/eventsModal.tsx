@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Event } from "@prisma/client";
 
 interface EventsModalProps {
@@ -47,14 +46,22 @@ const EventsModal = ({ isOpen, onClose, events }: EventsModalProps) => {
                 <h3 className="text-regular sm:text-xl font-bold mb-2">
                   <div>{event.eventType}</div>
                   <div>
-                    {event.schedule.toLocaleDateString()} de{" "}
-                    {new Intl.DateTimeFormat("pt-BR", {
-                      timeStyle: "short",
-                    }).format(new Date(event.schedule))}{" "}
-                    às{" "}
-                    {new Intl.DateTimeFormat("pt-BR", {
-                      timeStyle: "short",
-                    }).format(new Date(event.schedule))}
+                    {event.schedule ? (
+                      <>
+                        {event.schedule.toLocaleDateString()} de{" "}
+                        {new Intl.DateTimeFormat("pt-BR", {
+                          timeStyle: "short",
+                        }).format(new Date(event.schedule))}{" "}
+                        às{" "}
+                        {event.endTime
+                          ? new Intl.DateTimeFormat("pt-BR", {
+                              timeStyle: "short",
+                            }).format(new Date(event.endTime))
+                          : "horário a definir"}
+                      </>
+                    ) : (
+                      "horário a definir"
+                    )}
                   </div>
                 </h3>
                 <p className="text-base">{event.description}</p>{" "}
