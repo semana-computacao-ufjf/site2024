@@ -79,7 +79,7 @@ enum eventTypes {
 model Event {
   id Int @id @default(autoincrement())
 
-  title       String     @unique() @db.Text
+  title       String     @db.Text
   description String?    @db.Text
   eventType   eventTypes @map("event_type")
   location    String?    @db.Text
