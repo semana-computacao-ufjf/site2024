@@ -14,8 +14,10 @@ const formatEventType = (type: eventTypes): string => {
       return "Visita Técnica";
     case "SHOW_DE_TALENTOS":
       return "Show de Talentos";
-    default:
-      return "Evento";
+    case "MESA_REDONDA":
+      return "Mesa Redonda";
+    case "ESPECIAL":
+      return "Especial";
   }
 };
 

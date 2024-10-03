@@ -70,6 +70,8 @@ enum eventTypes {
   PROCESSO_SELETIVO @map("Processo Seletivo")
   VISITA_TECNICA    @map("Visita Tecnica")
   SHOW_DE_TALENTOS  @map("Show de Talentos")
+  MESA_REDONDA      @map("Mesa Redonda")
+  ESPECIAL          @map("Especial")
 
   @@map("event_types")
 }
