@@ -5,6 +5,7 @@ import { getWeekday } from "@/util/getWeekday";
 import { Event, Prize, Presenter, eventTypes } from "@prisma/client";
 import formatEventType from "@/util/formatEventType";
 import EventsModal from "../eventsModal";
+import Workshop from "../workshop";
 
 const EventTable = ({
   events,
@@ -148,6 +149,7 @@ export default function Schedule({
   return (
     <div className="min-h-screen w-full flex flex-col">
       <EventTable events={events} />
+      <Workshop />
       <div className="h-72 w-full bg-cover bg-no-repeat bg-[url('/images/transition.png')]" />
     </div>
   );
