@@ -19,15 +19,17 @@ export default function Cover() {
               height: "auto",
             }}
           />
-          <div className="font-bold text-3xl sm:hidden">
+          <div className="font-bold text-3xl sm:hidden text-white">
             <h1>Semana da</h1>
             <h1>Computação</h1>
+            <h1>25/11 à 29/11</h1>
           </div>
         </div>
         <div className="sm:col-span-3 sm:text-center font-gotham text-white sm:mr-14">
           <h1 className="font-bold text-7xl hidden sm:block">
-            Semana da computação
+            Semana da Computação
           </h1>
+          <h1 className="font-bold text-5xl hidden sm:block">25/11 à 29/11</h1>
           <h2 className="w-4/5 text-start mx-auto sm:text-3xl sm:text-left sm:w-full sm:mx-12 my-2 sm:my-12">
             A Semana da Computação é um evento anual organizado pelo
             Departamento de Ciência da Computação da Universidade Federal de
