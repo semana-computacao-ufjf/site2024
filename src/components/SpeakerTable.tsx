@@ -1,6 +1,6 @@
 import NextImage from "next/image";
 import { useState, useEffect } from "react";
-import { Presenter, Event } from "@prisma/client";
+import { Presenter, Event, Prize } from "@prisma/client";
 import formatEventType from "@/util/formatEventType";
 import EventsModal from "./eventsModal";
 

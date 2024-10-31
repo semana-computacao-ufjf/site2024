@@ -8,7 +8,7 @@ export default function Workshop() {
         <div className="flex-grow h-[2px] bg-[#E67119] ml-4" />
         <div className="w-6 h-6 bg-[#E67119] rounded-full mr-5 sm:mr-36"></div>
       </div>
-      <h2 className="font-gotham sm:text-3xl relative flex items-center ml-8 sm:ml-[168px] mr-5 sm:mr-36">
+      <h2 className="font-gotham sm:text-3xl relative flex items-center ml-8 sm:ml-[168px] mr-5 sm:mr-36 text-white">
         O Departamento de Ciência da Computação convida estudantes de graduação
         e pós-graduação da UFJF a submeterem artigo de seus trabalhos referentes
         a temas relevantes à investigação e aplicação na área de Ciência da

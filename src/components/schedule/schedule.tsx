@@ -16,10 +16,21 @@ const EventTable = ({
   })[];
 }) => {
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<
+    | (Event & {
+        prizes: Prize[];
+        presenters: Presenter[];
+      })
+    | null
+  >(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleEventClick = (event: Event) => {
+  const handleEventClick = (
+    event: Event & {
+      prizes: Prize[];
+      presenters: Presenter[];
+    },
+  ) => {
     if (event.schedule) {
       setSelectedEvent(event);
       setIsModalOpen(true);

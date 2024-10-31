@@ -1,9 +1,15 @@
-import { Event } from "@prisma/client";
+import formatEventType from "@/util/formatEventType";
+import { Event, Presenter, Prize } from "@prisma/client";
 
 interface EventsModalProps {
   isOpen: boolean;
   onClose: () => void;
-  events: Event[] | null;
+  events:
+    | (Event & {
+        prizes?: Prize[];
+        presenters?: Presenter[];
+      })[]
+    | null;
 }
 
 const EventsModal = ({ isOpen, onClose, events }: EventsModalProps) => {
@@ -35,38 +41,49 @@ const EventsModal = ({ isOpen, onClose, events }: EventsModalProps) => {
         <div className="font-gotham flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-4 text-white">Eventos</h2>
           <ul className="space-y-4">
-            {events.map((event, index) => (
-              <li
-                key={index}
-                className="bg-cover bg-no-repeat bg-[url('/images/dotsbg.png')] p-4 rounded-lg w-full"
-              >
-                <h3 className="text-regular sm:text-xl font-bold mb-2 border-b-2 border-[#E67119] text-white">
-                  {event.title}
-                </h3>
-                <h3 className="text-regular sm:text-xl font-bold mb-2">
-                  <div className="text-white">{event.eventType}</div>
-                  <div className="text-white">
-                    {event.schedule ? (
-                      <>
-                        {event.schedule.toLocaleDateString()} de{" "}
-                        {new Intl.DateTimeFormat("pt-BR", {
-                          timeStyle: "short",
-                        }).format(new Date(event.schedule))}{" "}
-                        às{" "}
-                        {event.endTime
-                          ? new Intl.DateTimeFormat("pt-BR", {
+            <li className="bg-cover bg-no-repeat bg-[url('/images/dotsbg.png')] p-4 rounded-lg w-full">
+              {events.map((event) => {
+                return (
+                  <>
+                    <h3 className="text-regular sm:text-xl font-bold mb-2 border-b-2 border-[#E67119] text-white">
+                      {event.title}
+                    </h3>
+                    <h3 className="text-regular sm:text-xl font-bold mb-2">
+                      <div className="text-white">
+                        {formatEventType(event.eventType)} {event.presenters !== undefined && event.presenters.length > 0 ? "- " : ""}
+                        {event.presenters?.map((presenter, index, array) => {
+                          return (
+                            <span key={index}>
+                              {presenter.name}
+                              {index + 1 !== array.length ? ", " : ""}
+                            </span>
+                          );
+                        })}
+                      </div>
+                      <div className="text-white">
+                        {event.schedule !== null ? (
+                          <>
+                            {event.schedule.toLocaleDateString()} de{" "}
+                            {new Intl.DateTimeFormat("pt-BR", {
                               timeStyle: "short",
-                            }).format(new Date(event.endTime))
-                          : "horário a definir"}
-                      </>
-                    ) : (
-                      "horário a definir"
-                    )}
-                  </div>
-                </h3>
-                <p className="text-base text-white">{event.description}</p>
-              </li>
-            ))}
+                            }).format(new Date(event.schedule))}{" "}
+                            às{" "}
+                            {event.endTime
+                              ? new Intl.DateTimeFormat("pt-BR", {
+                                  timeStyle: "short",
+                                }).format(new Date(event.endTime))
+                              : "horário a definir"}
+                          </>
+                        ) : (
+                          "horário a definir"
+                        )}
+                      </div>
+                    </h3>
+                    <p className="text-base text-white">{event.description}</p>
+                  </>
+                );
+              })}
+            </li>
           </ul>
         </div>
       </div>
