@@ -20,13 +20,10 @@ export default function Workshop() {
       <button
         className="bg-[#E67119] font-gotham w-4/5 sm:w-1/2 font-bold text-white text-xl sm:text-5xl text-center items-center rounded-[13px] border-2 border-[#E67119] hover:bg-transparent hover:text-[#E67119] button-transition mx-auto mt-5 mb-6 sm:mt-10 sm:mb-16 p-2 sm:p-3"
         onClick={() => {
-          window.open(
-            "https://www2.ufjf.br/getcomp/2024/09/19/xiv-workshop-dcc-2024/#:~:text=O%20Departamento%20de%20Ci%C3%AAncia%20da,%C3%A1rea%20de%20Ci%C3%AAncia%20da%20Computa%C3%A7%C3%A3o.",
-            "_blank"
-          );
+          window.open("http://relatedcc.nrc.ice.ufjf.br", "_blank");
         }}
       >
-        Saiba Mais
+        Inscreva-se
       </button>
     </div>
   );
